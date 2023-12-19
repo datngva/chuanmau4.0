@@ -1,0 +1,198 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Chuẩn Màu — Dịch vụ cân chỉnh màu màn hình tại Hà Nội',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Facebook',
+        href: 'https://www.facebook.com/chuanmaucom',
+        target: '_blank',
+        icon: 'tabler:brand-facebook',
+      },
+      { text: 'Liên hệ', href: '/lien-he' },
+    ]}
+    image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">
+    <span class="">Chuẩn Màu màn hình</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="">
+        <span class="font-semibold">Chuẩn Màu</span> cung cấp dịch vụ cân màu màn hình máy tính, laptop, bảng vẽ,… tại Hà nội. Màn hình sau khi cân màu giúp việc chỉnh sửa, in ấn, xuất bản file hạn chế bị sai màu sắc.</span
+      >
+    </Fragment>
+  </Hero>
+  
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="3 bước cân màu màn hình"
+    items={[
+      {
+        title: 'Bước 1: <span class="font-medium">Cân bằng trắng</span>',
+        description:
+          "Cân chỉnh nhiệt độ màu màn hình về 6500K, nơi mà ánh sáng trắng được coi là trung tính và gần giống như ánh sáng ban ngày.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Bước 2: <span class="font-medium">Cân chỉnh màu bằng máy đo chuyên dụng</em>',
+        description:
+          "Sử dụng thiết bị đo màu của hãng X-Rite tốt nhất trên thị trường hiện nay. Quá trình này hoàn toàn tự động.",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Bước 3: <span class="font-medium">Xuất Profile</span>',
+        description:
+          'Sau khi cân màu xong, chúng tôi sẽ lưu lại profile màu để lưu trữ và hướng dẫn bạn sử dụng profile.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Sẵn sàng!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://lh3.googleusercontent.com/pw/ABLVV87zMxphxxeJdxOJOtQrqNwlbdVOWYvUel7IQAZy-ESAbFugdlnQVAkSwF2QORHpVb5NXwk9WER7gp0MwPQrVGTnXl9pH4iFC4OiwJP6eTQonWXcN2j5=w2400',
+      alt: 'Steps image',
+    }}
+    >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gray-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Lựa chọn Chuẩn Màu.com"
+    subtitle="Chúng tôi mang lại nhiều giá trị cho bạn"
+    tagline="Why choose us?"
+    items={[
+      {
+        title: 'Kinh nghiệm',
+        description: "Chúng tôi đã có hơn 3 năm kinh nghiệm trong việc chẩn đoán, cân chỉnh màu màn hình.",
+        icon: 'tabler:archive',
+      },
+      {
+        title: 'Thiết bị đo màu chuẩn',
+        description:
+          "Chúng tôi chỉ sử dụng thiết bị của X-RITE để cân chỉnh nhằm mang lại kết quả tốt nhất.",
+        icon: 'tabler:current-location',
+      },
+      {
+        title: 'Tiết kiệm thời gian - chi phí',
+        description:
+          'Khách hàng nhận được tư vấn nhanh, giúp tối ưu hóa thời gian và chi phí.',
+        icon: 'tabler:discount',
+      },
+      {
+        title: 'Hỗ trợ nhanh chóng',
+        description:
+          "Chúng tôi sẽ hỗ trợ bạn trong suốt quá trình trước và sau khi cân chỉnh màu sắc màn hình.",
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Cân chỉnh màu tại nhà',
+        description:
+          'Chúng tôi cân chỉnh màu tại nhà khách hàng trong khu vực Hà nội.',
+        icon: 'tabler:home',
+      },
+      {
+        title: '10 phút',
+        description: 'Chỉ 10 phút cân chỉnh, chúng tôi có thể tối ưu hóa màu sắc trên màn hình của bạn.',
+        icon: 'tabler:clock',
+      },
+
+    ]}
+  >
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="Blog"
+    information={`Thanks.
+                `}
+    >
+  <Fragment slot="bg">
+      <div class="absolute inset-0 bg-neutral-50 dark:bg-transparent"></div>
+  </Fragment>    
+  </BlogLatestPosts>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Câu hỏi thường gặp"
+    subtitle="Vui lòng tham khảo câu hỏi hoặc liên hệ với chúng tôi để được tư vấn."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Sau khi cài lại hệ điều hành có bị mất màu sắc đã cân chỉnh không?',
+        description:
+          "Không nhé bạn. Sau khi cân chỉnh xong chúng tôi sẽ xuất file Profile.ICC và hướng dẫn bạn cài vào máy tính cho lần sau.",
+      },
+      {
+        title: 'Có cần cân chỉnh màu định kỳ không?',
+        description:
+          'Có. Thường trong thời gian sử dụng sẽ bị sai lệch nên chúng tôi đề xuất bạn cân chỉnh lại sau 6 tháng đến 1 năm sử dụng.',
+      },
+      {
+        title: 'Chi phí cân chỉnh màu màn hình là bao nhiêu?',
+        description:
+          "Chi phí cân chỉnh màu màn hình chỉ từ 150k/màn hình, Bạn vui lòng liên hệ với chúng tôi để được tư vấn chi tiết.",
+      },
+      {
+        title: "Màn hình laptop có cân chỉnh màu được không?",
+        description:
+          "Màn hình laptop có 2 loại: 60% và 100% sRGB nên tùy chất lượng màn hình mà chúng tôi sẽ tư vấn cho bạn có nên cân hay không.",
+      },
+      {
+        title: 'Bảng vẽ Wacom, Xp-Pen, Huion,... có cân chỉnh màu được không?',
+        description:
+          "Hoàn toàn được bạn nhé. Bản chất chỉ là màn hình rời nên chúng tôi có thể cân chỉnh được.",
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+  <hr>
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Liên hệ',
+        href: '/lien-he',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Màn hình của tôi có cân màu được không?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Màn hình của bạn có đủ đáp ứng để cân chỉnh màu hay không?
+      Hãy liên hệ với chúng tôi, cung cấp mã màn hình, thiết bị để được tư vấn trực tiếp.
+    </Fragment>
+  </CallToAction>
+</Layout>

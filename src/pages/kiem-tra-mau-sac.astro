@@ -1,0 +1,63 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import FAQs from "../components/widgets/FAQs.astro";
+const metadata = {
+  title: 'Kiểm tra màu sắc',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Color Check"
+    image={{
+      src: 'https://lh3.googleusercontent.com/pw/ABLVV850NolHVQ7X8z295uJblt-jEcffYQtoTTYLOf7MJw18l6GUsQhfj57XgSICabHQO0MDKTt1LDJ3CStTiOVFBAYQvKwplewoDElPJSYuelc6ep2cRNOE=w2400',
+      alt: 'sRGB check',
+    }}
+  >
+    <Fragment slot="title">
+      Kiểm tra màu sắc
+    </Fragment>
+
+    <Fragment slot="subtitle">Chúng tôi chuyên cung cấp nội dung chuyên môn và đánh giá uy tín.
+    </Fragment>
+  </Hero>
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Câu hỏi thường gặp"
+    subtitle="Vui lòng tham khảo câu hỏi hoặc liên hệ với chúng tôi để được tư vấn."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Sau khi cài lại hệ điều hành có bị mất màu sắc đã cân chỉnh không?',
+        description:
+          "Không nhé bạn. Sau khi cân chỉnh xong chúng tôi sẽ xuất file Profile.ICC và hướng dẫn bạn cài vào máy tính cho lần sau.",
+      },
+      {
+        title: 'Có cần cân chỉnh màu định kỳ không?',
+        description:
+          'Có. Thường trong thời gian sử dụng sẽ bị sai lệch nên chúng tôi đề xuất bạn cân chỉnh lại sau 6 tháng đến 1 năm sử dụng.',
+      },
+      {
+        title: 'Chi phí cân chỉnh màu màn hình là bao nhiêu?',
+        description:
+          "Chi phí cân chỉnh màu màn hình chỉ từ 150k/màn hình, Bạn vui lòng liên hệ với chúng tôi để được tư vấn chi tiết.",
+      },
+      {
+        title: "Màn hình laptop có cân chỉnh màu được không?",
+        description:
+          "Màn hình laptop có 2 loại: 60% và 100% sRGB nên tùy chất lượng màn hình mà chúng tôi sẽ tư vấn cho bạn có nên cân hay không.",
+      },
+      {
+        title: 'Bảng vẽ Wacom, Xp-Pen, Huion,... có cân chỉnh màu được không?',
+        description:
+          "Hoàn toàn được bạn nhé. Bản chất chỉ là màn hình rời nên chúng tôi có thể cân chỉnh được.",
+      },
+    ]}
+  />
+  
+</Layout>

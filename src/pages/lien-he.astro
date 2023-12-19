@@ -1,0 +1,65 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Liên Hệ',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact us" title="Liên Hệ" />
+  <!-- Features2 Widget ************** -->
+<hr>
+  <Features2
+    title="Chúng tôi có thể giúp gì cho bạn?"
+    items={[
+      {
+        title: 'Phone/Zalo',
+        description: '0879.02.5858',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Cầu Giấy',
+        description: 'Số 9 Duy Tân, Cầu Giấy, Hà Nội',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Bắc Từ Liêm',
+        description: 'A1 - IA20, Đông Ngạc, Bắc Từ Liêm, Hà Nội',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+  <hr>
+  <ContactUs
+    title="Gửi Ticket"
+    subtitle="Bạn có thể gửi nhanh yêu cầu hỗ tợ cho chúng tôi."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Họ Tên',
+      },
+      {
+        type: 'number',
+        name: 'phone',
+        label: 'Số điện thoại',
+      },
+    ]}
+    textarea={{
+      label: 'Lời nhắn',
+    }}
+    disclaimer={{
+      label:
+        'Bằng cách gửi biểu mẫu liên hệ này, bạn đồng ý với việc thu thập thông tin cá nhân của bạn.',
+    }}
+    description="Chúng tôi sẽ phản hồi bạn trong vòng 4 giờ làm việc."
+  />
+  
+  
+</Layout>
