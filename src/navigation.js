@@ -16,7 +16,7 @@ headerData = {
       links: [
         {
           text: 'DisplayCAL',
-          href: 'https://www.dropbox.com/home/DATA/chuanmau',
+          href: 'https://www.dropbox.com/sh/6squicub6nkpmkb/AADPjncb5xLrbOrAA5jFZIeaa?dl=0',
           target: '_blank'
         },
       ],
@@ -94,7 +94,7 @@ export const footerData = {
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(https://lh3.googleusercontent.com/pw/ABLVV84JLawuGL-A9Er9UUoprZgZShXNcb9Zr4L8bk5hEoqrISOeIqIqJC_jdnsNoki-Xs72b3LS8h_OFdSvJ8WJLU8i2PldQ5rmjlntroC2XLTtqP80WDwX=s32-p-k)]"></span>
+    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(https://lh3.googleusercontent.com/pw/ABLVV86u2q3gFhS-8BMYQBGYW_DgdUol72pugf7SC1RGrT1h5Gh7YXSmMn_2kZczKGXFMejYQnC701qTxb4imtQe6iSpdJ9zg02MPXnaSAFRCvOdCOUGof7bAONf6sykzrUFsIOk1qRwv07eXKjxcu0tbAbsLw=w32-h32-s-no?authuser=0)]"></span>
     Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://dat-nguyen.com/"> Dat Nguyen</a> · All rights reserved.
   `,
 };
