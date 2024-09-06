@@ -11,7 +11,7 @@ metadata:
   title:
     default: Chuẩn Màu
     template: '%s — ChuanMau'
-  description: "Cân màu màn hình PC, laptop, bảng vẽ tại Hà nội"
+  description: "Cân màu màn hình PC, laptop, bảng vẽ tại Hà nội."
   robots:
     index: true
     follow: true
