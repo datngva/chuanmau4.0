@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eefcd9a9-bfc7-4419-b19c-d6db89b74429" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="eefcd9a9-bfc7-4419-b19c-d6db89b74429" name="Changes" comment="Live chat Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,8 +98,17 @@
       <workItem from="1725611753921" duration="401000" />
       <workItem from="1725612173971" duration="68000" />
       <workItem from="1725638030786" duration="262000" />
-      <workItem from="1725677126812" duration="2093000" />
+      <workItem from="1725677126812" duration="3109000" />
     </task>
+    <task id="LOCAL-00001" summary="Live chat Update">
+      <option name="closed" value="true" />
+      <created>1725679328065</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725679328065</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,5 +124,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Live chat Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Live chat Update" />
   </component>
 </project>
