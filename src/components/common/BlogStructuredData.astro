@@ -1,0 +1,77 @@
+---
+interface Props {
+  post: {
+    title: string;
+    description?: string;
+    publishDate: string;
+    updateDate?: string;
+    image?: string;
+    author?: string;
+    tags?: Array<{ title: string }>;
+    category?: string;
+  };
+  url: string;
+}
+
+const { post, url } = Astro.props;
+
+const articleData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.description || post.title,
+  "image": post.image ? `https://chuanmau.com${String(post.image).replace('~/', '/')}` : "https://chuanmau.com/assets/images/default.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Chuẩn Màu",
+    "url": "https://chuanmau.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chuẩn Màu",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chuanmau.com/assets/images/logo.png"
+    }
+  },
+  "datePublished": post.publishDate,
+  "dateModified": post.updateDate || post.publishDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  },
+  "url": url,
+  "keywords": post.tags?.map(tag => tag.title).join(', ') || post.category || "cân màu màn hình",
+  "articleSection": post.category || "Tutorials",
+  "wordCount": post.title.length + (post.description?.length || 0),
+  "inLanguage": "vi-VN"
+};
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://chuanmau.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://chuanmau.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": post.title,
+      "item": url
+    }
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(articleData)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbData)}></script>

@@ -41,7 +41,7 @@ headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Thông tin',
+      title: 'Dịch vụ',
       links: [
         { text: 'Kiểm tra màu sắc', href: '/kiem-tra-mau-sac' },
         { text: 'Bảng giá', href: '/bang-gia' },
@@ -49,17 +49,25 @@ export const footerData = {
         { text: 'Blog', href: '/blog' },
       ],
     },
+
+    {
+      title: 'Thông tin',
+      links: [
+        { text: 'Điều khoản sử dụng', href: '/terms' },
+        { text: 'Quyền riêng tư', href: '/privacy' },
+      ],
+    },
   ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  ],
+//   secondaryLinks: [
+//     { text: 'Terms', href: getPermalink('/terms') },
+//     { text: 'Privacy Policy', href: getPermalink('/privacy') },
+//   ],
   socialLinks: [
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/chuanmaucom' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
     <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(https://lh3.googleusercontent.com/pw/ABLVV86u2q3gFhS-8BMYQBGYW_DgdUol72pugf7SC1RGrT1h5Gh7YXSmMn_2kZczKGXFMejYQnC701qTxb4imtQe6iSpdJ9zg02MPXnaSAFRCvOdCOUGof7bAONf6sykzrUFsIOk1qRwv07eXKjxcu0tbAbsLw=w32-h32-s-no?authuser=0)]"></span>
-    Made by <a class="text-primary hover:underline dark:text-gray-200" href="https://dat-nguyen.com/"> Dat Nguyen</a> · All rights reserved.
+    Made by <a class="text-primary hover:underline dark:text-gray-200" href="https://ngdat.com/"> Dat Nguyen</a> · All rights reserved.
   `,
 };

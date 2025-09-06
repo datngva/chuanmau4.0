@@ -2,6 +2,7 @@
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 import { headerData, footerData } from '~/navigation';
 
@@ -15,6 +16,7 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData />
   <slot name="header">
     <Header {...headerData} isSticky showRssFeed showToggleTheme />
   </slot>

@@ -1,0 +1,154 @@
+---
+import { SITE } from '~/config';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Chuẩn Màu",
+  "alternateName": "chuanmau.com",
+  "description": "Dịch vụ cân màu màn hình PC, laptop, bảng vẽ chuyên nghiệp tại Hà Nội. Độ chính xác cao, bảo hành 6 tháng. Phù hợp cho Designer, Photographer, Video Editor.",
+  "url": "https://chuanmau.com",
+  "logo": "https://chuanmau.com/assets/images/logo.png",
+  "image": [
+    "https://chuanmau.com/assets/images/default.jpg",
+    "https://chuanmau.com/assets/images/hero.png",
+    "https://chuanmau.com/assets/images/xritei1-chuanmau.jpg"
+  ],
+  "telephone": "+84-879-025-858",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+84-879-025-858",
+    "contactType": "customer service",
+    "availableLanguage": "Vietnamese",
+    "areaServed": "VN"
+  },
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Số 9 Duy Tân, phường Cầu Giấy",
+      "addressLocality": "Hà Nội",
+      "addressCountry": "VN",
+      "addressRegion": "Cầu Giấy"
+    },
+    {
+      "@type": "PostalAddress", 
+      "streetAddress": "Toà A1 - CC IA20 Ciputra, phường Phú Thượng",
+      "addressLocality": "Hà Nội",
+      "addressCountry": "VN",
+      "addressRegion": "Phú Thượng"
+    }
+  ],
+  "geo": [
+    {
+      "@type": "GeoCoordinates",
+      "latitude": "21.0285",
+      "longitude": "105.8542",
+      "name": "Cầu Giấy"
+    },
+    {
+      "@type": "GeoCoordinates",
+      "latitude": "21.0833", 
+      "longitude": "105.8167",
+      "name": "Phú Thượng"
+    }
+  ],
+  "openingHours": [
+    "Mo-Fr 09:00-18:00",
+    "Sa 09:00-17:00"
+  ],
+  "priceRange": "150000-200000 VND",
+  "currenciesAccepted": "VND",
+  "paymentAccepted": "Cash, Bank Transfer, ZaloPay",
+  "areaServed": {
+    "@type": "City",
+    "name": "Hà Nội"
+  },
+  "serviceType": [
+    "Cân màu màn hình PC",
+    "Cân màu laptop", 
+    "Cân màu bảng vẽ",
+    "Cài đặt ICC Profile",
+    "Tư vấn chọn màn hình",
+    "Dịch vụ tận nơi"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dịch vụ cân màu màn hình",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cân màu tại cửa hàng",
+          "description": "Cân chỉnh màu tại cửa hàng với giá 150.000đ/màn hình"
+        },
+        "price": "150000",
+        "priceCurrency": "VND"
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cân màu tại nhà",
+          "description": "Dịch vụ cân màu tại nhà khách hàng với giá 200.000đ/màn hình"
+        },
+        "price": "200000",
+        "priceCurrency": "VND"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Cân màu bảng vẽ",
+          "description": "Dịch vụ cân màu bảng vẽ Wacom, Huion và các thương hiệu khác"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cài đặt ICC Profile",
+          "description": "Hướng dẫn và hỗ trợ cài đặt ICC Profile cho Windows và macOS"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "50",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "sameAs": [
+    "https://www.facebook.com/chuanmaucom"
+  ],
+  "foundingDate": "2020",
+  "numberOfEmployees": "2-5",
+  "knowsAbout": [
+    "Color calibration",
+    "Display calibration", 
+    "ICC profiles",
+    "Color management",
+    "Monitor calibration",
+    "Laptop screen calibration",
+    "Graphics tablet calibration"
+  ]
+};
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://chuanmau.com"
+    }
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbData)}></script>

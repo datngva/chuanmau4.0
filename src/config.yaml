@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Chuẩn Màu
-    template: '%s — ChuanMau'
-  description: 'Cân màu màn hình PC, laptop, bảng vẽ tại Hà nội.'
+    default: Chuẩn Màu - Dịch vụ cân màu màn hình chuyên nghiệp tại Hà Nội
+    template: '%s — Chuẩn Màu'
+  description: 'Dịch vụ cân màu màn hình PC, laptop, bảng vẽ chuyên nghiệp tại Hà Nội. Độ chính xác cao, bảo hành 6 tháng. Phù hợp cho Designer, Photographer, Video Editor.'
   robots:
     index: true
     follow: true
@@ -21,10 +21,16 @@ metadata:
       - url: '~/assets/images/default.jpg'
         width: 1200
         height: 628
+        alt: 'Dịch vụ cân màu màn hình chuyên nghiệp tại Hà Nội'
     type: website
+    locale: vi_VN
+  twitter:
+    handle: '@chuanmau'
+    site: '@chuanmau'
+    cardType: summary_large_image
 
 i18n:
-  language: en
+  language: vi
   textDirection: ltr
 
 apps:

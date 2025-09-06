@@ -1,2 +1,16 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://chuanmau.com/sitemap-index.xml
+
+# Disallow admin areas
+Disallow: /decapcms/
+Disallow: /admin/
+Disallow: /_astro/
+
+# Allow important pages
+Allow: /blog/
+Allow: /kiem-tra-mau-sac/
+Allow: /bang-gia/
+Allow: /lien-he/
