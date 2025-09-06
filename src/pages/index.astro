@@ -2,18 +2,14 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Chuẩn Màu — Cân màu màn hình PC, laptop, bảng vẽ tại Hà Nội',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,352 +21,153 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Liên hệ ngay',
+        href: '/lien-he',
+        icon: 'tabler:phone',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Xem dịch vụ', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/hero.png', alt: 'Cân màu màn hình chuyên nghiệp' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
+      Dịch vụ <span class="hidden xl:inline">cân màu màn hình</span>
+      <span class="text-accent dark:text-white"> chuyên nghiệp</span> tại Hà Nội
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
+        <span class="font-semibold">Chuẩn Màu</span> cung cấp dịch vụ cân màu màn hình PC, laptop, bảng vẽ chuyên nghiệp
+        với độ chính xác cao.</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      <span class="block mb-1 sm:hidden font-bold text-primary">Chuẩn Màu: Chuyên nghiệp & Chính xác.</span>
+      Phù hợp cho Designer, Photographer, Video Editor, và tất cả những ai cần độ chính xác màu sắc cao.
     </Fragment>
   </Hero>
-
-  <!-- Note Widget ******************* -->
-
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
 
   <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+    tagline="Dịch vụ"
+    title="Các dịch vụ cân màu màn hình của chúng tôi"
+    subtitle="Chúng tôi cung cấp các dịch vụ cân màu chuyên nghiệp với thiết bị hiện đại và độ chính xác cao nhất."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Cân màu màn hình PC',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'Dịch vụ cân màu màn hình PC chuyên nghiệp với thiết bị đo màu hiện đại, đảm bảo độ chính xác cao.',
+        icon: 'tabler:device-desktop',
       },
       {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+        title: 'Cân màu laptop',
+        description: 'Cân màu laptop cho Designer, Photographer và Video Editor với độ chính xác màu sắc tối ưu.',
+        icon: 'tabler:device-laptop',
       },
       {
-        title: 'Best Practices',
+        title: 'Cân màu bảng vẽ',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          'Dịch vụ cân màu bảng vẽ Wacom, Huion và các thương hiệu khác cho công việc thiết kế chuyên nghiệp.',
+        icon: 'tabler:device-tablet',
       },
       {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+        title: 'Cài đặt ICC Profile',
+        description: 'Hướng dẫn và hỗ trợ cài đặt ICC Profile cho Windows và macOS để duy trì độ chính xác màu sắc.',
+        icon: 'tabler:settings',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+        title: 'Tư vấn chọn màn hình',
+        description: 'Tư vấn chọn màn hình phù hợp với nhu cầu công việc và ngân sách của bạn.',
+        icon: 'tabler:help',
       },
       {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+        title: 'Bảo hành và hỗ trợ',
+        description: 'Dịch vụ bảo hành và hỗ trợ kỹ thuật sau khi cân màu để đảm bảo chất lượng lâu dài.',
+        icon: 'tabler:shield-check',
       },
     ]}
   />
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
 
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="Quy trình cân màu màn hình chuyên nghiệp của chúng tôi."
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: 'Bước 1: <span class="font-medium">Liên hệ</span>',
         description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
+          'Liên hệ với chúng tôi qua điện thoại hoặc website để đặt lịch hẹn. Chúng tôi sẽ tư vấn và báo giá chi tiết cho dịch vụ cân màu.',
+        icon: 'tabler:phone',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: 'Bước 2: <span class="font-medium">Khảo sát</span>',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
+          'Kỹ thuật viên sẽ đến tận nơi để khảo sát màn hình và đánh giá tình trạng hiện tại. Chúng tôi sẽ kiểm tra độ sáng, độ tương phản và màu sắc.',
+        icon: 'tabler:search',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Bước 3: <span class="font-medium">Cân màu</span>',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
+          'Sử dụng thiết bị đo màu chuyên nghiệp để cân chỉnh màn hình theo chuẩn màu phù hợp với nhu cầu công việc của bạn.',
+        icon: 'tabler:palette',
       },
       {
-        title: 'Ready!',
+        title: 'Hoàn thành!',
         icon: 'tabler:check',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: '~/assets/images/xritei1-chuanmau.jpg',
+      alt: 'máy cân màu xrite i1 chuẩn màu',
     }}
   />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
 
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
+    title="Bài viết"
+    information={`Mỗi bài viết sẽ giúp bạn hiểu rõ hơn về tầm quan trọng của việc cân màu màn hình trong công việc thiết kế.
+                        Độ chính xác màu sắc là yếu tố quan trọng quyết định chất lượng sản phẩm cuối cùng.
                 `}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
+    title="Câu hỏi thường gặp"
+    subtitle="Tìm hiểu thêm về dịch vụ cân màu màn hình và những điều bạn cần biết trước khi sử dụng dịch vụ của chúng tôi."
+    tagline="FAQ"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'Tại sao cần cân màu màn hình?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          'Cân màu màn hình giúp đảm bảo màu sắc hiển thị chính xác, đặc biệt quan trọng cho Designer, Photographer, Video Editor. Màn hình không được cân màu có thể hiển thị màu sắc sai lệch, ảnh hưởng đến chất lượng công việc.',
       },
       {
-        title: 'What do I need to start?',
+        title: 'Dịch vụ cân màu mất bao lâu?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          'Thời gian cân màu cho mỗi màn hình thường mất khoảng 30-45 phút. Chúng tôi sẽ kiểm tra, đo đạc và cân chỉnh màn hình theo chuẩn màu phù hợp với nhu cầu công việc của bạn.',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'Có cần chuẩn bị gì trước khi cân màu?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          'Bạn chỉ cần chuẩn bị màn hình sạch sẽ và đảm bảo màn hình đã được sử dụng ít nhất 30 phút để ổn định nhiệt độ. Chúng tôi sẽ mang theo tất cả thiết bị cần thiết.',
       },
       {
-        title: "What's something that you don't understand?",
+        title: 'Dịch vụ có bảo hành không?',
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          'Chúng tôi cung cấp bảo hành 6 tháng cho dịch vụ cân màu. Nếu có vấn đề gì về màu sắc trong thời gian bảo hành, chúng tôi sẽ hỗ trợ kiểm tra và cân chỉnh lại miễn phí.',
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: 'Giá dịch vụ như thế nào?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+          'Giá dịch vụ phụ thuộc vào loại màn hình và yêu cầu cụ thể. Chúng tôi cung cấp mức giá cạnh tranh và phù hợp với chất lượng dịch vụ chuyên nghiệp. Liên hệ để được báo giá chi tiết.',
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        title: 'Có dịch vụ tận nơi không?',
         description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          'Có, chúng tôi cung cấp dịch vụ tận nơi tại Hà Nội. Kỹ thuật viên sẽ đến tận nơi để thực hiện cân màu, giúp bạn tiết kiệm thời gian và chi phí di chuyển.',
       },
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
     ]}
   />
 
@@ -380,20 +177,19 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Liên hệ ngay',
+        href: '/lien-he',
+        icon: 'tabler:phone',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      Chuẩn Màu <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Chuyên nghiệp</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Đừng để màu sắc sai lệch ảnh hưởng đến chất lượng công việc của bạn. <br class="hidden md:inline" />
+      Liên hệ ngay để được tư vấn miễn phí!
     </Fragment>
   </CallToAction>
 </Layout>

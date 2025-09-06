@@ -1,31 +1,27 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: chuanmau.com
+  site: 'https://chuanmau.com'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: RrFlTylhRlRngAVxH3qU8l8xD6a1SGDj_w8CMwS2hxA
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Chuẩn Màu
+    template: '%s — ChuanMau'
+  description: 'Cân màu màn hình PC, laptop, bảng vẽ tại Hà nội.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Chuẩn Màu
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/default.jpg'
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
-    cardType: summary_large_image
 
 i18n:
   language: en
@@ -60,13 +56,10 @@ apps:
       robots:
         index: false
 
-    isRelatedPostsEnabled: true
-    relatedPostsCount: 4
-
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: G-RTJ2270PK0 # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'light:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

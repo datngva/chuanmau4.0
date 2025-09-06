@@ -1,0 +1,160 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Bảng giá cân chỉnh màu',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Pricing"
+    title="Bảng Giá"
+    subtitle="Tham khảo bảng giá của chúng tôi hoặc liên hệ trực tiếp để nhận báo giá tuỳ chỉnh."
+  />
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    prices={[
+      {
+        title: 'Tại cửa hàng',
+        subtitle: 'Khách hàng mang màn hình đến',
+        price: 150,
+        period: '1 màn hình',
+        items: [
+          {
+            description: 'Cân chỉnh màu tại cửa hàng',
+          },
+          {
+            description: 'Từ màn hình thứ 2 giá 100.000đ',
+          },
+          {
+            description: 'Xuất Profile màu và hướng dẫn',
+          },
+          {
+            description: 'Support trọn đời',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Đặt lịch',
+          href: 'tel:0879025858',
+        },
+      },
+      {
+        title: 'Tại nhà',
+        subtitle: 'Đến nhà khách hàng',
+        price: 200,
+        period: '1 màn hình',
+        items: [
+          {
+            description: 'Cân chỉnh màu tại nhà khách hàng',
+          },
+          {
+            description: 'Từ màn hình thứ 2 giá 100.000đ',
+          },
+          {
+            description: 'Xuất Profile màu và hướng dẫn',
+          },
+          {
+            description: 'Support trọn đời',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Đặt lịch',
+          href: 'tel:0879025858',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'đề xuất',
+      },
+      {
+        title: 'Tuỳ chỉnh',
+        subtitle: '5 màn hình trở lên',
+        price: 90,
+        period: 'những màn hình sau',
+        items: [
+          {
+            description: 'Cân chỉnh màu tại nhà khách hàng',
+          },
+          {
+            description: 'Màn hình đầu tiên 200K',
+          },
+          {
+            description: 'Xuất Profile màu và hướng dẫn',
+          },
+          {
+            description: 'Support trọn đời',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Đặt lịch',
+          href: 'tel:0879025858',
+        },
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Câu hỏi thường gặp"
+    subtitle="Vui lòng tham khảo câu hỏi hoặc liên hệ với chúng tôi để được tư vấn."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Sau khi cài lại hệ điều hành có bị mất màu sắc đã cân chỉnh không?',
+        description:
+          'Không nhé bạn. Sau khi cân chỉnh xong chúng tôi sẽ xuất file Profile.ICC và hướng dẫn bạn cài vào máy tính cho lần sau.',
+      },
+      {
+        title: 'Có cần cân chỉnh màu định kỳ không?',
+        description:
+          'Có. Thường trong thời gian sử dụng sẽ bị sai lệch nên chúng tôi đề xuất bạn cân chỉnh lại sau 6 tháng đến 1 năm sử dụng.',
+      },
+      {
+        title: 'Chi phí cân chỉnh màu màn hình là bao nhiêu?',
+        description:
+          'Chi phí cân chỉnh màu màn hình chỉ từ 150k/màn hình, Bạn vui lòng liên hệ với chúng tôi để được tư vấn chi tiết.',
+      },
+      {
+        title: 'Màn hình laptop có cân chỉnh màu được không?',
+        description:
+          'Màn hình laptop có 2 loại: 60% và 100% sRGB nên tùy chất lượng màn hình mà chúng tôi sẽ tư vấn cho bạn có nên cân hay không.',
+      },
+      {
+        title: 'Bảng vẽ Wacom, Xp-Pen, Huion,... có cân chỉnh màu được không?',
+        description: 'Hoàn toàn được bạn nhé. Bản chất chỉ là màn hình rời nên chúng tôi có thể cân chỉnh được.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Liên hệ',
+        href: '/lien-he',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title"> Màn hình của tôi có cân màu được không? </Fragment>
+
+    <Fragment slot="subtitle">
+      Màn hình của bạn có đủ đáp ứng để cân chỉnh màu hay không? Hãy liên hệ với chúng tôi, cung cấp mã màn hình, thiết
+      bị để được tư vấn trực tiếp.
+    </Fragment>
+  </CallToAction>
+</Layout>
