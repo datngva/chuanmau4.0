@@ -1,6 +1,6 @@
 import { getRssString } from '@astrojs/rss';
 
-import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
+import { SITE, METADATA, APP_BLOG } from '~/config';
 import { fetchPosts } from '~/utils/blog';
 import { getPermalink, getAsset } from '~/utils/permalinks';
 

@@ -1,81 +1,88 @@
-<!DOCTYPE html><html lang="en" dir="ltr" class="2xl:text-[20px]"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="sitemap" href="/sitemap-index.xml"><link rel="shortcut icon" href="/_astro/favicon.Uw4KmMf7.ico"><link rel="icon" type="image/svg+xml" href="/_astro/favicon.nIJyS6GC.svg"><link rel="mask-icon" href="/_astro/favicon.nIJyS6GC.svg" color="#8D46E7"><link rel="apple-touch-icon" sizes="180x180" href="/_astro/apple-touch-icon.xyJRu3aZ.png"><style is:global>
+<!DOCTYPE html><html lang="en" dir="ltr" class="2xl:text-[20px]"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="sitemap" href="/sitemap-index.xml"><link rel="shortcut icon" href="/_astro/favicon.BTDgqYx_.ico"><link rel="icon" type="image/svg+xml" href="/_astro/favicon.CcgnJLoY.svg"><link rel="mask-icon" href="/_astro/favicon.CcgnJLoY.svg" color="#8D46E7"><link rel="apple-touch-icon" sizes="180x180" href="/_astro/apple-touch-icon.DHIlG7dp.png"><style>
   :root {
     --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: var(--aw-font-sans);
-    --aw-font-heading: var(--aw-font-sans);
+    --aw-font-serif: 'Inter Variable';
+    --aw-font-heading: 'Inter Variable';
 
-    --aw-color-primary: rgb(255, 182, 0);
-    --aw-color-secondary: rgb(0, 124, 76);
-    --aw-color-accent: rgb(150, 226, 150);
+    --aw-color-primary: rgb(0 140 91); /* logo green */
+    --aw-color-secondary: rgb(6 95 70); /* darker green */
+    --aw-color-accent: rgb(255 198 36); /* logo yellow */
 
-    --aw-color-text-heading: rgb(0 0 0); 
+    --aw-color-text-heading: rgb(0 0 0);
     --aw-color-text-default: rgb(16 16 16);
-    --aw-color-text-muted: rgb(16 16 16 / 80%);
+    --aw-color-text-muted: rgb(16 16 16 / 66%);
     --aw-color-bg-page: rgb(255 255 255);
 
-    --aw-color-bg-page-dark: rgb(25, 25, 25);
+    --aw-color-bg-page-dark: rgb(6 12 10);
 
-    ::selection {background-color: lavenderblush;}
-
+    ::selection {
+      background-color: rgba(255, 198, 36, 0.35);
+    }
   }
 
   .dark {
     --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: var(--aw-font-sans);
-    --aw-font-heading: var(--aw-font-sans);
+    --aw-font-serif: 'Inter Variable';
+    --aw-font-heading: 'Inter Variable';
 
-    --aw-color-primary: rgb(255, 182, 0);
-    --aw-color-secondary: rgb(0, 124, 76);
-    --aw-color-accent: rgb(150, 226, 150);
+    --aw-color-primary: rgb(0 140 91);
+    --aw-color-secondary: rgb(6 95 70);
+    --aw-color-accent: rgb(255 198 36);
 
-    --aw-color-text-heading: rgb(0 0 0); 
+    --aw-color-text-heading: rgb(247, 248, 248);
     --aw-color-text-default: rgb(229 236 246);
-    --aw-color-text-muted: rgb(229 236 246 / 80%);
-    --aw-color-bg-page: var(--aw-color-bg-page-dark);
+    --aw-color-text-muted: rgb(229 236 246 / 66%);
+    --aw-color-bg-page: rgb(3 6 32);
 
-    ::selection {background-color: black; color: snow}
-
+    ::selection {
+      background-color: black;
+      color: snow;
+    }
   }
-</style><script>(function(){const defaultTheme = "light";
+</style><script>(function(){const defaultTheme = "light:only";
 
   function applyTheme(theme) {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove('dark');
     }
-    const matches = document.querySelectorAll("[data-aw-toggle-color-scheme] > input");
+    const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');
 
     if (matches && matches.length) {
       matches.forEach((elem) => {
-        elem.checked = theme !== "dark";
+        elem.checked = theme !== 'dark';
       });
     }
   }
 
-  if ((defaultTheme && defaultTheme.endsWith(":only")) || (!localStorage.theme && defaultTheme !== "system")) {
-    applyTheme(defaultTheme.replace(":only", ""));
+  if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+    applyTheme(defaultTheme.replace(':only', ''));
   } else if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
-    applyTheme("dark");
+    applyTheme('dark');
   } else {
-    applyTheme("light");
+    applyTheme('light');
   }
-})();</script><title>Posts by tag &#39;tutorials&#39; — ChuanMau</title>
-<meta name="description" content="🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages &amp; Blogs." />
-<meta name="robots" content="noindex,follow" />
-<link rel="canonical" href="https://chuanmau.com/tag/tutorials" />
-<meta property="og:title" content="Posts by tag &#39;tutorials&#39;" />
-<meta property="og:description" content="🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages &amp; Blogs." />
-<meta property="og:url" content="https://chuanmau.com/tag/tutorials" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://chuanmau.com/_astro/default.EOgGV2yp_Z2ur88m.webp" />
+})();</script><title>Posts by tag &#39;Tutorials&#39; — ChuanMau</title>
+<meta name="description" content="Cân màu màn hình PC, laptop, bảng vẽ tại Hà nội.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://chuanmau.com/tag/tutorials">
+<meta property="og:title" content="Posts by tag &#39;Tutorials&#39;">
+<meta property="og:description" content="Cân màu màn hình PC, laptop, bảng vẽ tại Hà nội.">
+<meta property="og:url" content="https://chuanmau.com/tag/tutorials">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://chuanmau.com/_astro/default.Q6AZXbKl_1OTXHT.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="900">
 
-<meta property="og:locale" content="en" />
-<meta property="og:site_name" content="Chuẩn Màu" />
-<meta name="twitter:card" content="summary" /><meta name="google-site-verification" content="RrFlTylhRlRngAVxH3qU8l8xD6a1SGDj_w8CMwS2hxA"><script async src="https://www.googletagmanager.com/gtag/js?id=G-RTJ2270PK0" type="text/partytown"></script><script type="text/partytown">(function(){const id = "G-RTJ2270PK0";
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Chuẩn Màu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@chuanmau">
+<meta name="twitter:creator" content="@chuanmau"><meta name="google-site-verification" content="RrFlTylhRlRngAVxH3qU8l8xD6a1SGDj_w8CMwS2hxA"><script async src="https://www.googletagmanager.com/gtag/js?id=G-RTJ2270PK0" type="text/partytown"></script><script type="text/partytown">(function(){const id = "G-RTJ2270PK0";
 
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -83,15 +90,13 @@
   }
   gtag("js", new Date());
   gtag("config", id);
-})();</script><!-- Uncomment line below to activate View Transitions --><!-- <ViewTransitions fallback="swap" /> --><link rel="stylesheet" href="/_astro/click-through._27Punr1.css" />
-<style>.svg-text-container[data-astro-cid-tvrurpns]{display:flex;align-items:center}.text-container[data-astro-cid-tvrurpns]{margin-left:8px}@media (max-width: 768px){.self-center[data-astro-cid-tvrurpns]{display:none}}
-</style><script>!(function(w,p,f,c){if(!window.crossOriginIsolated && !navigator.serviceWorker) return;c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.8.1 - MIT builder.io */
-!function(t,e,n,i,o,r,a,s,d,c,l,p){function u(){p||(p=1,"/"==(a=(r.lib||"/~partytown/")+(r.debug?"debug/":""))[0]&&(d=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(s=setTimeout(f,1e4),e.addEventListener("pt0",w),o?h(1):n.serviceWorker?n.serviceWorker.register(a+(r.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.style.display="block",c.style.width="0",c.style.height="0",c.style.border="0",c.style.visibility="hidden",c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.8.1":"sandbox-sw.html?"+Date.now()),e.querySelector(r.sandboxParent||"body").appendChild(c)}function f(n,o){for(w(),i==t&&(r.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<d.length;n++)(o=e.createElement("script")).innerHTML=d[n].innerHTML,o.nonce=r.nonce,e.head.appendChild(o);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(s)}r=t.partytown||{},i==t&&(r.forward||[]).map((function(e){l=t,e.split(".").map((function(e,n,i){l=l[i[n]]=n+1<i.length?"push"==i[n+1]?[]:l[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head> <body class="antialiased text-default bg-page tracking-tight">   <header class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-aw-sticky-header id="header"> <div class="absolute inset-0"></div> <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl"> <div class="flex justify-between"> <a class="flex items-center" href="/"> <div class="svg-text-container" data-astro-cid-tvrurpns> <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none" data-astro-cid-tvrurpns> <!-- Các path của SVG tại đây --> <path d="M40.67 10.38L31.04 0.65998C30.54 0.15998 29.85 -0.0700198 29.17 0.0199803L13.79 1.88998C7.58998 2.66998 2.70998 7.54998 1.93998 13.75L0.0199803 29.22C-0.0700198 29.9 0.15998 30.59 0.65998 31.09L10.24 40.76C10.38 40.9 10.6 40.81 10.6 40.62L13.79 14.93C13.84 14.43 14.25 14.02 14.79 13.93L40.48 10.74C40.71 10.74 40.8 10.51 40.66 10.38H40.67Z" fill="#ffb600" data-astro-cid-tvrurpns></path> <path d="M44.69 14.57L42.77 30.49C41.99 36.88 36.93 41.9 30.54 42.67L14.8 44.68C14.66 44.68 14.53 44.59 14.53 44.41L15.94 33.41C15.99 32.86 16.44 32.45 16.94 32.41L29.67 30.81C30.22 30.76 30.63 30.31 30.67 29.81L32.22 17.04C32.27 16.49 32.72 16.08 33.22 16.04L44.4 14.35C44.58 14.3 44.72 14.4 44.67 14.58L44.69 14.57Z" fill="#FFC624" data-astro-cid-tvrurpns></path> <path d="M27.62 16.76L18.27 17.9C18.09 17.95 17.95 18.08 17.91 18.26L16.82 27.57C16.82 27.71 16.91 27.8 17.05 27.8L26.36 26.71C26.54 26.71 26.68 26.53 26.72 26.35L27.86 16.95C27.86 16.86 27.77 16.77 27.63 16.77L27.62 16.76Z" fill="#008C5B" data-astro-cid-tvrurpns></path> </svg> <div class="text-container" data-astro-cid-tvrurpns> <span class="self-center ml-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white" data-astro-cid-tvrurpns>chuanmau.com</span> </div> </div>  </a> <div class="flex items-center md:hidden"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> </div> <nav class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/kiem-tra-mau-sac"> Kiểm tra màu sắc </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/bang-gia"> Bảng giá </a> </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> Download <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">  <symbol id="ai:tabler:chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></symbol> <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="https://www.dropbox.com/home/DATA/chuanmau"> DisplayCAL </a> </li> </ul>  </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> Lưu trữ <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use  xlink:href="#ai:tabler:chevron-down"></use> </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/blog"> Blog </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/tutorials"> Hướng dẫn </a> </li> </ul>  </li> </ul> </nav> <div class="hidden md:self-center flex md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0"> <div class="items-center flex justify-between w-full md:w-auto"> <div class="flex"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 md:w-5 md:h-5 md:inline-block" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol> <use  xlink:href="#ai:tabler:sun"></use> </svg></button> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS Feed" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">  <symbol id="ai:tabler:rss"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"/></symbol> <use  xlink:href="#ai:tabler:rss"></use> </svg> </a> </div> <span class="ml-4 rtl:ml-0 rtl:mr-4"> <a class="btn-secondary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" target="_blank" rel="noopener noreferrer" href="/lien-he">Liên hệ</a> </span> </div> </div> </div> </header>  <main>  <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl"> <header class="mb-8 md:mb-16 text-center max-w-3xl mx-auto"> <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">Tag: tutorials</h1>  </header> <ul> <li class="mb-12 md:mb-20"> <article class="max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 md:grid-cols-2"> <a class="relative block group" href="/huong-dan-cai-dat-icc-profile-tren-macos"> <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg"> <img src="https://lh3.googleusercontent.com/pw/ABLVV85vCMG1NXGkHKJMmx9WOCp7TkJvZSB1ZzjRs9dA64EBoLYKJCPCZn6jWKgpyxyzLJB48XkCpR7eehJWh3-9p3PToCydXxKzPjy3lYfZ2fyWJSDDSCaF=w2400" width="900" height="506.25" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 900px; max-height: 506.25px; aspect-ratio: 1.7777777777777777; width: 100%;" class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700" alt="Hướng dẫn cài đặt ICC Profile trên MacOS" loading="lazy" decoding="async"> </div> </a> <div class="mt-2"> <header> <div class="mb-1"> <span class="text-sm"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:clock">  <symbol id="ai:tabler:clock"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0"/><path d="M12 7v5l3 3"/></g></symbol> <use  xlink:href="#ai:tabler:clock"></use> </svg> <time datetime="Sun Jul 30 2023 07:00:00 GMT+0700 (Indochina Time)" class="inline-block">Jul 30, 2023</time>  
-· <a class="capitalize hover:underline" href="/category/tutorials"> tutorials </a>  </span> </div> <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300"> <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="/huong-dan-cai-dat-icc-profile-tren-macos"> Hướng dẫn cài đặt ICC Profile trên MacOS </a> </h2> </header> <p class="flex-grow text-muted dark:text-slate-400 text-lg">Trong bài viết này, chúng ta sẽ hướng dẫn từng bước cách cài đặt profile ICC trên macOS, giúp bạn tận dụng đầy đủ tính năng quản lý màu sắc cho các dự án sáng tạo.</p> <footer class="mt-5"> <ul class="text-sm"><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/tutorials" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">tutorials</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/chuanmau" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">chuanmau</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/canmaumanhinh" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">canmaumanhinh</a></li></ul> </footer> </div> </article> </li><li class="mb-12 md:mb-20"> <article class="max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 md:grid-cols-2"> <a class="relative block group" href="/cai-dat-icc-profile-tren-window-10"> <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg"> <img src="https://lh3.googleusercontent.com/pw/ABLVV84zCgYWGYUP-XVTHoKmUrvp4tYbU5YDXqZp4Ntie-T7kiYg7W-w4M0sdhiMWujWjSL-tCTI8cQd4xnsFYRnasGOMJCG3KAYV7jVyHtlBDi8czxEssve=w2400" width="900" height="506.25" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 900px; max-height: 506.25px; aspect-ratio: 1.7777777777777777; width: 100%;" class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700" alt="Cài đặt Profile màu trên hệ điều hành Window" loading="lazy" decoding="async"> </div> </a> <div class="mt-2"> <header> <div class="mb-1"> <span class="text-sm"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:clock">   <use  xlink:href="#ai:tabler:clock"></use> </svg> <time datetime="Fri Feb 26 2021 07:00:00 GMT+0700 (Indochina Time)" class="inline-block">Feb 26, 2021</time>  
-· <a class="capitalize hover:underline" href="/category/tutorials"> tutorials </a>  </span> </div> <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300"> <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href="/cai-dat-icc-profile-tren-window-10"> Cài đặt Profile màu trên hệ điều hành Window </a> </h2> </header> <p class="flex-grow text-muted dark:text-slate-400 text-lg">Để cài đặt ICC profile (proflies màu) trên Windows, làm theo các bước sau...</p> <footer class="mt-5"> <ul class="text-sm"><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/tutorials" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">tutorials</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/chuanmau" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">chuanmau</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/canmaumanhinh" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">canmaumanhinh</a></li></ul> </footer> </div> </article> </li> </ul>  </section>  </main>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="md:flex md:items-center md:justify-between py-6 md:py-8"> <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Facebook" href="https://www.facebook.com/chuanmaucom"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-facebook">  <symbol id="ai:tabler:brand-facebook"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2H7"/></symbol> <use  xlink:href="#ai:tabler:brand-facebook"></use> </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">   <use  xlink:href="#ai:tabler:rss"></use> </svg>  </a> </li> </ul> <div class="text-sm mr-4 dark:text-slate-400"> 
-    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(https://lh3.googleusercontent.com/pw/ABLVV84JLawuGL-A9Er9UUoprZgZShXNcb9Zr4L8bk5hEoqrISOeIqIqJC_jdnsNoki-Xs72b3LS8h_OFdSvJ8WJLU8i2PldQ5rmjlntroC2XLTtqP80WDwX=s32-p-k)]"></span>
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://dat-nguyen.com/"> Dat Nguyen</a> · All rights reserved.
-   </div> </div> </div> </footer>   <script>(function(){const defaultTheme = "light";
+})();</script><!-- Comment the line below to disable View Transitions --><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="swap"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DZnDNxNb.js"></script><link rel="stylesheet" href="/_astro/click-through.DwJ5j0X4.css"><script>!(function(w,p,f,c){if(!window.crossOriginIsolated && !navigator.serviceWorker) return;c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.11.0 - MIT QwikDev */
+const t={preserveBehavior:!1},e=e=>{if("string"==typeof e)return[e,t];const[n,r=t]=e;return[n,{...t,...r}]},n=Object.freeze((t=>{const e=new Set;let n=[];do{Object.getOwnPropertyNames(n).forEach((t=>{"function"==typeof n[t]&&e.add(t)}))}while((n=Object.getPrototypeOf(n))!==Object.prototype);return Array.from(e)})());!function(t,r,o,i,a,s,c,l,d,p,u=t,f){function h(){f||(f=1,"/"==(c=(s.lib||"/~partytown/")+(s.debug?"debug/":""))[0]&&(d=r.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(l=setTimeout(v,(null==s?void 0:s.fallbackTimeout)||1e4),r.addEventListener("pt0",w),a?y(1):o.serviceWorker?o.serviceWorker.register(c+(s.swPath||"partytown-sw.js"),{scope:c}).then((function(t){t.active?y():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&y()}))}),console.error):v())))}function y(e){p=r.createElement(e?"script":"iframe"),t._pttab=Date.now(),e||(p.style.display="block",p.style.width="0",p.style.height="0",p.style.border="0",p.style.visibility="hidden",p.setAttribute("aria-hidden",!0)),p.src=c+"partytown-"+(e?"atomics.js?v=0.11.0":"sandbox-sw.html?"+t._pttab),r.querySelector(s.sandboxParent||"body").appendChild(p)}function v(n,o){for(w(),i==t&&(s.forward||[]).map((function(n){const[r]=e(n);delete t[r.split(".")[0]]})),n=0;n<d.length;n++)(o=r.createElement("script")).innerHTML=d[n].innerHTML,o.nonce=s.nonce,r.head.appendChild(o);p&&p.parentNode.removeChild(p)}function w(){clearTimeout(l)}s=t.partytown||{},i==t&&(s.forward||[]).map((function(r){const[o,{preserveBehavior:i}]=e(r);u=t,o.split(".").map((function(e,r,o){var a;u=u[o[r]]=r+1<o.length?u[o[r]]||(a=o[r+1],n.includes(a)?[]:{}):(()=>{let e=null;if(i){const{methodOrProperty:n,thisObject:r}=((t,e)=>{let n=t;for(let t=0;t<e.length-1;t+=1)n=n[e[t]];return{thisObject:n,methodOrProperty:e.length>0?n[e[e.length-1]]:void 0}})(t,o);"function"==typeof n&&(e=(...t)=>n.apply(r,...t))}return function(){let n;return e&&(n=e(arguments)),(t._ptf=t._ptf||[]).push(o,arguments),n}})()}))})),"complete"==r.readyState?h():(t.addEventListener("DOMContentLoaded",h),t.addEventListener("load",h))}(window,document,navigator,top,window.crossOriginIsolated);;(e=>{e.addEventListener("astro:before-swap",e=>{let r=document.body.querySelector("iframe[src*='/~partytown/']");if(r)e.newDocument.body.append(r)})})(document);</script></head> <body class="antialiased text-default bg-page tracking-tight">   <header class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-aw-sticky-header="true" id="header"> <div class="absolute inset-0"></div> <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full md:grid md:grid-cols-3 md:items-center max-w-7xl"> <div class="flex justify-between"> <a class="flex items-center" href="/"> <div class="flex items-center gap-2 select-none"> <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='45'%20height='45'%20viewBox='0%200%2045%2045'%20fill='none'%3e%3c!--%20Các%20path%20của%20SVG%20tại%20đây%20--%3e%3cpath%20d='M40.67%2010.38L31.04%200.65998C30.54%200.15998%2029.85%20-0.0700198%2029.17%200.0199803L13.79%201.88998C7.58998%202.66998%202.70998%207.54998%201.93998%2013.75L0.0199803%2029.22C-0.0700198%2029.9%200.15998%2030.59%200.65998%2031.09L10.24%2040.76C10.38%2040.9%2010.6%2040.81%2010.6%2040.62L13.79%2014.93C13.84%2014.43%2014.25%2014.02%2014.79%2013.93L40.48%2010.74C40.71%2010.74%2040.8%2010.51%2040.66%2010.38H40.67Z'%20fill='%23FFC624'%3e%3c/path%3e%3cpath%20d='M44.69%2014.57L42.77%2030.49C41.99%2036.88%2036.93%2041.9%2030.54%2042.67L14.8%2044.68C14.66%2044.68%2014.53%2044.59%2014.53%2044.41L15.94%2033.41C15.99%2032.86%2016.44%2032.45%2016.94%2032.41L29.67%2030.81C30.22%2030.76%2030.63%2030.31%2030.67%2029.81L32.22%2017.04C32.27%2016.49%2032.72%2016.08%2033.22%2016.04L44.4%2014.35C44.58%2014.3%2044.72%2014.4%2044.67%2014.58L44.69%2014.57Z'%20fill='%23FFC624'%3e%3c/path%3e%3cpath%20d='M27.62%2016.76L18.27%2017.9C18.09%2017.95%2017.95%2018.08%2017.91%2018.26L16.82%2027.57C16.82%2027.71%2016.91%2027.8%2017.05%2027.8L26.36%2026.71C26.54%2026.71%2026.68%2026.53%2026.72%2026.35L27.86%2016.95C27.86%2016.86%2027.77%2016.77%2027.63%2016.77L27.62%2016.76Z'%20fill='%23008C5B'%3e%3c/path%3e%3c/svg%3e" alt="chuanmau.com" width="32" height="32" class="h-8 w-8" loading="eager" decoding="async"> <span class="self-center ml-1 rtl:ml-0 rtl:mr-1 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> chuanmau.com </span> </div> </a> <div class="flex items-center md:hidden"> <button type="button" class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> </div> <nav class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-self-center" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"> <li class> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap" href="/kiem-tra-mau-sac"> Kiểm tra màu sắc </a> </li><li class> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap" href="/bang-gia"> Bảng giá </a> </li><li class="dropdown">  <button type="button" class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"> Download  <svg width="1em" height="1em" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <symbol id="ai:tabler:chevron-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></symbol><use href="#ai:tabler:chevron-down"></use>  </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="https://www.dropbox.com/sh/6squicub6nkpmkb/AADPjncb5xLrbOrAA5jFZIeaa?dl=0"> DisplayCAL </a> </li> </ul>  </li><li class="dropdown">  <button type="button" class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"> Lưu trữ  <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">   <use href="#ai:tabler:chevron-down"></use>  </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/blog"> Blog </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/category/tutorials"> Hướng dẫn </a> </li> </ul>  </li> </ul> </nav> <div class="hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0 md:justify-self-end"> <div class="items-center flex justify-between w-full md:w-auto"> <div class="flex">  <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS Feed" href="/rss.xml"> <svg width="1em" height="1em" class="w-5 h-5" data-icon="tabler:rss">   <symbol id="ai:tabler:rss" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"/></symbol><use href="#ai:tabler:rss"></use>  </svg> </a> </div> <span class="ml-4 rtl:ml-0 rtl:mr-4"> <a class="btn-secondary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" target="_blank" rel="noopener noreferrer" href="/lien-he">Liên hệ</a> </span> </div> </div> </div> </header>  <main>  <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl"> <header class="mb-8 md:mb-16 text-center max-w-3xl mx-auto"> <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">Tag: Tutorials</h1>  </header> <ul> <li class="mb-12 md:mb-20"> <article class="max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade md:grid-cols-2"> <a class="relative block group" href="/huong-dan-cai-dat-icc-profile-tren-macos"> <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg"> <img src="/_astro/huong-dan-cai-dat-icc-profile-tren-macOS.DJR7WQVW.jpg" crossorigin="anonymous" referrerpolicy="no-referrer" width="900" height="562" srcset="/_astro/huong-dan-cai-dat-icc-profile-tren-macOS.DJR7WQVW_BthB2.webp 400w, /_astro/huong-dan-cai-dat-icc-profile-tren-macOS.DJR7WQVW_Zq7z7x.webp 900w, /_astro/huong-dan-cai-dat-icc-profile-tren-macOS.DJR7WQVW_ZpcrKb.webp 1800w" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 900px; max-height: 562px; aspect-ratio: 1.7777777777777777; width: 100%;" class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700" alt="Hướng dẫn cài đặt ICC Profile trên MacOS" loading="lazy" decoding="async"> </div> </a> <div class="mt-2"> <header> <div class="mb-1"> <span class="text-sm"> <svg width="1em" height="1em" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:clock">   <symbol id="ai:tabler:clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0"/><path d="M12 7v5l3 3"/></g></symbol><use href="#ai:tabler:clock"></use>  </svg> <time datetime="Sun Jul 30 2023 07:00:00 GMT+0700 (Indochina Time)" class="inline-block">Jul 30, 2023</time>   
+· <a class="hover:underline" href="/category/tutorials"> Tutorials </a>  </span> </div> <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300"> <a class="inline-block hover:text-primary dark:hover:text-primary transition ease-in duration-200" href="/huong-dan-cai-dat-icc-profile-tren-macos"> Hướng dẫn cài đặt ICC Profile trên MacOS </a> </h2> </header> <p class="flex-grow text-muted dark:text-slate-400 text-lg">Trong bài viết này, chúng ta sẽ hướng dẫn từng bước cách cài đặt profile ICC trên macOS, giúp bạn tận dụng đầy đủ tính năng quản lý màu sắc cho các dự án sáng tạo.</p> <footer class="mt-5"> <ul class="text-sm"><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/tutorials" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">Tutorials</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/chuanmau" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">chuanmau</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/canmaumanhinh" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">canmaumanhinh</a></li></ul> </footer> </div> </article> </li><li class="mb-12 md:mb-20"> <article class="max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade md:grid-cols-2"> <a class="relative block group" href="/cai-dat-icc-profile-tren-window-10"> <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg"> <img src="/_astro/cai-dat-icc-profile-tren-window-10.ZRhC8o7M.jpg" crossorigin="anonymous" referrerpolicy="no-referrer" width="900" height="675" srcset="/_astro/cai-dat-icc-profile-tren-window-10.ZRhC8o7M_Z2u0zAN.webp 400w, /_astro/cai-dat-icc-profile-tren-window-10.ZRhC8o7M_ZNpNRW.webp 900w, /_astro/cai-dat-icc-profile-tren-window-10.ZRhC8o7M_Z1YXWEy.webp 1800w" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 900px; max-height: 675px; aspect-ratio: 1.7777777777777777; width: 100%;" class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700" alt="Cài đặt Profile màu trên hệ điều hành Window" loading="lazy" decoding="async"> </div> </a> <div class="mt-2"> <header> <div class="mb-1"> <span class="text-sm"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:clock">   <use href="#ai:tabler:clock"></use>  </svg> <time datetime="Fri Feb 26 2021 07:00:00 GMT+0700 (Indochina Time)" class="inline-block">Feb 26, 2021</time>   
+· <a class="hover:underline" href="/category/tutorials"> Tutorials </a>  </span> </div> <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300"> <a class="inline-block hover:text-primary dark:hover:text-primary transition ease-in duration-200" href="/cai-dat-icc-profile-tren-window-10"> Cài đặt Profile màu trên hệ điều hành Window </a> </h2> </header> <p class="flex-grow text-muted dark:text-slate-400 text-lg">Để cài đặt ICC profile (proflies màu) trên Windows, làm theo các bước sau...</p> <footer class="mt-5"> <ul class="text-sm"><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/tutorials" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">Tutorials</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/chuanmau" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">chuanmau</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/canmaumanhinh" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">canmaumanhinh</a></li></ul> </footer> </div> </article> </li> </ul>  </section>  </main>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"> <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12"> <div class="col-span-12 lg:col-span-4"> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/">chuanmau.com</a> </div> <div class="text-sm text-muted flex gap-1"> <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="/terms">Terms</a>  · <a class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="/privacy">Privacy Policy</a>  </div> </div> <div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">Thông tin</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/kiem-tra-mau-sac"> Kiểm tra màu sắc </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/bang-gia"> Bảng giá </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/download"> Download </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/blog"> Blog </a> </li> </ul> </div> </div> <div class="md:flex md:items-center md:justify-between py-6 md:py-8"> <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Facebook" href="https://www.facebook.com/chuanmaucom"> <svg width="1em" height="1em" class="w-5 h-5" data-icon="tabler:brand-facebook">   <symbol id="ai:tabler:brand-facebook" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z"/></symbol><use href="#ai:tabler:brand-facebook"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">   <use href="#ai:tabler:rss"></use>  </svg>  </a> </li> </ul> <div class="text-sm mr-4 dark:text-muted"> 
+    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(https://lh3.googleusercontent.com/pw/ABLVV86u2q3gFhS-8BMYQBGYW_DgdUol72pugf7SC1RGrT1h5Gh7YXSmMn_2kZczKGXFMejYQnC701qTxb4imtQe6iSpdJ9zg02MPXnaSAFRCvOdCOUGof7bAONf6sykzrUFsIOk1qRwv07eXKjxcu0tbAbsLw=w32-h32-s-no?authuser=0)]"></span>
+    Made by <a class="text-primary hover:underline dark:text-gray-200" href="https://dat-nguyen.com/"> Dat Nguyen</a> · All rights reserved.
+   </div> </div> </div> </footer>   <script>(function(){const defaultTheme = "light:only";
 
   if (window.basic_script) {
     return;
@@ -158,6 +163,9 @@
       if (defaultTheme.endsWith(':only')) {
         return;
       }
+
+      Observer.removeAnimationDelay();
+
       document.documentElement.classList.toggle('dark');
       localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
     });
@@ -195,23 +203,35 @@
       newlink.click();
     });
 
-    function appyHeaderStylesOnScroll() {
+    const screenSize = window.matchMedia('(max-width: 767px)');
+    screenSize.addEventListener('change', function () {
+      document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
+      document.body.classList.remove('overflow-hidden');
+      document.getElementById('header')?.classList.remove('h-screen');
+      document.getElementById('header')?.classList.remove('expanded');
+      document.getElementById('header')?.classList.remove('bg-page');
+      document.querySelector('#header nav')?.classList.add('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
+    });
+
+    function applyHeaderStylesOnScroll() {
       const header = document.querySelector('#header[data-aw-sticky-header]');
+      if (!header) return;
       if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
-        document.getElementById('header').classList.add('scroll');
+        header.classList.add('scroll');
       } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
-        document.getElementById('header').classList.remove('scroll');
+        header.classList.remove('scroll');
       }
       ticking = false;
     }
-    appyHeaderStylesOnScroll();
+    applyHeaderStylesOnScroll();
 
     attachEvent([document], 'scroll', function () {
       lastKnownScrollPosition = window.scrollY;
 
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          appyHeaderStylesOnScroll();
+          applyHeaderStylesOnScroll();
         });
         ticking = true;
       }
@@ -237,4 +257,111 @@
     onLoad();
     onPageShow();
   });
-})();</script>  </body> </html>
+})();</script> <script>
+  /* Inspired by: https://github.com/heidkaemper/tailwindcss-intersect */
+  const Observer = {
+    observer: null,
+    delayBetweenAnimations: 100,
+    animationCounter: 0,
+    elements: null,
+
+    start() {
+      const selectors = [
+        '[class*=" intersect:"]',
+        '[class*=":intersect:"]',
+        '[class^="intersect:"]',
+        '[class="intersect"]',
+        '[class*=" intersect "]',
+        '[class^="intersect "]',
+        '[class$=" intersect"]',
+      ];
+
+      this.elements = Array.from(document.querySelectorAll(selectors.join(',')));
+
+      const getThreshold = (element) => {
+        if (element.classList.contains('intersect-full')) return 0.99;
+        if (element.classList.contains('intersect-half')) return 0.5;
+        if (element.classList.contains('intersect-quarter')) return 0.25;
+        return 0;
+      };
+
+      this.elements.forEach((el) => {
+        el.setAttribute('no-intersect', '');
+        el._intersectionThreshold = getThreshold(el);
+      });
+
+      const callback = (entries) => {
+        entries.forEach((entry) => {
+          requestAnimationFrame(() => {
+            const target = entry.target;
+            const intersectionRatio = entry.intersectionRatio;
+            const threshold = target._intersectionThreshold;
+
+            if (target.classList.contains('intersect-no-queue')) {
+              if (entry.isIntersecting) {
+                target.removeAttribute('no-intersect');
+                if (target.classList.contains('intersect-once')) {
+                  this.observer.unobserve(target);
+                }
+              } else {
+                target.setAttribute('no-intersect', '');
+              }
+              return;
+            }
+
+            if (intersectionRatio >= threshold) {
+              if (!target.hasAttribute('data-animated')) {
+                target.removeAttribute('no-intersect');
+                target.setAttribute('data-animated', 'true');
+
+                const delay = this.animationCounter * this.delayBetweenAnimations;
+                this.animationCounter++;
+
+                target.style.transitionDelay = `${delay}ms`;
+                target.style.animationDelay = `${delay}ms`;
+
+                if (target.classList.contains('intersect-once')) {
+                  this.observer.unobserve(target);
+                }
+              }
+            } else {
+              target.setAttribute('no-intersect', '');
+              target.removeAttribute('data-animated');
+              target.style.transitionDelay = '';
+              target.style.animationDelay = '';
+
+              this.animationCounter = 0;
+            }
+          });
+        });
+      };
+
+      this.observer = new IntersectionObserver(callback.bind(this), { threshold: [0, 0.25, 0.5, 0.99] });
+
+      this.elements.forEach((el) => {
+        this.observer.observe(el);
+      });
+    },
+
+    /* 
+      REF: #643;
+      We need to remove the delay to fix flickering/delay
+      when toggling the theme. Observer only removes them
+      after data-animated is gone (out of view).
+    */
+    removeAnimationDelay() {
+      this.elements.forEach((el) => {
+        if (el.getAttribute('data-animated') === 'true') {
+          el.style.transitionDelay = '';
+          el.style.animationDelay = '';
+        }
+      });
+    },
+  };
+
+  Observer.start();
+
+  document.addEventListener('astro:after-swap', () => {
+    Observer.start();
+  });
+</script> </body></html>
