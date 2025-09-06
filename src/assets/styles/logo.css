@@ -1,0 +1,15 @@
+.svg-text-container {
+    display: flex;
+    align-items: center; /* Căn phía trên của SVG và text */
+  }
+  
+  .text-container {
+    margin-left: 8px; /* Khoảng cách giữa SVG và text */
+  }
+  
+  /* Media query để ẩn text khi xem trên di động */
+@media (max-width: 768px) {
+  .self-center {
+    display: none;
+  }
+}
