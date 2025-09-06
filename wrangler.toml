@@ -1,0 +1,8 @@
+name = "chuanmau4.0"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "chuanmau4.0"
+
+[env.production.vars]
+NODE_VERSION = "20.11.1"
