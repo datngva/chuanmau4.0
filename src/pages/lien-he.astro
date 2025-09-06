@@ -2,7 +2,8 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Liên Hệ',
@@ -15,26 +16,70 @@ const metadata = {
   <HeroText tagline="Contact us" title="Liên Hệ" />
   <!-- Features2 Widget ************** -->
   <hr />
-  <Features2
-    title="Chúng tôi có thể giúp gì cho bạn?"
-    items={[
-      {
-        title: 'Phone/Zalo',
-        description: '0879.02.5858',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'P. Cầu Giấy',
-        description: 'Số 9 Duy Tân, phường Cầu Giấy, Hà Nội',
-        icon: 'tabler:map-pin',
-      },
-      {
-        title: 'P. Phú Thượng',
-        description: 'Toà A1 - CC IA20 Ciputra, phường Phú Thượng, Hà Nội',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+  <!-- Contact Information Section -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-7xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Chúng tôi có thể giúp gì cho bạn?</h2>
+    </div>
+    
+    <div class="grid gap-8 lg:grid-cols-3 sm:grid-cols-1">
+      <!-- Phone/Zalo Contact -->
+      <div class="rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6">
+        <Icon name="tabler:headset" class="w-12 h-12 text-primary mb-4" />
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Phone/Zalo</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <a href="tel:0879025858" class="hover:text-primary transition-colors duration-200">
+            0879.02.5858
+          </a>
+        </p>
+        <div class="flex gap-2">
+          <a 
+            href="https://zalo.me/0879025858" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-6 h-6 bg-[#0068FF] text-white rounded-full hover:bg-[#0056CC] transition-colors duration-200"
+            title="Liên hệ qua Zalo"
+          >
+            <Image 
+              src="~/assets/images/Icon_of_Zalo.svg" 
+              alt="Zalo" 
+              width={16} 
+              height={16}
+              class="w-4 h-4"
+            />
+          </a>
+          <a 
+            href="https://m.me/chuanmaucom" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            title="Liên hệ qua Facebook Messenger"
+          >
+            <Image 
+              src="~/assets/images/facebook-messenger-icon.svg" 
+              alt="Facebook Messenger" 
+              width={30} 
+              height={30}
+              class="w-30 h-30"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Cầu Giấy Location -->
+      <div class="rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6">
+        <Icon name="tabler:map-pin" class="w-12 h-12 text-primary mb-4" />
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">P. Cầu Giấy</h3>
+        <p class="text-gray-600 dark:text-gray-300">Số 9 Duy Tân, phường Cầu Giấy, Hà Nội</p>
+      </div>
+
+      <!-- Phú Thượng Location -->
+      <div class="rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6">
+        <Icon name="tabler:map-pin" class="w-12 h-12 text-primary mb-4" />
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">P. Phú Thượng</h3>
+        <p class="text-gray-600 dark:text-gray-300">Toà A1 - CC IA20 Ciputra, phường Phú Thượng, Hà Nội</p>
+      </div>
+    </div>
+  </section>
   <hr />
   <ContactUs
     title="Gửi Ticket"
