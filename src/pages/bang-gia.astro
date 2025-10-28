@@ -103,6 +103,66 @@ const metadata = {
     ]}
   />
 
+  <!-- Price Calculator Form ******************* -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold dark:text-white mb-2">Tính Chi Phí Cân Chỉnh Màu</h2>
+      <p class="text-gray-600 dark:text-slate-400">Nhập số lượng màn hình cần cân chỉnh để xem tổng chi phí</p>
+      <p class="text-sm text-primary mt-2 font-medium">✨ Ưu đãi: Từ màn hình thứ 2 chỉ 90k khi đặt từ 6 màn hình trở lên</p>
+    </div>
+
+    <div class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-lg px-8 py-8">
+      <form class="space-y-6" id="priceCalculator">
+        <div>
+          <label for="serviceType" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+            Loại dịch vụ
+          </label>
+          <select 
+            id="serviceType" 
+            name="serviceType" 
+            class="w-full rounded-md border border-gray-300 dark:border-gray-600 dark:bg-slate-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            <option value="store">Tại cửa hàng (150k/màn hình đầu)</option>
+            <option value="home" selected>Tại nhà (200k/màn hình đầu)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="screenCount" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+            Số lượng màn hình
+          </label>
+          <input 
+            type="number" 
+            id="screenCount" 
+            name="screenCount" 
+            min="1" 
+            max="50" 
+            value="1"
+            class="w-full rounded-md border border-gray-300 dark:border-gray-600 dark:bg-slate-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+
+        <div class="bg-primary/10 dark:bg-primary/20 rounded-lg p-6 border border-primary/30">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-gray-700 dark:text-slate-300 font-medium">Màn hình đầu tiên:</span>
+            <span class="text-2xl font-bold text-primary dark:text-primary" id="firstScreenPrice">200k</span>
+          </div>
+          <div class="flex justify-between items-center mb-2" id="additionalScreensRow" style="display: none;">
+            <span class="text-gray-700 dark:text-slate-300 font-medium">
+              <span id="additionalCount">0</span> màn hình tiếp theo (<span id="additionalPricePerUnit">100</span>k/màn):
+            </span>
+            <span class="text-2xl font-bold text-primary dark:text-primary" id="additionalScreensPrice">0k</span>
+          </div>
+          <hr class="my-4 border-gray-300 dark:border-gray-600" />
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold text-gray-900 dark:text-white">Tổng cộng:</span>
+            <span class="text-3xl font-extrabold text-primary dark:text-primary" id="totalPrice">200k</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <!-- FAQs Widget ******************* -->
 
   <FAQs
@@ -158,3 +218,58 @@ const metadata = {
     </Fragment>
   </CallToAction>
 </Layout>
+
+<script define:vars={{}}>
+  // Price calculation logic
+  const serviceType = document.getElementById('serviceType');
+  const screenCount = document.getElementById('screenCount');
+  const firstScreenPrice = document.getElementById('firstScreenPrice');
+  const additionalScreensRow = document.getElementById('additionalScreensRow');
+  const additionalCount = document.getElementById('additionalCount');
+  const additionalScreensPrice = document.getElementById('additionalScreensPrice');
+  const additionalPricePerUnit = document.getElementById('additionalPricePerUnit');
+  const totalPrice = document.getElementById('totalPrice');
+
+  function calculatePrice() {
+    const selectedType = serviceType.value;
+    const count = parseInt(screenCount.value) || 0;
+    
+    // Prices based on service type
+    const firstScreenCost = selectedType === 'store' ? 150 : 200;
+    // If > 5 screens, additional screens are 90k, otherwise 100k
+    const additionalScreenCost = count > 5 ? 90 : 100;
+    
+    // Calculate
+    if (count <= 0) {
+      firstScreenPrice.textContent = `${firstScreenCost}k`;
+      additionalScreensRow.style.display = 'none';
+      totalPrice.textContent = '0k';
+      return;
+    }
+    
+    firstScreenPrice.textContent = `${firstScreenCost}k`;
+    
+    if (count > 1) {
+      const additionalScreens = count - 1;
+      const additionalTotal = additionalScreens * additionalScreenCost;
+      
+      additionalCount.textContent = additionalScreens;
+      additionalScreensPrice.textContent = `${additionalTotal}k`;
+      additionalPricePerUnit.textContent = additionalScreenCost;
+      additionalScreensRow.style.display = 'flex';
+      
+      const total = firstScreenCost + additionalTotal;
+      totalPrice.textContent = `${total}k`;
+    } else {
+      additionalScreensRow.style.display = 'none';
+      totalPrice.textContent = `${firstScreenCost}k`;
+    }
+  }
+
+  // Add event listeners
+  serviceType.addEventListener('change', calculatePrice);
+  screenCount.addEventListener('input', calculatePrice);
+  
+  // Calculate on page load
+  calculatePrice();
+</script>
