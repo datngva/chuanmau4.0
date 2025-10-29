@@ -7,6 +7,7 @@ import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Toast from '~/components/common/Toast.astro';
 
 const metadata = {
   title: 'Chuẩn Màu — Dịch vụ cân màu màn hình chuyên nghiệp tại Hà Nội',
@@ -193,4 +194,12 @@ const metadata = {
       Liên hệ ngay để được tư vấn miễn phí!
     </Fragment>
   </CallToAction>
+
+  <!-- Toast Notification -->
+  <Toast 
+    show={true}
+    message="🎉 Nhận Chatbot AI Perplexity Pro miễn phí khi đăng ký qua link dưới đây!"
+    linkUrl="https://plex.it/referrals/5Z64FMBY"
+    linkText="Khám phá ngay"
+  />
 </Layout>

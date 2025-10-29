@@ -1,0 +1,108 @@
+---
+export interface Props {
+  show?: boolean;
+  message?: string;
+  linkUrl: string;
+  linkText?: string;
+}
+
+const { 
+  show = false,
+  message = "🎉 Khuyến mãi đặc biệt!",
+  linkUrl,
+  linkText = "Khám phá ngay"
+} = Astro.props;
+---
+
+<div 
+  id="toast-notification" 
+  class="fixed bottom-4 left-4 right-4 md:left-4 md:right-auto md:w-auto z-50 transform transition-all duration-300 translate-y-0 opacity-100 pointer-events-auto"
+  data-show={show}
+>
+  <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-2xl p-4 flex items-start gap-4 max-w-md">
+    <!-- Icon -->
+    <div class="flex-shrink-0 pt-0.5">
+      <div class="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex-1 min-w-0">
+      <p class="text-sm font-medium text-gray-900 dark:text-white mb-2">
+        {message}
+      </p>
+      <a 
+        href={linkUrl} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center text-sm font-semibold text-primary hover:text-accent transition-colors group"
+      >
+        {linkText}
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Close Button -->
+    <button 
+      id="close-toast" 
+      class="flex-shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+      aria-label="Close notification"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  #toast-notification:not([data-show="true"]) {
+    transform: translateY(120%);
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  const toast = document.getElementById('toast-notification');
+  const closeBtn = document.getElementById('close-toast');
+
+  // Check if user has dismissed the toast in this session
+  const toastDismissed = sessionStorage.getItem('toast-dismissed');
+
+  // Show toast if not dismissed
+  if (toast && !toastDismissed) {
+    toast.setAttribute('data-show', 'true');
+  }
+
+  // Close button handler
+  closeBtn?.addEventListener('click', () => {
+    if (toast) {
+      toast.setAttribute('data-show', 'false');
+      sessionStorage.setItem('toast-dismissed', 'true');
+      
+      // Remove from DOM after animation
+      setTimeout(() => {
+        toast.remove();
+      }, 300);
+    }
+  });
+
+  // Auto-dismiss after 10 seconds (optional)
+  if (toast && !toastDismissed) {
+    setTimeout(() => {
+      toast.setAttribute('data-show', 'false');
+      sessionStorage.setItem('toast-dismissed', 'true');
+      
+      setTimeout(() => {
+        toast.remove();
+      }, 300);
+    }, 10000);
+  }
+</script>
+
