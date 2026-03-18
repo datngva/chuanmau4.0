@@ -47,6 +47,51 @@
   @apply bg-page md:bg-[#030303e6] border-b border-gray-500/20;
   box-shadow: none;
 }
+
+/* === Hero Transparent Nav ===
+   When header is over the hero slider (no .scroll class),
+   make it transparent with white text for contrast */
+#header.nav-hero:not(.scroll) > div:first-child {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+#header.nav-hero:not(.scroll) {
+  border-color: transparent;
+}
+#header.nav-hero:not(.scroll) .text-default,
+#header.nav-hero:not(.scroll) nav a,
+#header.nav-hero:not(.scroll) nav button,
+#header.nav-hero:not(.scroll) .text-gray-900,
+#header.nav-hero:not(.scroll) .text-muted {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+#header.nav-hero:not(.scroll) nav a:hover,
+#header.nav-hero:not(.scroll) nav button:hover,
+#header.nav-hero:not(.scroll) a:not([class*="btn"]):hover {
+  color: #FFC624 !important;
+  background: transparent !important;
+}
+
+/* Keep dropdown panel readable over the hero background */
+#header.nav-hero:not(.scroll) .dropdown-menu {
+  background: rgba(10, 10, 18, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+}
+#header.nav-hero:not(.scroll) .dropdown-menu a {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+#header.nav-hero:not(.scroll) .dropdown-menu a:hover {
+  color: #FFC624 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+/* Transition for smooth color change */
+#header {
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+#header > div:first-child {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
 /* #header.scroll > div:last-child {
   @apply py-3;
 } */

@@ -1,12 +1,14 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import HeroSlider from '~/components/HeroSlider.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import USPSection from '~/components/USPSection.astro';
+import TestimonialsSection from '~/components/TestimonialsSection.astro';
 // import Toast from '~/components/common/Toast.astro';
 
 const metadata = {
@@ -17,34 +19,80 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    actions={[
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
       {
-        variant: 'primary',
-        text: 'Liên hệ ngay',
-        href: '/lien-he',
-        icon: 'tabler:phone',
+        "@type": "Question",
+        "name": "Tại sao cần cân màu màn hình?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cân màu màn hình giúp đảm bảo màu sắc hiển thị chính xác, đặc biệt quan trọng cho Designer, Photographer, Video Editor. Màn hình không được cân màu có thể hiển thị màu sắc sai lệch, ảnh hưởng đến chất lượng công việc."
+        }
       },
-      { text: 'Xem dịch vụ', href: '#features' },
-    ]}
-    image={{ src: '~/assets/images/hero.png', alt: 'Cân màu màn hình chuyên nghiệp' }}
-  >
-    <Fragment slot="title">
-      Dịch vụ <span class="hidden xl:inline">cân màu màn hình</span>
-      <span class="text-accent dark:text-white"> chuyên nghiệp</span> tại Hà Nội
-    </Fragment>
+      {
+        "@type": "Question",
+        "name": "Dịch vụ cân màu mất bao lâu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Thời gian cân màu cho mỗi màn hình thường mất khoảng 30-45 phút."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Giá dịch vụ cân màu màn hình là bao nhiêu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tại cửa hàng: 150.000đ/màn hình đầu. Tại nhà: 200.000đ/màn hình đầu. Từ màn hình thứ 2 trở đi chỉ 100.000đ."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dịch vụ có bảo hành không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có, Chuẩn Màu cung cấp bảo hành 6 tháng. Nếu có vấn đề trong thời gian bảo hành, chúng tôi hỗ trợ kiểm tra và cân chỉnh lại miễn phí."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Có dịch vụ tận nơi không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có, Chuẩn Màu cung cấp dịch vụ tận nơi tại Hà Nội với phí 200.000đ/màn hình đầu tiên."
+        }
+      }
+    ]
+  })}></script>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">Chuẩn Màu</span> cung cấp dịch vụ cân màu màn hình PC, laptop, bảng vẽ chuyên nghiệp
-        với độ chính xác cao.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-primary">Chuẩn Màu: Chuyên nghiệp & Chính xác.</span>
-      Phù hợp cho Designer, Photographer, Video Editor, và tất cả những ai cần độ chính xác màu sắc cao.
-    </Fragment>
-  </Hero>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Cân màu màn hình",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Chuẩn Màu"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Hà Nội"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "150000",
+      "highPrice": "200000",
+      "priceCurrency": "VND"
+    }
+  })}></script>
+
+  <!-- Hero Slider ****************** -->
+
+  <HeroSlider />
+
+  <!-- USP Section ******************* -->
+
+  <USPSection />
 
   <!-- Features Widget *************** -->
 
@@ -123,6 +171,10 @@ const metadata = {
     }}
   />
 
+  <!-- Testimonials Section *********** -->
+
+  <TestimonialsSection />
+
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
@@ -175,7 +227,7 @@ const metadata = {
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
+  <!--<CallToAction
     actions={[
       {
         variant: 'primary',
@@ -193,15 +245,5 @@ const metadata = {
       Đừng để màu sắc sai lệch ảnh hưởng đến chất lượng công việc của bạn. <br class="hidden md:inline" />
       Liên hệ ngay để được tư vấn miễn phí!
     </Fragment>
-  </CallToAction>
-
-  <!-- Toast Notification -->
-  <!-- 
-  <Toast 
-    show={true}
-    message="🎉 Nhận Chatbot AI Perplexity Pro miễn phí khi đăng ký qua link dưới đây!"
-    linkUrl="https://plex.it/referrals/5Z64FMBY"
-    linkText="Khám phá ngay"
-  />
-  -->
+  </CallToAction> 
 </Layout>

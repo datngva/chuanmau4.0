@@ -1,0 +1,50 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { Icon } from 'astro-icon/components';
+
+const usps = [
+  {
+    title: 'X-Rite i1Display Pro',
+    description: 'Thiết bị đo màu chuyên nghiệp hàng đầu thế giới',
+    icon: 'tabler:device-laptop',
+  },
+  {
+    title: 'Chuẩn Delta-E < 2',
+    description: 'Độ chính xác màu sắc theo chuẩn quốc tế',
+    icon: 'tabler:target',
+  },
+  {
+    title: 'Bảo hành 6 tháng',
+    description: 'Hỗ trợ kỹ thuật trọn đời, tư vấn & kiểm tra miễn phí',
+    icon: 'tabler:shield-check',
+  },
+  {
+    title: '500+ màn hình',
+    description: 'Đã phục vụ hàng trăm khách hàng tại Hà Nội',
+    icon: 'tabler:users',
+  },
+];
+
+const {
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {
+      usps.map(({ title, description, icon }) => (
+        <div class="flex flex-col items-center text-center p-6 rounded-lg border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-shadow duration-300 intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-primary/10 text-primary">
+            <Icon name={icon} class="w-6 h-6" />
+          </div>
+          <h3 class="text-lg font-bold mb-2 dark:text-white">{title}</h3>
+          <p class="text-sm text-muted dark:text-slate-400">{description}</p>
+        </div>
+      ))
+    }
+  </div>
+</WidgetWrapper>

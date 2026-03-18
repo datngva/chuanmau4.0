@@ -4,25 +4,24 @@ export let headerData;
 headerData = {
   links: [
     {
-      text: 'Kiểm tra màu sắc',
-      href: '/kiem-tra-mau-sac',
+      text: 'Dịch vụ',
+      links: [
+        {
+          text: 'Kiểm tra màu sắc',
+          href: '/kiem-tra-mau-sac',
+        },
+        {
+          text: 'Cân chỉnh màu',
+          href: '/#features',
+        },
+      ],
     },
     {
       text: 'Bảng giá',
       href: '/bang-gia',
     },
     {
-      text: 'Download',
-      links: [
-        {
-          text: 'DisplayCAL',
-          href: 'https://www.dropbox.com/sh/6squicub6nkpmkb/AADPjncb5xLrbOrAA5jFZIeaa?dl=0',
-          target: '_blank',
-        },
-      ],
-    },
-    {
-      text: 'Lưu trữ',
+      text: 'Kiến thức',
       links: [
         {
           text: 'Blog',
@@ -32,10 +31,15 @@ headerData = {
           text: 'Hướng dẫn',
           href: getPermalink('tutorials', 'category'),
         },
+        {
+          text: 'DisplayCAL',
+          href: 'https://www.dropbox.com/sh/6squicub6nkpmkb/AADPjncb5xLrbOrAA5jFZIeaa?dl=0',
+          target: '_blank',
+        },
       ],
     },
   ],
-  actions: [{ text: 'Liên hệ', href: '/lien-he', target: '_blank' }],
+  actions: [{ text: 'Liên hệ', href: '/lien-he', variant: 'primary' }],
 };
 
 export const footerData = {

@@ -30,6 +30,9 @@ export default defineConfig({
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 
   output: 'static',
+  image: {
+    domains: ['ui-avatars.com'],
+  },
 
   integrations: [
     tailwind({

@@ -1,0 +1,21 @@
+---
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import { testimonials } from '~/data/testimonials';
+
+const testimonialData = testimonials.map((t) => ({
+  name: t.name,
+  job: t.role + (t.company ? ` at ${t.company}` : ''),
+  testimonial: t.content,
+  image: {
+    src: `https://ui-avatars.com/api/?name=${encodeURIComponent(t.name)}&background=random`,
+    alt: t.name,
+  },
+}));
+---
+
+<Testimonials
+  id="testimonials"
+  title="Khách hàng nói gì về chúng tôi"
+  subtitle="Sự hài lòng của khách hàng là động lực để chúng tôi không ngừng cải thiện chất lượng dịch vụ."
+  testimonials={testimonialData}
+/>

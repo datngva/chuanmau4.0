@@ -11,10 +11,56 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Tại sao cần cân màu màn hình?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cân màu màn hình giúp đảm bảo màu sắc hiển thị chính xác, đặc biệt quan trọng cho Designer, Photographer, Video Editor. Màn hình không được cân màu có thể hiển thị màu sắc sai lệch, ảnh hưởng đến chất lượng công việc."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dịch vụ cân màu mất bao lâu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Thời gian cân màu cho mỗi màn hình thường mất khoảng 30-45 phút."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Giá dịch vụ cân màu màn hình là bao nhiêu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tại cửa hàng: 150.000đ/màn hình đầu. Tại nhà: 200.000đ/màn hình đầu. Từ màn hình thứ 2 trở đi chỉ 100.000đ."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dịch vụ có bảo hành không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có, Chuẩn Màu cung cấp bảo hành 6 tháng. Nếu có vấn đề trong thời gian bảo hành, chúng tôi hỗ trợ kiểm tra và cân chỉnh lại miễn phí."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Có dịch vụ tận nơi không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có, Chuẩn Màu cung cấp dịch vụ tận nơi tại Hà Nội với phí 200.000đ/màn hình đầu tiên."
+        }
+      }
+    ]
+  })}></script>
   <!-- HeroText Widget ******************* -->
 
   <HeroText
-    tagline="Pricing"
+    tagline="Dịch vụ"
     title="Bảng Giá"
     subtitle="Tham khảo bảng giá của chúng tôi hoặc liên hệ trực tiếp để nhận báo giá tuỳ chỉnh."
   />
@@ -42,11 +88,10 @@ const metadata = {
             description: 'Support trọn đời',
           },
         ],
-        callToAction: {
-          target: '_blank',
-          text: 'Đặt lịch',
-          href: 'tel:0879025858',
-        },
+        callToAction: `<div class="flex flex-col items-center gap-2 w-full">
+          <a href="https://zalo.me/0879025858" target="_blank" rel="noopener" class="btn-primary w-full text-center">Đặt lịch qua Zalo</a>
+          <a href="tel:0879025858" class="text-sm text-gray-500 dark:text-slate-400 hover:text-primary transition-colors">hoặc gọi 0879.02.5858</a>
+        </div>`,
       },
       {
         title: 'Tại nhà',
@@ -67,11 +112,10 @@ const metadata = {
             description: 'Support trọn đời',
           },
         ],
-        callToAction: {
-          target: '_blank',
-          text: 'Đặt lịch',
-          href: 'tel:0879025858',
-        },
+        callToAction: `<div class="flex flex-col items-center gap-2 w-full">
+          <a href="https://zalo.me/0879025858" target="_blank" rel="noopener" class="btn-primary w-full text-center">Đặt lịch qua Zalo</a>
+          <a href="tel:0879025858" class="text-sm text-gray-500 dark:text-slate-400 hover:text-primary transition-colors">hoặc gọi 0879.02.5858</a>
+        </div>`,
         hasRibbon: true,
         ribbonTitle: 'đề xuất',
       },
@@ -94,11 +138,10 @@ const metadata = {
             description: 'Support trọn đời',
           },
         ],
-        callToAction: {
-          target: '_blank',
-          text: 'Đặt lịch',
-          href: 'tel:0879025858',
-        },
+        callToAction: `<div class="flex flex-col items-center gap-2 w-full">
+          <a href="https://zalo.me/0879025858" target="_blank" rel="noopener" class="btn-primary w-full text-center">Đặt lịch qua Zalo</a>
+          <a href="tel:0879025858" class="text-sm text-gray-500 dark:text-slate-400 hover:text-primary transition-colors">hoặc gọi 0879.02.5858</a>
+        </div>`,
       },
     ]}
   />
