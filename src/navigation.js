@@ -47,13 +47,25 @@ export const footerData = {
     {
       title: 'Dịch vụ',
       links: [
+        { text: 'Cân chỉnh màu', href: '/#features' },
         { text: 'Kiểm tra màu sắc', href: '/kiem-tra-mau-sac' },
         { text: 'Bảng giá', href: '/bang-gia' },
-        { text: 'Download', href: '/download' },
-        { text: 'Blog', href: '/blog' },
       ],
     },
-
+    {
+      title: 'Kiến thức',
+      links: [
+        { text: 'Blog', href: '/blog' },
+        { text: 'Hướng dẫn', href: '/category/tutorials' },
+      ],
+    },
+    {
+      title: 'Liên hệ',
+      links: [
+        { text: 'Liên hệ', href: '/lien-he' },
+        { text: 'Zalo: 0879.02.5858', href: 'https://zalo.me/0879025858' },
+      ],
+    },
     {
       title: 'Thông tin',
       links: [
