@@ -101,5 +101,17 @@ const { post, url } = Astro.props;
       <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
     </div>
   </article>
-  <BlogStructuredData post={post} url={String(url)} />
+  <BlogStructuredData
+    post={{
+      ...post,
+      publishDate: typeof post.publishDate === 'string' ? post.publishDate : post.publishDate.toISOString(),
+      updateDate: post.updateDate
+        ? typeof post.updateDate === 'string'
+          ? post.updateDate
+          : post.updateDate.toISOString()
+        : undefined,
+      category: typeof post.category === 'string' ? post.category : post.category?.title,
+    }}
+    url={String(url)}
+  />
 </section>

@@ -2,14 +2,38 @@
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import { testimonials } from '~/data/testimonials';
 
+const stringToHsl = (str: string) => {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const h = Math.abs(hash) % 360;
+  return `hsl(${h} 65% 55%)`;
+};
+
+const initials = (name: string) =>
+  name
+    .split(' ')
+    .map((p) => p[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
+
+const avatarDataUri = (name: string) => {
+  const bg = stringToHsl(name);
+  const text = initials(name);
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'>
+    <rect width='80' height='80' rx='16' fill='${bg}' />
+    <text x='50%' y='55%' text-anchor='middle' font-family='Inter, sans-serif' font-size='28' fill='white' font-weight='700'>${text}</text>
+  </svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+};
+
 const testimonialData = testimonials.map((t) => ({
   name: t.name,
   job: t.role + (t.company ? ` at ${t.company}` : ''),
   testimonial: t.content,
-  image: {
-    src: `https://ui-avatars.com/api/?name=${encodeURIComponent(t.name)}&background=random`,
-    alt: t.name,
-  },
+  image: `<img src="${avatarDataUri(t.name)}" alt="${t.name}" width="40" height="40" loading="lazy" decoding="async" class="h-10 w-10 rounded-full border border-slate-200 dark:border-slate-600 min-w-full min-h-full" />`,
 }));
 ---
 

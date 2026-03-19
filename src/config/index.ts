@@ -5,6 +5,7 @@ import path from 'path';
 // Load config from YAML file
 const configPath = path.join(process.cwd(), 'src', 'config.yaml');
 const configFile = fs.readFileSync(configPath, 'utf8');
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const rawConfig = yaml.load(configFile) as any;
 
 // Site configuration

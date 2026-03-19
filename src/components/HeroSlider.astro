@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import banner1 from "../assets/images/hero/chuanmau-banner1.jpg";
 import banner2 from "../assets/images/hero/chuanmau-banner2.jpg";
 import banner3 from "../assets/images/hero/chuanmau-banner3.jpg";
@@ -14,7 +15,7 @@ const slides = [
     cta1: { text: "Đặt lịch qua Zalo", href: "https://zalo.me/0879025858" },
     cta2: { text: "0879.02.5858", href: "tel:0879025858" },
     badge: { num: "500+", label: "Màn hình đã cân màu" },
-    image: banner1.src,
+    image: banner1,
   },
   {
     tag: "Dịch vụ tận nơi · Toàn Hà Nội",
@@ -23,7 +24,7 @@ const slides = [
     cta1: { text: "Đặt lịch tại nhà", href: "https://zalo.me/0879025858" },
     cta2: { text: "Xem bảng giá", href: "/bang-gia" },
     badge: { num: "200k", label: "Tại nhà / màn hình đầu" },
-    image: banner2.src,
+    image: banner2,
   },
   {
     tag: "Wacom · Huion · XP-Pen",
@@ -32,7 +33,7 @@ const slides = [
     cta1: { text: "Tư vấn miễn phí", href: "https://zalo.me/0879025858" },
     cta2: { text: "Gọi ngay", href: "tel:0879025858" },
     badge: { num: "6T", label: "Bảo hành miễn phí" },
-    image: banner3.src,
+    image: banner3,
   },
   {
     tag: "Calibration · ICC Profile",
@@ -41,7 +42,7 @@ const slides = [
     cta1: { text: "Đặt lịch qua Zalo", href: "https://zalo.me/0879025858" },
     cta2: { text: "0879.02.5858", href: "tel:0879025858" },
     badge: { num: "100%", label: "Giữ nguyên sau format" },
-    image: banner4.src,
+    image: banner4,
   },
   {
     tag: "Photographer · Retoucher",
@@ -50,7 +51,7 @@ const slides = [
     cta1: { text: "Tư vấn ngay", href: "https://zalo.me/0879025858" },
     cta2: { text: "Xem bảng giá", href: "/bang-gia" },
     badge: { num: "Delta-E", label: "< 2 — chuẩn print" },
-    image: banner5.src,
+    image: banner5,
   },
   {
     tag: "Video Editor · Colorist",
@@ -59,7 +60,7 @@ const slides = [
     cta1: { text: "Đặt lịch qua Zalo", href: "https://zalo.me/0879025858" },
     cta2: { text: "Gọi ngay", href: "tel:0879025858" },
     badge: { num: "4K", label: "Hỗ trợ màn hình 4K" },
-    image: banner6.src,
+    image: banner6,
   },
 ];
 ---
@@ -72,41 +73,45 @@ const slides = [
       class={`hs-slide absolute inset-0 transition-opacity duration-700 ${i === 0 ? 'active' : ''}`}
       data-index={i}
     >
-      <!-- Background image -->
-      <img
+      {/* Background image */}
+      <Image
         src={slide.image}
         alt={`Hero slide ${i + 1}`}
         class="absolute inset-0 w-full h-full object-cover"
         loading={i === 0 ? 'eager' : 'lazy'}
         fetchpriority={i === 0 ? 'high' : 'auto'}
+        decoding="async"
+        sizes="100vw"
+        widths={[640, 960, 1280, 1600, 1920]}
+        format="webp"
       />
-      <!-- Overlay gradient -->
+      {/* Overlay gradient */}
       <div class="absolute inset-0" style="background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.15) 100%);"></div>
 
-      <!-- Content -->
+      {/* Content */}
       <div class="relative h-full flex items-center">
         <div class="w-full max-w-7xl mx-auto px-5 sm:px-8 pt-[76px]">
-          <!-- Accent line -->
+          {/* Accent line */}
           <div class="hs-accentline absolute left-5 sm:left-8 top-1/2 -translate-y-1/2 w-0.5 h-0 bg-[#FFC624] rounded-full transition-all duration-500" style="background:#FFC624;"></div>
 
           <div class="pl-6 sm:pl-8 max-w-3xl">
-            <!-- Tag -->
+            {/* Tag */}
             <p class="hs-tag text-sm font-semibold uppercase tracking-widest text-[#FFC624] mb-4 opacity-0 translate-y-4 transition-all duration-500" style="color:#FFC624;">
               {slide.tag}
             </p>
 
-            <!-- Title -->
+            {/* Title */}
             <h1
               class="hs-title hs-syne text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5 opacity-0 translate-y-4 transition-all duration-500"
               set:html={slide.title}
             />
 
-            <!-- Description -->
+            {/* Description */}
             <p class="hs-desc text-base sm:text-lg text-white/80 mb-8 opacity-0 translate-y-4 transition-all duration-500 max-w-xl">
               {slide.desc}
             </p>
 
-            <!-- CTAs -->
+            {/* CTAs */}
             <div class="hs-ctas flex flex-wrap gap-3 opacity-0 translate-y-4 transition-all duration-500">
               <a
                 href={slide.cta1.href}
@@ -126,7 +131,7 @@ const slides = [
             </div>
           </div>
 
-          <!-- Badge -->
+          {/* Badge */}
           <div class="hs-badge absolute right-5 sm:right-12 bottom-28 sm:bottom-24 lg:bottom-32 text-right opacity-0 translate-x-6 transition-all duration-500">
             <div class="inline-block bg-black/50 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3">
               <div class="hs-syne text-3xl sm:text-4xl font-extrabold" style="color:#FFC624;">{slide.badge.num}</div>
