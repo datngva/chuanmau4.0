@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);
@@ -35,6 +40,10 @@
 
   .btn-tertiary {
     @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+  }
+
+  .btn-accent {
+    @apply btn font-semibold bg-accent text-black border-accent hover:bg-[#e0ad1f] hover:border-[#e0ad1f] hover:text-black dark:text-black dark:bg-accent dark:border-accent dark:hover:border-[#e0ad1f] dark:hover:bg-[#e0ad1f];
   }
 }
 

@@ -39,7 +39,7 @@ headerData = {
       ],
     },
   ],
-  actions: [{ text: 'Liên hệ', href: '/lien-he', variant: 'primary' }],
+  actions: [{ text: 'Liên hệ', href: '/lien-he', variant: 'accent' }],
 };
 
 export const footerData = {

@@ -65,7 +65,7 @@ const slides = [
 ];
 ---
 
-<section id="hero-slider" class="hs-root relative w-full overflow-hidden md:-mt-[76px]" style="height:100svh;min-height:560px;max-height:860px;">
+<section id="hero-slider" class="hs-root relative w-full overflow-hidden -mt-[150px]" style="height:calc(100svh + 150px);min-height:710px;max-height:1010px;">
 
   <!-- Slides -->
   {slides.map((slide, i) => (
@@ -90,7 +90,7 @@ const slides = [
 
       {/* Content */}
       <div class="relative h-full flex items-center">
-        <div class="w-full max-w-7xl mx-auto px-5 sm:px-8 pt-[76px]">
+        <div class="w-full max-w-7xl mx-auto px-5 sm:px-8 pt-[150px]">
           {/* Accent line */}
           <div class="hs-accentline absolute left-5 sm:left-8 top-1/2 -translate-y-1/2 w-0.5 h-0 bg-[#FFC624] rounded-full transition-all duration-500" style="background:#FFC624;"></div>
 
