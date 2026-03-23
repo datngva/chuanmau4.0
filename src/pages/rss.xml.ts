@@ -56,8 +56,12 @@ export const GET = async () => {
         categories,
         author,
         customData: `
-      <guid isPermaLink="true">${guid}</guid>${updated ? `
-      <atom:updated>${updated.toUTCString()}</atom:updated>` : ''}${enclosure}`,
+      <guid isPermaLink="true">${guid}</guid>${
+        updated
+          ? `
+      <atom:updated>${updated.toUTCString()}</atom:updated>`
+          : ''
+      }${enclosure}`,
       };
     }),
 

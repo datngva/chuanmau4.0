@@ -1,10 +1,10 @@
 ---
 publishDate: 2026-03-18T00:00:00Z
-title: "Màn hình bị ám vàng là do đâu? Có cứu được không?"
-description: "Màn hình máy tính bị ám vàng, hiển thị màu không trung thực? Tìm hiểu nguyên nhân và cách khắc phục hiệu quả — từ tự xử lý đến cân màu chuyên nghiệp."
-excerpt: "Màn hình máy tính bị ám vàng, hiển thị màu không trung thực? Tìm hiểu nguyên nhân và cách khắc phục hiệu quả."
-image: "~/assets/images/hero/chuanmau-banner2.jpg"
-category: "Blog"
+title: 'Màn hình bị ám vàng là do đâu? Có cứu được không?'
+description: 'Màn hình máy tính bị ám vàng, hiển thị màu không trung thực? Tìm hiểu nguyên nhân và cách khắc phục hiệu quả — từ tự xử lý đến cân màu chuyên nghiệp.'
+excerpt: 'Màn hình máy tính bị ám vàng, hiển thị màu không trung thực? Tìm hiểu nguyên nhân và cách khắc phục hiệu quả.'
+image: '~/assets/images/hero/chuanmau-banner2.jpg'
+category: 'Blog'
 tags:
   - màn hình ám vàng
   - cân màu màn hình

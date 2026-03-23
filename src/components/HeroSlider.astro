@@ -1,147 +1,163 @@
 ---
 import { Image } from 'astro:assets';
-import banner1 from "../assets/images/hero/chuanmau-banner1.jpg";
-import banner2 from "../assets/images/hero/chuanmau-banner2.jpg";
-import banner3 from "../assets/images/hero/chuanmau-banner3.jpg";
-import banner4 from "../assets/images/hero/chuanmau-banner4.jpg";
-import banner5 from "../assets/images/hero/chuanmau-banner5.jpg";
-import banner6 from "../assets/images/hero/chuanmau-banner6.jpg";
+import banner1 from '../assets/images/hero/chuanmau-banner1.jpg';
+import banner2 from '../assets/images/hero/chuanmau-banner2.jpg';
+import banner3 from '../assets/images/hero/chuanmau-banner3.jpg';
+import banner4 from '../assets/images/hero/chuanmau-banner4.jpg';
+import banner5 from '../assets/images/hero/chuanmau-banner5.jpg';
+import banner6 from '../assets/images/hero/chuanmau-banner6.jpg';
 
 const slides = [
   {
-    tag: "Dịch vụ chuyên nghiệp · Hà Nội",
-    title: "Cân màu <span>chính xác</span> cho mọi màn hình",
-    desc: "Thiết bị X-Rite i1Display Pro — đạt chuẩn Delta-E <2. Phục vụ Designer, Photographer, Video Editor tại Hà Nội.",
-    cta1: { text: "Đặt lịch qua Zalo", href: "https://zalo.me/0879025858" },
-    cta2: { text: "0879.02.5858", href: "tel:0879025858" },
-    badge: { num: "500+", label: "Màn hình đã cân màu" },
+    tag: 'Dịch vụ chuyên nghiệp · Hà Nội',
+    title: 'Cân màu <span>chính xác</span> cho mọi màn hình',
+    desc: 'Thiết bị X-Rite i1Display Pro — đạt chuẩn Delta-E <2. Phục vụ Designer, Photographer, Video Editor tại Hà Nội.',
+    cta1: { text: 'Đặt lịch qua Zalo', href: 'https://zalo.me/0879025858' },
+    cta2: { text: '0879.02.5858', href: 'tel:0879025858' },
+    badge: { num: '500+', label: 'Màn hình đã cân màu' },
     image: banner1,
   },
   {
-    tag: "Dịch vụ tận nơi · Toàn Hà Nội",
-    title: "Kỹ thuật viên đến <span>tận nhà</span> bạn",
-    desc: "Không cần mang màn hình đi đâu. Chúng tôi mang thiết bị đến, cân chỉnh tại chỗ — bảo hành 6 tháng.",
-    cta1: { text: "Đặt lịch tại nhà", href: "https://zalo.me/0879025858" },
-    cta2: { text: "Xem bảng giá", href: "/bang-gia" },
-    badge: { num: "200k", label: "Tại nhà / màn hình đầu" },
+    tag: 'Dịch vụ tận nơi · Toàn Hà Nội',
+    title: 'Kỹ thuật viên đến <span>tận nhà</span> bạn',
+    desc: 'Không cần mang màn hình đi đâu. Chúng tôi mang thiết bị đến, cân chỉnh tại chỗ — bảo hành 6 tháng.',
+    cta1: { text: 'Đặt lịch tại nhà', href: 'https://zalo.me/0879025858' },
+    cta2: { text: 'Xem bảng giá', href: '/bang-gia' },
+    badge: { num: '200k', label: 'Tại nhà / màn hình đầu' },
     image: banner2,
   },
   {
-    tag: "Wacom · Huion · XP-Pen",
-    title: "Cân màu <span>bảng vẽ</span> cho Creative",
-    desc: "Màu sắc chính xác trên Wacom, Huion, XP-Pen. Xuất file ICC Profile — cài lại sau khi format không mất màu.",
-    cta1: { text: "Tư vấn miễn phí", href: "https://zalo.me/0879025858" },
-    cta2: { text: "Gọi ngay", href: "tel:0879025858" },
-    badge: { num: "6T", label: "Bảo hành miễn phí" },
+    tag: 'Wacom · Huion · XP-Pen',
+    title: 'Cân màu <span>bảng vẽ</span> cho Creative',
+    desc: 'Màu sắc chính xác trên Wacom, Huion, XP-Pen. Xuất file ICC Profile — cài lại sau khi format không mất màu.',
+    cta1: { text: 'Tư vấn miễn phí', href: 'https://zalo.me/0879025858' },
+    cta2: { text: 'Gọi ngay', href: 'tel:0879025858' },
+    badge: { num: '6T', label: 'Bảo hành miễn phí' },
     image: banner3,
   },
   {
-    tag: "Calibration · ICC Profile",
-    title: "Xuất file <span>ICC Profile</span> chuẩn màu",
-    desc: "Hồ sơ màu ICC được lưu lại vĩnh viễn — cài lại bất cứ lúc nào sau khi format máy, không lo mất chỉnh.",
-    cta1: { text: "Đặt lịch qua Zalo", href: "https://zalo.me/0879025858" },
-    cta2: { text: "0879.02.5858", href: "tel:0879025858" },
-    badge: { num: "100%", label: "Giữ nguyên sau format" },
+    tag: 'Calibration · ICC Profile',
+    title: 'Xuất file <span>ICC Profile</span> chuẩn màu',
+    desc: 'Hồ sơ màu ICC được lưu lại vĩnh viễn — cài lại bất cứ lúc nào sau khi format máy, không lo mất chỉnh.',
+    cta1: { text: 'Đặt lịch qua Zalo', href: 'https://zalo.me/0879025858' },
+    cta2: { text: '0879.02.5858', href: 'tel:0879025858' },
+    badge: { num: '100%', label: 'Giữ nguyên sau format' },
     image: banner4,
   },
   {
-    tag: "Photographer · Retoucher",
-    title: "Màu <span>trung thực</span> cho nhiếp ảnh gia",
-    desc: "Ảnh chụp ra đúng màu thực tế — không còn cảnh khách phàn nàn về màu sau khi in hay đăng web.",
-    cta1: { text: "Tư vấn ngay", href: "https://zalo.me/0879025858" },
-    cta2: { text: "Xem bảng giá", href: "/bang-gia" },
-    badge: { num: "Delta-E", label: "< 2 — chuẩn print" },
+    tag: 'Photographer · Retoucher',
+    title: 'Màu <span>trung thực</span> cho nhiếp ảnh gia',
+    desc: 'Ảnh chụp ra đúng màu thực tế — không còn cảnh khách phàn nàn về màu sau khi in hay đăng web.',
+    cta1: { text: 'Tư vấn ngay', href: 'https://zalo.me/0879025858' },
+    cta2: { text: 'Xem bảng giá', href: '/bang-gia' },
+    badge: { num: 'Delta-E', label: '< 2 — chuẩn print' },
     image: banner5,
   },
   {
-    tag: "Video Editor · Colorist",
-    title: "Màn hình <span>chuẩn màu</span> cho Video",
-    desc: "Grading video chính xác từ đầu — đảm bảo màu sắc nhất quán trên mọi thiết bị phát lại của khán giả.",
-    cta1: { text: "Đặt lịch qua Zalo", href: "https://zalo.me/0879025858" },
-    cta2: { text: "Gọi ngay", href: "tel:0879025858" },
-    badge: { num: "4K", label: "Hỗ trợ màn hình 4K" },
+    tag: 'Video Editor · Colorist',
+    title: 'Màn hình <span>chuẩn màu</span> cho Video',
+    desc: 'Grading video chính xác từ đầu — đảm bảo màu sắc nhất quán trên mọi thiết bị phát lại của khán giả.',
+    cta1: { text: 'Đặt lịch qua Zalo', href: 'https://zalo.me/0879025858' },
+    cta2: { text: 'Gọi ngay', href: 'tel:0879025858' },
+    badge: { num: '4K', label: 'Hỗ trợ màn hình 4K' },
     image: banner6,
   },
 ];
 ---
 
-<section id="hero-slider" class="hs-root relative w-full overflow-hidden -mt-[150px]" style="height:calc(100svh + 150px);min-height:710px;max-height:1010px;">
-
+<section
+  id="hero-slider"
+  class="hs-root relative w-full overflow-hidden -mt-[150px]"
+  style="height:calc(100svh + 150px);min-height:710px;max-height:1010px;"
+>
   <!-- Slides -->
-  {slides.map((slide, i) => (
-    <div
-      class={`hs-slide absolute inset-0 transition-opacity duration-700 ${i === 0 ? 'active' : ''}`}
-      data-index={i}
-    >
-      {/* Background image */}
-      <Image
-        src={slide.image}
-        alt={`Hero slide ${i + 1}`}
-        class="absolute inset-0 w-full h-full object-cover"
-        loading={i === 0 ? 'eager' : 'lazy'}
-        fetchpriority={i === 0 ? 'high' : 'auto'}
-        decoding="async"
-        sizes="100vw"
-        widths={[640, 960, 1280, 1600, 1920]}
-        format="webp"
-      />
-      {/* Overlay gradient */}
-      <div class="absolute inset-0" style="background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.15) 100%);"></div>
+  {
+    slides.map((slide, i) => (
+      <div
+        class={`hs-slide absolute inset-0 transition-opacity duration-700 ${i === 0 ? 'active' : ''}`}
+        data-index={i}
+      >
+        {/* Background image */}
+        <Image
+          src={slide.image}
+          alt={`Hero slide ${i + 1}`}
+          class="absolute inset-0 w-full h-full object-cover"
+          loading={i === 0 ? 'eager' : 'lazy'}
+          fetchpriority={i === 0 ? 'high' : 'auto'}
+          decoding="async"
+          sizes="100vw"
+          widths={[640, 960, 1280, 1600, 1920]}
+          format="webp"
+        />
+        {/* Overlay gradient */}
+        <div
+          class="absolute inset-0"
+          style="background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.15) 100%);"
+        />
 
-      {/* Content */}
-      <div class="relative h-full flex items-center">
-        <div class="w-full max-w-7xl mx-auto px-5 sm:px-8 pt-[150px]">
-          {/* Accent line */}
-          <div class="hs-accentline absolute left-5 sm:left-8 top-1/2 -translate-y-1/2 w-0.5 h-0 bg-[#FFC624] rounded-full transition-all duration-500" style="background:#FFC624;"></div>
-
-          <div class="pl-6 sm:pl-8 max-w-3xl">
-            {/* Tag */}
-            <p class="hs-tag text-sm font-semibold uppercase tracking-widest text-[#FFC624] mb-4 opacity-0 translate-y-4 transition-all duration-500" style="color:#FFC624;">
-              {slide.tag}
-            </p>
-
-            {/* Title */}
-            <h1
-              class="hs-title hs-syne text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5 opacity-0 translate-y-4 transition-all duration-500"
-              set:html={slide.title}
+        {/* Content */}
+        <div class="relative h-full flex items-center">
+          <div class="w-full max-w-7xl mx-auto px-5 sm:px-8 pt-[150px]">
+            {/* Accent line */}
+            <div
+              class="hs-accentline absolute left-5 sm:left-8 top-1/2 -translate-y-1/2 w-0.5 h-0 bg-[#FFC624] rounded-full transition-all duration-500"
+              style="background:#FFC624;"
             />
 
-            {/* Description */}
-            <p class="hs-desc text-base sm:text-lg text-white/80 mb-8 opacity-0 translate-y-4 transition-all duration-500 max-w-xl">
-              {slide.desc}
-            </p>
+            <div class="pl-6 sm:pl-8 max-w-3xl">
+              {/* Tag */}
+              <p
+                class="hs-tag text-sm font-semibold uppercase tracking-widest text-[#FFC624] mb-4 opacity-0 translate-y-4 transition-all duration-500"
+                style="color:#FFC624;"
+              >
+                {slide.tag}
+              </p>
 
-            {/* CTAs */}
-            <div class="hs-ctas flex flex-wrap gap-3 opacity-0 translate-y-4 transition-all duration-500">
-              <a
-                href={slide.cta1.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-black transition-all hover:brightness-110 hover:-translate-y-0.5"
-                style="background:#FFC624;"
-              >
-                {slide.cta1.text}
-              </a>
-              <a
-                href={slide.cta2.href}
-                class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white border border-white/40 transition-all hover:bg-white/10 hover:-translate-y-0.5"
-              >
-                {slide.cta2.text}
-              </a>
+              {/* Title */}
+              <h1
+                class="hs-title hs-syne text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5 opacity-0 translate-y-4 transition-all duration-500"
+                set:html={slide.title}
+              />
+
+              {/* Description */}
+              <p class="hs-desc text-base sm:text-lg text-white/80 mb-8 opacity-0 translate-y-4 transition-all duration-500 max-w-xl">
+                {slide.desc}
+              </p>
+
+              {/* CTAs */}
+              <div class="hs-ctas flex flex-wrap gap-3 opacity-0 translate-y-4 transition-all duration-500">
+                <a
+                  href={slide.cta1.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-black transition-all hover:brightness-110 hover:-translate-y-0.5"
+                  style="background:#FFC624;"
+                >
+                  {slide.cta1.text}
+                </a>
+                <a
+                  href={slide.cta2.href}
+                  class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white border border-white/40 transition-all hover:bg-white/10 hover:-translate-y-0.5"
+                >
+                  {slide.cta2.text}
+                </a>
+              </div>
             </div>
-          </div>
 
-          {/* Badge */}
-          <div class="hs-badge absolute right-5 sm:right-12 bottom-28 sm:bottom-24 lg:bottom-32 text-right opacity-0 translate-x-6 transition-all duration-500">
-            <div class="inline-block bg-black/50 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3">
-              <div class="hs-syne text-3xl sm:text-4xl font-extrabold" style="color:#FFC624;">{slide.badge.num}</div>
-              <div class="text-xs text-white/70 mt-0.5 uppercase tracking-wider">{slide.badge.label}</div>
+            {/* Badge */}
+            <div class="hs-badge absolute right-5 sm:right-12 bottom-28 sm:bottom-24 lg:bottom-32 text-right opacity-0 translate-x-6 transition-all duration-500">
+              <div class="inline-block bg-black/50 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3">
+                <div class="hs-syne text-3xl sm:text-4xl font-extrabold" style="color:#FFC624;">
+                  {slide.badge.num}
+                </div>
+                <div class="text-xs text-white/70 mt-0.5 uppercase tracking-wider">{slide.badge.label}</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  ))}
+    ))
+  }
 
   <!-- Progress bar -->
   <div class="hs-progress-track absolute bottom-0 left-0 right-0 h-[3px] bg-white/20 z-20">
@@ -154,8 +170,15 @@ const slides = [
     aria-label="Slide trước"
     class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-black/30 border border-white/20 text-white hover:bg-black/60 transition"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2.5"
+      stroke="currentColor"
+      class="w-5 h-5"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
     </svg>
   </button>
   <button
@@ -163,29 +186,42 @@ const slides = [
     aria-label="Slide tiếp theo"
     class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-black/30 border border-white/20 text-white hover:bg-black/60 transition"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2.5"
+      stroke="currentColor"
+      class="w-5 h-5"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
     </svg>
   </button>
 
   <!-- Navigation dots -->
   <div id="hs-dots" class="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
-    {slides.map((_, i) => (
-      <button
-        class={`hs-dot transition-all duration-300 rounded-full bg-white/50 ${i === 0 ? 'active w-6 h-2.5 bg-white' : 'w-2.5 h-2.5'}`}
-        data-index={i}
-        aria-label={`Chuyển đến slide ${i + 1}`}
-      />
-    ))}
+    {
+      slides.map((_, i) => (
+        <button
+          class={`hs-dot transition-all duration-300 rounded-full bg-white/50 ${i === 0 ? 'active w-6 h-2.5 bg-white' : 'w-2.5 h-2.5'}`}
+          data-index={i}
+          aria-label={`Chuyển đến slide ${i + 1}`}
+        />
+      ))
+    }
   </div>
-
 </section>
 
 <style>
   /* Font Montserrat loaded globally via <link> in Layout.astro */
 
   .hs-syne {
-    font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+    font-family:
+      'Inter Variable',
+      'Inter',
+      system-ui,
+      -apple-system,
+      sans-serif;
   }
 
   .hs-slide {
@@ -198,26 +234,51 @@ const slides = [
   }
 
   /* Stagger animations fire when slide becomes active */
-  .hs-slide.active .hs-tag    { opacity: 1; transform: translateY(0); transition-delay: 0ms;   }
-  .hs-slide.active .hs-title  { opacity: 1; transform: translateY(0); transition-delay: 120ms; }
-  .hs-slide.active .hs-desc   { opacity: 1; transform: translateY(0); transition-delay: 240ms; }
-  .hs-slide.active .hs-ctas   { opacity: 1; transform: translateY(0); transition-delay: 360ms; }
-  .hs-slide.active .hs-badge  { opacity: 1; transform: translateX(0); transition-delay: 480ms; }
-  .hs-slide.active .hs-accentline { height: 6rem; transition-delay: 60ms; }
+  .hs-slide.active .hs-tag {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0ms;
+  }
+  .hs-slide.active .hs-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 120ms;
+  }
+  .hs-slide.active .hs-desc {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 240ms;
+  }
+  .hs-slide.active .hs-ctas {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 360ms;
+  }
+  .hs-slide.active .hs-badge {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 480ms;
+  }
+  .hs-slide.active .hs-accentline {
+    height: 6rem;
+    transition-delay: 60ms;
+  }
 
   /* Heading accent span */
-  .hs-title :global(span) { color: #FFC624; }
+  .hs-title :global(span) {
+    color: #ffc624;
+  }
 </style>
 
 <script>
   (function () {
     const INTERVAL = 5000;
-    const root      = document.getElementById('hero-slider') as HTMLElement;
-    const slideEls  = root.querySelectorAll<HTMLElement>('.hs-slide');
-    const dotEls    = root.querySelectorAll<HTMLButtonElement>('.hs-dot');
+    const root = document.getElementById('hero-slider') as HTMLElement;
+    const slideEls = root.querySelectorAll<HTMLElement>('.hs-slide');
+    const dotEls = root.querySelectorAll<HTMLButtonElement>('.hs-dot');
     const progressBar = root.querySelector<HTMLElement>('.hs-progress-bar')!;
-    const prevBtn   = root.querySelector<HTMLButtonElement>('#hs-prev')!;
-    const nextBtn   = root.querySelector<HTMLButtonElement>('#hs-next')!;
+    const prevBtn = root.querySelector<HTMLButtonElement>('#hs-prev')!;
+    const nextBtn = root.querySelector<HTMLButtonElement>('#hs-next')!;
 
     let current = 0;
     let timer: ReturnType<typeof setInterval> | null = null;
@@ -268,8 +329,14 @@ const slides = [
     startTimer();
     startProgress();
 
-    prevBtn.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
-    nextBtn.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+    prevBtn.addEventListener('click', () => {
+      goTo(current - 1);
+      resetTimer();
+    });
+    nextBtn.addEventListener('click', () => {
+      goTo(current + 1);
+      resetTimer();
+    });
 
     dotEls.forEach((d) => {
       d.addEventListener('click', () => {
@@ -281,17 +348,36 @@ const slides = [
 
     // Touch swipe support
     let touchStartX = 0;
-    root.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
-    root.addEventListener('touchend', (e) => {
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      if (Math.abs(dx) < 40) return;
-      if (dx < 0) { goTo(current + 1); } else { goTo(current - 1); }
-      resetTimer();
-    }, { passive: true });
+    root.addEventListener(
+      'touchstart',
+      (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+      },
+      { passive: true }
+    );
+    root.addEventListener(
+      'touchend',
+      (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) < 40) return;
+        if (dx < 0) {
+          goTo(current + 1);
+        } else {
+          goTo(current - 1);
+        }
+        resetTimer();
+      },
+      { passive: true }
+    );
 
     // Pause on hover (desktop UX)
-    root.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); progressBar.style.animationPlayState = 'paused'; });
-    root.addEventListener('mouseleave', () => { resetTimer(); });
+    root.addEventListener('mouseenter', () => {
+      if (timer) clearInterval(timer);
+      progressBar.style.animationPlayState = 'paused';
+    });
+    root.addEventListener('mouseleave', () => {
+      resetTimer();
+    });
   })();
 
   // ── Transparent nav when over hero slider ──────────────────────────

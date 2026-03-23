@@ -11,52 +11,56 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Tại sao cần cân màu màn hình?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Cân màu màn hình giúp đảm bảo màu sắc hiển thị chính xác, đặc biệt quan trọng cho Designer, Photographer, Video Editor. Màn hình không được cân màu có thể hiển thị màu sắc sai lệch, ảnh hưởng đến chất lượng công việc."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Dịch vụ cân màu mất bao lâu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Thời gian cân màu cho mỗi màn hình thường mất khoảng 30-45 phút."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Giá dịch vụ cân màu màn hình là bao nhiêu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tại cửa hàng: 150.000đ/màn hình đầu. Tại nhà: 200.000đ/màn hình đầu. Từ màn hình thứ 2 trở đi chỉ 100.000đ."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Dịch vụ có bảo hành không?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Có, Chuẩn Màu cung cấp bảo hành 6 tháng. Nếu có vấn đề trong thời gian bảo hành, chúng tôi hỗ trợ kiểm tra và cân chỉnh lại miễn phí."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Có dịch vụ tận nơi không?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Có, Chuẩn Màu cung cấp dịch vụ tận nơi tại Hà Nội với phí 200.000đ/màn hình đầu tiên."
-        }
-      }
-    ]
-  })}></script>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Tại sao cần cân màu màn hình?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Cân màu màn hình giúp đảm bảo màu sắc hiển thị chính xác, đặc biệt quan trọng cho Designer, Photographer, Video Editor. Màn hình không được cân màu có thể hiển thị màu sắc sai lệch, ảnh hưởng đến chất lượng công việc.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Dịch vụ cân màu mất bao lâu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Thời gian cân màu cho mỗi màn hình thường mất khoảng 30-45 phút.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Giá dịch vụ cân màu màn hình là bao nhiêu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Tại cửa hàng: 150.000đ/màn hình đầu. Tại nhà: 200.000đ/màn hình đầu. Từ màn hình thứ 2 trở đi chỉ 100.000đ.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Dịch vụ có bảo hành không?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Có, Chuẩn Màu cung cấp bảo hành 6 tháng. Nếu có vấn đề trong thời gian bảo hành, chúng tôi hỗ trợ kiểm tra và cân chỉnh lại miễn phí.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Có dịch vụ tận nơi không?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Có, Chuẩn Màu cung cấp dịch vụ tận nơi tại Hà Nội với phí 200.000đ/màn hình đầu tiên.',
+          },
+        },
+      ],
+    })}
+  />
   <!-- HeroText Widget ******************* -->
 
   <HeroText
@@ -151,18 +155,22 @@ const metadata = {
     <div class="text-center mb-8">
       <h2 class="text-3xl font-bold dark:text-white mb-2">Tính Chi Phí Cân Chỉnh Màu</h2>
       <p class="text-gray-600 dark:text-slate-400">Nhập số lượng màn hình cần cân chỉnh để xem tổng chi phí</p>
-      <p class="text-sm text-primary mt-2 font-medium">✨ Ưu đãi: Từ màn hình thứ 2 chỉ 90k khi đặt từ 6 màn hình trở lên</p>
+      <p class="text-sm text-primary mt-2 font-medium">
+        ✨ Ưu đãi: Từ màn hình thứ 2 chỉ 90k khi đặt từ 6 màn hình trở lên
+      </p>
     </div>
 
-    <div class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-lg px-8 py-8">
+    <div
+      class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-lg px-8 py-8"
+    >
       <form class="space-y-6" id="priceCalculator">
         <div>
           <label for="serviceType" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
             Loại dịch vụ
           </label>
-          <select 
-            id="serviceType" 
-            name="serviceType" 
+          <select
+            id="serviceType"
+            name="serviceType"
             class="w-full rounded-md border border-gray-300 dark:border-gray-600 dark:bg-slate-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
           >
             <option value="store">Tại cửa hàng (150k/màn hình đầu)</option>
@@ -174,12 +182,12 @@ const metadata = {
           <label for="screenCount" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
             Số lượng màn hình
           </label>
-          <input 
-            type="number" 
-            id="screenCount" 
-            name="screenCount" 
-            min="1" 
-            max="50" 
+          <input
+            type="number"
+            id="screenCount"
+            name="screenCount"
+            min="1"
+            max="50"
             value="1"
             class="w-full rounded-md border border-gray-300 dark:border-gray-600 dark:bg-slate-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
           />
@@ -192,7 +200,8 @@ const metadata = {
           </div>
           <div class="flex justify-between items-center mb-2" id="additionalScreensRow" style="display: none;">
             <span class="text-gray-700 dark:text-slate-300 font-medium">
-              <span id="additionalCount">0</span> màn hình tiếp theo (<span id="additionalPricePerUnit">100</span>k/màn):
+              <span id="additionalCount">0</span> màn hình tiếp theo (<span id="additionalPricePerUnit">100</span
+              >k/màn):
             </span>
             <span class="text-2xl font-bold text-primary dark:text-primary" id="additionalScreensPrice">0k</span>
           </div>
@@ -262,7 +271,7 @@ const metadata = {
   </CallToAction>
 </Layout>
 
-<script define:vars={{}}>
+<script is:inline define:vars={{}}>
   // Price calculation logic
   const serviceType = document.getElementById('serviceType');
   const screenCount = document.getElementById('screenCount');
@@ -276,12 +285,12 @@ const metadata = {
   function calculatePrice() {
     const selectedType = serviceType.value;
     const count = parseInt(screenCount.value) || 0;
-    
+
     // Prices based on service type
     const firstScreenCost = selectedType === 'store' ? 150 : 200;
     // If > 5 screens, additional screens are 90k, otherwise 100k
     const additionalScreenCost = count > 5 ? 90 : 100;
-    
+
     // Calculate
     if (count <= 0) {
       firstScreenPrice.textContent = `${firstScreenCost}k`;
@@ -289,18 +298,18 @@ const metadata = {
       totalPrice.textContent = '0k';
       return;
     }
-    
+
     firstScreenPrice.textContent = `${firstScreenCost}k`;
-    
+
     if (count > 1) {
       const additionalScreens = count - 1;
       const additionalTotal = additionalScreens * additionalScreenCost;
-      
+
       additionalCount.textContent = additionalScreens;
       additionalScreensPrice.textContent = `${additionalTotal}k`;
       additionalPricePerUnit.textContent = additionalScreenCost;
       additionalScreensRow.style.display = 'flex';
-      
+
       const total = firstScreenCost + additionalTotal;
       totalPrice.textContent = `${total}k`;
     } else {
@@ -312,7 +321,7 @@ const metadata = {
   // Add event listeners
   serviceType.addEventListener('change', calculatePrice);
   screenCount.addEventListener('input', calculatePrice);
-  
+
   // Calculate on page load
   calculatePrice();
 </script>

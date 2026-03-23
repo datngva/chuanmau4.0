@@ -12,14 +12,13 @@ import TestimonialsSection from '~/components/TestimonialsSection.astro';
 
 const metadata = {
   title: 'Chuẩn Màu — Dịch vụ cân màu màn hình chuyên nghiệp tại Hà Nội',
-  description: 'Dịch vụ cân màu màn hình PC, laptop, bảng vẽ chuyên nghiệp tại Hà Nội. Độ chính xác cao, bảo hành 6 tháng. Phù hợp cho Designer, Photographer, Video Editor.',
+  description:
+    'Dịch vụ cân màu màn hình PC, laptop, bảng vẽ chuyên nghiệp tại Hà Nội. Độ chính xác cao, bảo hành 6 tháng. Phù hợp cho Designer, Photographer, Video Editor.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-
-
   <!-- Hero Slider ****************** -->
 
   <HeroSlider />
@@ -180,70 +179,78 @@ const metadata = {
       Liên hệ ngay để được tư vấn miễn phí!
     </Fragment>
   </CallToAction>-->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Tại sao cần cân màu màn hình?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Cân màu màn hình giúp đảm bảo màu sắc hiển thị chính xác, đặc biệt quan trọng cho Designer, Photographer, Video Editor. Màn hình không được cân màu có thể hiển thị màu sắc sai lệch, ảnh hưởng đến chất lượng công việc."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Dịch vụ cân màu mất bao lâu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Thời gian cân màu cho mỗi màn hình thường mất khoảng 30-45 phút."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Giá dịch vụ cân màu màn hình là bao nhiêu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tại cửa hàng: 150.000đ/màn hình đầu. Tại nhà: 200.000đ/màn hình đầu. Từ màn hình thứ 2 trở đi chỉ 100.000đ."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Dịch vụ có bảo hành không?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Có, Chuẩn Màu cung cấp bảo hành 6 tháng. Nếu có vấn đề trong thời gian bảo hành, chúng tôi hỗ trợ kiểm tra và cân chỉnh lại miễn phí."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Có dịch vụ tận nơi không?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Có, Chuẩn Màu cung cấp dịch vụ tận nơi tại Hà Nội với phí 200.000đ/màn hình đầu tiên."
-        }
-      }
-    ]
-  })}></script>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Tại sao cần cân màu màn hình?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Cân màu màn hình giúp đảm bảo màu sắc hiển thị chính xác, đặc biệt quan trọng cho Designer, Photographer, Video Editor. Màn hình không được cân màu có thể hiển thị màu sắc sai lệch, ảnh hưởng đến chất lượng công việc.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Dịch vụ cân màu mất bao lâu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Thời gian cân màu cho mỗi màn hình thường mất khoảng 30-45 phút.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Giá dịch vụ cân màu màn hình là bao nhiêu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Tại cửa hàng: 150.000đ/màn hình đầu. Tại nhà: 200.000đ/màn hình đầu. Từ màn hình thứ 2 trở đi chỉ 100.000đ.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Dịch vụ có bảo hành không?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Có, Chuẩn Màu cung cấp bảo hành 6 tháng. Nếu có vấn đề trong thời gian bảo hành, chúng tôi hỗ trợ kiểm tra và cân chỉnh lại miễn phí.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Có dịch vụ tận nơi không?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Có, Chuẩn Màu cung cấp dịch vụ tận nơi tại Hà Nội với phí 200.000đ/màn hình đầu tiên.',
+          },
+        },
+      ],
+    })}
+  />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Cân màu màn hình",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Chuẩn Màu"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Hà Nội"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "lowPrice": "150000",
-      "highPrice": "200000",
-      "priceCurrency": "VND"
-    }
-  })}></script>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Cân màu màn hình',
+      provider: {
+        '@type': 'LocalBusiness',
+        name: 'Chuẩn Màu',
+      },
+      areaServed: {
+        '@type': 'City',
+        name: 'Hà Nội',
+      },
+      offers: {
+        '@type': 'AggregateOffer',
+        lowPrice: '150000',
+        highPrice: '200000',
+        priceCurrency: 'VND',
+      },
+    })}
+  />
 </Layout>

@@ -1,16 +1,16 @@
 ---
 const breadcrumbData = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Trang chủ",
-      "item": "https://chuanmau.com"
-    }
-  ]
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Trang chủ',
+      item: 'https://chuanmau.com',
+    },
+  ],
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(breadcrumbData)}></script>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbData)} />

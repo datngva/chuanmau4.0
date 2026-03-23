@@ -1,4 +1,5 @@
 # Information Architecture — chuanmau.com
+
 > Cập nhật: 2026-03-16
 
 ---
@@ -18,6 +19,7 @@ Trang chủ
 ```
 
 **Vấn đề IA hiện tại:**
+
 - "Download" không cần ở nav chính, không cần dropdown
 - "Lưu trữ" là label mơ hồ — user không đoán được nội dung bên trong
 - "Kiểm tra màu sắc" không rõ là tool hay bài viết
@@ -54,16 +56,16 @@ Trang chủ
 
 ## Cấu trúc trang chủ (thứ tự scroll đề xuất)
 
-| # | Section | Trạng thái | Mục đích |
-|---|---------|-----------|---------|
-| 1 | Hero + ảnh thực tế | Sửa ảnh | Awareness — giải thích dịch vụ |
-| 2 | USP (4 điểm khác biệt) | **Thêm mới** | Differentiation |
-| 3 | Dịch vụ (6 card) | Giữ nguyên | Inform |
-| 4 | Quy trình (3 bước) | Giữ nguyên | Build confidence |
-| 5 | Testimonial / Review | **Thêm mới** | Trust |
-| 6 | Blog (4 bài mới nhất) | Giữ nguyên | SEO + Authority |
-| 7 | FAQ | Giữ nguyên | Objection handling |
-| 8 | CTA cuối trang | Cải thiện | Conversion |
+| #   | Section                | Trạng thái   | Mục đích                       |
+| --- | ---------------------- | ------------ | ------------------------------ |
+| 1   | Hero + ảnh thực tế     | Sửa ảnh      | Awareness — giải thích dịch vụ |
+| 2   | USP (4 điểm khác biệt) | **Thêm mới** | Differentiation                |
+| 3   | Dịch vụ (6 card)       | Giữ nguyên   | Inform                         |
+| 4   | Quy trình (3 bước)     | Giữ nguyên   | Build confidence               |
+| 5   | Testimonial / Review   | **Thêm mới** | Trust                          |
+| 6   | Blog (4 bài mới nhất)  | Giữ nguyên   | SEO + Authority                |
+| 7   | FAQ                    | Giữ nguyên   | Objection handling             |
+| 8   | CTA cuối trang         | Cải thiện    | Conversion                     |
 
 ---
 

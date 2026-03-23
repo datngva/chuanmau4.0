@@ -7,6 +7,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 This is **ChuanMau 4.0**, a Vietnamese color calibration service website built with **Astro 5.0** and **Tailwind CSS**. The site provides services for monitor color calibration (cân chỉnh màu màn hình) in Hanoi, Vietnam.
 
 ### Technology Stack
+
 - **Framework**: Astro 5.0 (Static Site Generator)
 - **Styling**: Tailwind CSS with custom theming
 - **Language**: TypeScript + JavaScript
@@ -17,6 +18,7 @@ This is **ChuanMau 4.0**, a Vietnamese color calibration service website built w
 ## Development Commands
 
 ### Essential Commands
+
 ```bash
 # Install dependencies
 npm install
@@ -33,6 +35,7 @@ npm run preview
 ```
 
 ### Quality Assurance
+
 ```bash
 # Run all checks (Astro, ESLint, Prettier)
 npm run check
@@ -49,6 +52,7 @@ npm run fix:prettier    # Auto-format with Prettier
 ```
 
 ### Astro CLI Commands
+
 ```bash
 # Run Astro CLI commands
 npm run astro --help
@@ -59,6 +63,7 @@ npm run astro preview
 ## Project Architecture
 
 ### Directory Structure
+
 ```
 src/
 ├── components/          # Reusable components
@@ -76,19 +81,22 @@ src/
 ```
 
 ### Key Configuration Files
+
 - **`src/config.yaml`**: Main site configuration (SEO, analytics, blog settings)
 - **`astro.config.ts`**: Astro framework configuration
 - **`tailwind.config.js`**: Tailwind CSS customization
 - **`tsconfig.json`**: TypeScript configuration
 
 ### Content Management
+
 - Blog posts are in `src/data/post/` as Markdown/MDX files
 - Site content is managed through Astro components and config.yaml
 - Navigation is defined in `src/navigation.ts`
 
 ## Important Pages
+
 - **Home**: `/` - Main landing page
-- **Pricing**: `/bang-gia` - Service pricing table  
+- **Pricing**: `/bang-gia` - Service pricing table
 - **Contact**: `/lien-he` - Contact form and information
 - **Color Test**: `/kiem-tra-mau-sac` - Color testing tool
 - **Blog**: `/blog` - Articles about color calibration
@@ -96,6 +104,7 @@ src/
 ## Site Configuration
 
 ### Key Settings in `config.yaml`
+
 - Site name: "chuanmau.com"
 - Language: Vietnamese (en locale but Vietnamese content)
 - Theme: Light mode only (`light:only`)
@@ -103,6 +112,7 @@ src/
 - Blog: Enabled with 6 posts per page
 
 ### SEO & Performance
+
 - Optimized for PageSpeed Insights
 - Open Graph meta tags configured
 - Sitemap generation enabled
@@ -110,15 +120,17 @@ src/
 - Compression enabled for CSS, HTML, and JavaScript
 
 ## Business Context
+
 This is a service website for monitor color calibration services in Hanoi, targeting photographers, designers, and professionals who need accurate color reproduction. Services include:
 
 - On-site color calibration (tại nhà)
-- In-store calibration (tại cửa hàng) 
+- In-store calibration (tại cửa hàng)
 - Bulk calibration for multiple monitors
 - Support for laptops, drawing tablets (Wacom, XP-Pen, Huion)
 - ICC profile creation and installation guidance
 
 ### Contact Information
+
 - Phone: 0879025858
 - Service area: Hanoi, Vietnam
 - Pricing: Starting from 150k VND per monitor
@@ -126,6 +138,7 @@ This is a service website for monitor color calibration services in Hanoi, targe
 ## Development Notes
 
 ### Custom Components
+
 The project uses a widget-based architecture where page sections are built as reusable components in `src/components/widgets/`. Key widgets include:
 
 - **Hero/HeroText**: Landing page headers
@@ -135,12 +148,14 @@ The project uses a widget-based architecture where page sections are built as re
 - **Contact**: Contact forms and information
 
 ### Styling Approach
+
 - Tailwind CSS with custom color scheme
 - Vietnamese typography considerations
 - Mobile-responsive design
 - Light-only theme (no dark mode)
 
 ### Content Guidelines
+
 - Content is in Vietnamese language
 - Technical terms mixed Vietnamese/English (e.g., "ICC Profile", "sRGB")
 - SEO optimized for Vietnamese search terms

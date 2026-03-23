@@ -74,10 +74,10 @@ export const footerData = {
       ],
     },
   ],
-//   secondaryLinks: [
-//     { text: 'Terms', href: getPermalink('/terms') },
-//     { text: 'Privacy Policy', href: getPermalink('/privacy') },
-//   ],
+  //   secondaryLinks: [
+  //     { text: 'Terms', href: getPermalink('/terms') },
+  //     { text: 'Privacy Policy', href: getPermalink('/privacy') },
+  //   ],
   socialLinks: [
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/chuanmaucom' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
