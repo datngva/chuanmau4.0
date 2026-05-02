@@ -1,0 +1,63 @@
+---
+// Sticky Zalo + Phone floating button
+---
+
+<div id="sticky-contact" class="fixed bottom-6 right-5 z-50 flex flex-col items-center gap-3">
+  <!-- Phone button -->
+  <a
+    href="tel:0879025858"
+    id="sticky-phone"
+    aria-label="Gọi điện: 0879.02.5858"
+    class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 hover:scale-110 transition-transform duration-200"
+    title="Gọi: 0879.02.5858"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+    </svg>
+    <!-- Tooltip -->
+    <span class="absolute right-14 whitespace-nowrap bg-gray-900 text-white text-xs px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+      0879.02.5858
+    </span>
+  </a>
+
+  <!-- Zalo button with pulse ring -->
+  <a
+    href="https://zalo.me/0879025858"
+    id="sticky-zalo"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat Zalo: 0879.02.5858"
+    class="group relative flex items-center justify-center w-14 h-14 rounded-full shadow-xl hover:scale-110 transition-transform duration-200"
+    style="background:#0068FF;"
+    title="Chat Zalo ngay"
+  >
+    <!-- Pulse animation ring -->
+    <span class="absolute inset-0 rounded-full animate-ping opacity-30" style="background:#0068FF;"></span>
+    <!-- Zalo icon SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-8 h-8" fill="white">
+      <path d="M24 4C12.95 4 4 12.95 4 24c0 3.6.96 6.98 2.64 9.9L4 44l10.4-2.72A19.84 19.84 0 0 0 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm9.6 27.2c-.4 1.12-2.32 2.14-3.2 2.26-.82.12-1.86.18-3-.38-1.74-.84-4.26-2.4-6.62-5.22-2.1-2.52-3.4-5.4-3.8-6.78-.36-1.3.04-2.56.58-3.2.54-.64 1.18-.8 1.58-.82h1.12c.38 0 .7.14.98.78l1.38 3.2c.28.66.18 1.1-.12 1.52l-.54.72c-.3.4-.28.8-.04 1.18.56.9 1.6 2.16 2.76 3.2 1.2 1.08 2.56 1.82 3.5 2.24.42.18.82.14 1.12-.18l.76-.92c.38-.48.78-.56 1.3-.3l3.62 1.8c.5.24.74.58.62 1.7z"/>
+    </svg>
+    <!-- Tooltip -->
+    <span class="absolute right-16 whitespace-nowrap bg-gray-900 text-white text-xs px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+      Chat Zalo ngay
+    </span>
+  </a>
+</div>
+
+<style>
+  /* Hide on very small screens if overlapping content */
+  @media (max-width: 360px) {
+    #sticky-contact {
+      bottom: 4px;
+      right: 4px;
+    }
+    #sticky-zalo {
+      width: 48px;
+      height: 48px;
+    }
+    #sticky-zalo svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+</style>

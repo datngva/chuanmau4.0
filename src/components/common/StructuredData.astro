@@ -11,6 +11,79 @@ const breadcrumbData = {
     },
   ],
 };
+
+const localBusinessData = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Chuẩn Màu',
+  alternateName: 'Dịch vụ cân màu màn hình Chuẩn Màu',
+  description:
+    'Dịch vụ cân màu màn hình PC, laptop, bảng vẽ chuyên nghiệp tại Hà Nội. Thiết bị X-Rite i1Display Pro — đạt chuẩn Delta-E <2. Phục vụ Designer, Photographer, Video Editor.',
+  url: 'https://chuanmau.com',
+  telephone: '+84879025858',
+  priceRange: '₫₫',
+  image: 'https://chuanmau.com/og-image.jpg',
+  logo: 'https://chuanmau.com/favicon.ico',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Số 9 Duy Tân',
+    addressLocality: 'Cầu Giấy',
+    addressRegion: 'Hà Nội',
+    postalCode: '100000',
+    addressCountry: 'VN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 21.0299957,
+    longitude: 105.7841586,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '08:00',
+      closes: '18:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '18:00',
+      closes: '22:00',
+    },
+  ],
+  sameAs: [
+    'https://www.facebook.com/chuanmaucom',
+    'https://zalo.me/0879025858',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Dịch vụ cân màu màn hình',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Cân màu màn hình tại cửa hàng',
+          description: 'Cân màu màn hình PC, laptop tại cửa hàng với thiết bị X-Rite i1Display Pro',
+        },
+        price: '150000',
+        priceCurrency: 'VND',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Cân màu màn hình tại nhà',
+          description: 'Kỹ thuật viên đến tận nhà cân màu màn hình, bảo hành 6 tháng',
+        },
+        price: '200000',
+        priceCurrency: 'VND',
+      },
+    ],
+  },
+};
 ---
 
 <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbData)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessData)} />
+

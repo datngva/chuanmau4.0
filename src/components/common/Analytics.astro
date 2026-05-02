@@ -1,13 +1,22 @@
 ---
-import { GoogleAnalytics } from '@astrolib/analytics';
 import { ANALYTICS } from '~/config';
+
+const googleAnalyticsId = String(ANALYTICS?.vendors?.googleAnalytics?.id ?? '');
+const isValidGoogleAnalyticsId = /^G-[A-Z0-9-]+$/.test(googleAnalyticsId);
+const scriptType = ANALYTICS?.vendors?.googleAnalytics?.partytown ? 'text/partytown' : undefined;
 ---
 
 {
-  ANALYTICS?.vendors?.googleAnalytics?.id ? (
-    <GoogleAnalytics
-      id={String(ANALYTICS.vendors.googleAnalytics.id)}
-      partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
-    />
+  isValidGoogleAnalyticsId ? (
+    <>
+      <script async type={scriptType} src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} />
+      <script
+        is:inline
+        type={scriptType}
+        set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',${JSON.stringify(
+          googleAnalyticsId
+        )});`}
+      />
+    </>
   ) : null
 }

@@ -8,6 +8,8 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import USPSection from '~/components/USPSection.astro';
 import TestimonialsSection from '~/components/TestimonialsSection.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import PartnersStrip from '~/components/PartnersStrip.astro';
 // import Toast from '~/components/common/Toast.astro';
 
 const metadata = {
@@ -22,6 +24,10 @@ const metadata = {
   <!-- Hero Slider ****************** -->
 
   <HeroSlider />
+
+  <!-- Partners Strip ****************** -->
+
+  <PartnersStrip />
 
   <!-- USP Section ******************* -->
 
@@ -160,7 +166,7 @@ const metadata = {
 
   <!-- CallToAction Widget *********** -->
 
-  <!--<CallToAction
+  <CallToAction
     actions={[
       {
         variant: 'primary',
@@ -178,7 +184,7 @@ const metadata = {
       Đừng để màu sắc sai lệch ảnh hưởng đến chất lượng công việc của bạn. <br class="hidden md:inline" />
       Liên hệ ngay để được tư vấn miễn phí!
     </Fragment>
-  </CallToAction>-->
+  </CallToAction>
   <script
     is:inline
     type="application/ld+json"

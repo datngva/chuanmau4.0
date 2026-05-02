@@ -3,6 +3,7 @@ import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
+import StickyContact from '~/components/StickyContact.astro';
 
 import { headerData, footerData } from '~/navigation';
 
@@ -26,4 +27,5 @@ const { metadata } = Astro.props;
     <Footer {...footerData} />
   </slot>
   <StructuredData />
+  <StickyContact />
 </Layout>

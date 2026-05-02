@@ -1,62 +1,63 @@
-# chuanmau-antigravity
+# chuanmau4.0
 
-> Nghiên cứu UX/IA và Agent prompts cho dự án chuanmau.com trên Google Antigravity
+> Website dịch vụ cân màu màn hình chuyên nghiệp tại Hà Nội — chuanmau.com
 
----
-
-## Cách dùng
-
-### Bước 1: Copy vào project
-
-```bash
-# Copy brain files vào project chuanmau của bạn
-cp -r .gemini/ /path/to/chuanmau.com/
-cp -r .agents/ /path/to/chuanmau.com/
-cp AGENT-PROMPTS.md /path/to/chuanmau.com/
-```
-
-### Bước 2: Mở project trong Antigravity
-
-Mở thư mục chuanmau.com trong Antigravity IDE.
-Các file trong `.gemini/antigravity/brain/` sẽ được agent tự động đọc.
-Các skill trong `.agents/skills/` sẽ được load khi request phù hợp.
-
-### Bước 3: Giao việc cho Agent
-
-Mở file `AGENT-PROMPTS.md`, copy prompt sprint muốn làm, paste vào Agent Manager.
+**Stack:** Astro v5 · Tailwind CSS · TypeScript · nginx (Docker)
 
 ---
 
 ## Cấu trúc file
 
 ```
-.
-├── AGENT-PROMPTS.md              ← Prompt sẵn sàng dùng, copy paste vào Agent Manager
+src/
+├── pages/
+│   ├── index.astro           ← Trang chủ
+│   ├── bang-gia.astro        ← Bảng giá dịch vụ
+│   ├── lien-he.astro         ← Liên hệ (cần thêm Google Maps)
+│   ├── services.astro        ← Trang dịch vụ
+│   ├── kiem-tra-mau-sac.astro
+│   └── [...blog]/            ← Blog
 │
-├── .gemini/antigravity/brain/    ← Context dài hạn, agent đọc mỗi session
-│   ├── ux-audit.md               ← 7 vấn đề UX + giải pháp + file cần sửa
-│   ├── ia-structure.md           ← IA hiện tại vs đề xuất, URL slugs
-│   └── seo-schema.md             ← JSON-LD schema code sẵn sàng copy
+├── components/
+│   ├── HeroSlider.astro      ← Hero slider 3 slides (desktop/mobile)
+│   ├── USPSection.astro      ← 4 điểm nổi bật
+│   └── TestimonialsSection.astro
 │
-└── .agents/skills/               ← Quy tắc theo từng loại task
-    ├── ux-guidelines/SKILL.md    ← Nguyên tắc Trust-First, màu sắc, spacing
-    ├── ia-navigation/SKILL.md    ← Cấu trúc nav 4 items, quy tắc không vi phạm
-    ├── cta-patterns/SKILL.md     ← CTA luôn 2 nút, Zalo deeplink, sticky button
-    └── seo-schema/SKILL.md       ← Checklist SEO, title/description patterns
+└── assets/images/hero/       ← banner1-6.jpg (banner4-6 chưa dùng)
+
+.brain/
+├── brain.json                ← Kiến thức tĩnh về project
+└── session.json              ← Tiến độ làm việc (gitignored)
+
+nginx/nginx.conf              ← Production server config (security hardened)
+Dockerfile                    ← Multi-stage build + non-root user
 ```
 
 ---
 
-## Thứ tự ưu tiên Sprint
+## Chạy local
 
-| Sprint | Task                     | Thời gian ước tính | Tác động                     |
-| ------ | ------------------------ | ------------------ | ---------------------------- |
-| 1      | Fix navigation menu      | 30 phút            | Cao — IA đúng ngay           |
-| 2      | Google Maps + giờ mở cửa | 20 phút            | Cao — trust                  |
-| 3      | Fix CTA bảng giá (2 nút) | 15 phút            | Cao — conversion             |
-| 4      | Sticky Zalo button       | 10 phút            | Cao — friction thấp          |
-| 5      | Schema JSON-LD           | 20 phút            | Trung bình — SEO             |
-| 6      | Section USP              | 45 phút            | Trung bình — differentiation |
-| 7      | Section Testimonial      | 60 phút            | Cao — nhưng cần data thật    |
+```bash
+npm install
+npm run dev          # http://localhost:4321
+npm run check        # Type check + lint
+```
 
-**Tổng thời gian:** ~3.5 giờ dev cho tất cả 7 sprint
+## Build & Deploy
+
+```bash
+# Docker
+docker build -t chuanmau .
+docker run -p 8080:8080 chuanmau
+
+# Netlify / Vercel
+git push  # auto-deploy
+```
+
+---
+
+## Việc cần làm
+
+- [ ] Fix navigation menu — 4 items: Dịch vụ | Bảng giá | Kiến thức | Liên hệ
+- [ ] Google Maps + giờ mở cửa vào trang Liên hệ
+- [ ] Nâng cấp Astro v5 → v6 (XSS moderate fix)

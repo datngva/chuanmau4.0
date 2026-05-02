@@ -1,0 +1,119 @@
+---
+const partners = [
+  {
+    name: 'X-Rite',
+    desc: 'Thiết bị đo màu',
+    svg: `<svg viewBox="0 0 120 40" class="h-8 w-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <text x="4" y="30" font-family="Arial Black, sans-serif" font-weight="900" font-size="28" letter-spacing="-1">X-Rite</text>
+    </svg>`,
+  },
+  {
+    name: 'Wacom',
+    desc: 'Bảng vẽ điện tử',
+    svg: `<svg viewBox="0 0 120 40" class="h-8 w-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <text x="4" y="30" font-family="Arial, sans-serif" font-weight="700" font-size="26">Wacom</text>
+    </svg>`,
+  },
+  {
+    name: 'Huion',
+    desc: 'Bảng vẽ điện tử',
+    svg: `<svg viewBox="0 0 100 40" class="h-8 w-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <text x="4" y="30" font-family="Arial, sans-serif" font-weight="700" font-size="26">Huion</text>
+    </svg>`,
+  },
+  {
+    name: 'XP-Pen',
+    desc: 'Bảng vẽ điện tử',
+    svg: `<svg viewBox="0 0 110 40" class="h-8 w-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <text x="4" y="30" font-family="Arial, sans-serif" font-weight="700" font-size="24">XP-Pen</text>
+    </svg>`,
+  },
+  {
+    name: 'Datacolor',
+    desc: 'Thiết bị đo màu',
+    svg: `<svg viewBox="0 0 145 40" class="h-8 w-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <text x="4" y="30" font-family="Arial, sans-serif" font-weight="700" font-size="24">Datacolor</text>
+    </svg>`,
+  },
+  {
+    name: 'Dell',
+    desc: 'Màn hình chuyên nghiệp',
+    svg: `<svg viewBox="0 0 70 40" class="h-8 w-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <text x="4" y="30" font-family="Arial, sans-serif" font-weight="700" font-size="28">Dell</text>
+    </svg>`,
+  },
+  {
+    name: 'ASUS',
+    desc: 'Màn hình ProArt',
+    svg: `<svg viewBox="0 0 90 40" class="h-8 w-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <text x="4" y="30" font-family="Arial, sans-serif" font-weight="900" font-size="26">ASUS</text>
+    </svg>`,
+  },
+  {
+    name: 'LG',
+    desc: 'Màn hình IPS',
+    svg: `<svg viewBox="0 0 55 40" class="h-8 w-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <text x="4" y="30" font-family="Arial, sans-serif" font-weight="900" font-size="28">LG</text>
+    </svg>`,
+  },
+];
+---
+
+<section id="doi-tac" class="py-12 bg-gray-50 dark:bg-slate-900/50 border-y border-gray-200 dark:border-slate-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-8">
+      Thiết bị & màn hình chúng tôi đã hỗ trợ
+    </p>
+    <!-- Scrolling logo strip -->
+    <div class="relative overflow-hidden">
+      <!-- Fade edges -->
+      <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-50 dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-50 dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
+
+      <div class="flex items-center gap-12 partner-track">
+        {partners.map((p) => (
+          <div
+            class="flex-shrink-0 flex items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-default"
+            title={p.desc}
+          >
+            <span class="font-bold text-xl tracking-tight whitespace-nowrap">{p.name}</span>
+          </div>
+        ))}
+        <!-- Duplicate for seamless loop -->
+        {partners.map((p) => (
+          <div
+            class="flex-shrink-0 flex items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-default"
+            title={p.desc}
+            aria-hidden="true"
+          >
+            <span class="font-bold text-xl tracking-tight whitespace-nowrap">{p.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .partner-track {
+    animation: marquee 20s linear infinite;
+    width: max-content;
+  }
+
+  .partner-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partner-track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>
