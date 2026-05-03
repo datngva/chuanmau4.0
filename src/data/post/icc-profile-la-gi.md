@@ -1,7 +1,7 @@
 ---
 publishDate: 2026-05-02T00:00:00Z
-title: "ICC profile là gì? Giải thích đủ để dùng được"
-excerpt: "ICC profile là gì, nó mô tả gì về màn hình, khi nào nên cài file .icc và khi nào không nên đắp profile máy khác lên máy mình. Giải thích thực dụng cho dân nghề."
+title: 'ICC profile là gì? Giải thích đủ để dùng được'
+excerpt: 'ICC profile là gì, nó mô tả gì về màn hình, khi nào nên cài file .icc và khi nào không nên đắp profile máy khác lên máy mình. Giải thích thực dụng cho dân nghề.'
 image: ~/assets/images/icc-profile-la-gi/icc-profile-la-gi-1.png
 category: Tutorials
 tags:
@@ -10,7 +10,7 @@ tags:
   - color profile
   - canmaumanhinh
 metadata:
-  description: "ICC profile là gì, nó mô tả gì về màn hình, khi nào nên cài file .icc và khi nào không nên đắp profile máy khác lên máy mình. Giải thích thực dụng cho dân nghề."
+  description: 'ICC profile là gì, nó mô tả gì về màn hình, khi nào nên cài file .icc và khi nào không nên đắp profile máy khác lên máy mình. Giải thích thực dụng cho dân nghề.'
 canonical: https://chuanmau.com/icc-profile-la-gi
 ---
 

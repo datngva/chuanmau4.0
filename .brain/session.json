@@ -1,0 +1,86 @@
+{
+  "updated_at": "2026-05-03T12:08:30+07:00",
+  "working_on": {
+    "feature": "CI Stabilization & Blog Pipeline",
+    "task": "Session checkpoint saved",
+    "status": "stable",
+    "files": [
+      "src/navigation.ts",
+      "src/components/common/Analytics.astro",
+      ".prettierignore",
+      "src/content.config.ts",
+      "src/data/post/icc-profile-la-gi.md",
+      ".github/workflows/actions.yaml"
+    ],
+    "blockers": [],
+    "notes": "Local npm run check passes; CI issues traced to formatting scope and duplicate content config file."
+  },
+  "pending_tasks": [
+    {
+      "task": "Monitor latest GitHub Actions run",
+      "priority": "high",
+      "notes": "Confirm remote workflow green after pushed fixes"
+    },
+    {
+      "task": "Optional: suppress non-blocking astro z deprecation hints in future Astro migration",
+      "priority": "low",
+      "notes": "Not required for pass/fail currently"
+    }
+  ],
+  "recent_changes": [
+    {
+      "timestamp": "2026-05-03T11:47:00+07:00",
+      "type": "bugfix",
+      "description": "Fixed Header/Footer type errors in navigation data",
+      "files": [
+        "src/navigation.ts"
+      ]
+    },
+    {
+      "timestamp": "2026-05-03T11:50:00+07:00",
+      "type": "quality",
+      "description": "Silenced Analytics inline hint and cleaned check output",
+      "files": [
+        "src/components/common/Analytics.astro"
+      ]
+    },
+    {
+      "timestamp": "2026-05-03T11:58:00+07:00",
+      "type": "quality",
+      "description": "Fixed Prettier CI scope by ignoring generated .astro files",
+      "files": [
+        ".prettierignore"
+      ]
+    },
+    {
+      "timestamp": "2026-05-03T12:03:00+07:00",
+      "type": "cleanup",
+      "description": "Removed duplicate src/content/config.ts to avoid duplicate diagnostics",
+      "files": [
+        "src/content/config.ts"
+      ]
+    }
+  ],
+  "errors_encountered": [
+    {
+      "error": "GitHub Actions failed on prettier check with generated .astro files",
+      "solution": "Add .astro to .prettierignore and run npm run fix",
+      "resolved": true
+    },
+    {
+      "error": "TypeScript Footer/Header prop mismatch",
+      "solution": "Add secondaryLinks in footerData and use literal variant type via as const",
+      "resolved": true
+    }
+  ],
+  "decisions_made": [
+    {
+      "decision": "Keep astro:content z import for compatibility",
+      "reason": "Switching to zod import caused schema type mismatch error in current setup"
+    },
+    {
+      "decision": "Treat deprecation hints as non-blocking",
+      "reason": "Goal is passing CI checks without disabling type checks"
+    }
+  ]
+}

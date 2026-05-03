@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "schema_version": "1.1.0",
+    "awf_version": "3.3.0",
+    "last_updated": "2026-05-03T12:08:30+07:00"
+  },
+  "project": {
+    "name": "chuanmau4.0-new",
+    "type": "Astro",
+    "status": "active"
+  },
+  "tech_stack": {
+    "frontend": {
+      "framework": "Astro v5.x",
+      "styling": "Tailwind CSS",
+      "icons": "astro-icon",
+      "fonts": "@fontsource-variable/inter"
+    },
+    "backend": {
+      "type": "Static / Serverless",
+      "platform": "Cloudflare + GitHub Actions"
+    },
+    "ci_cd": {
+      "tool": "GitHub Actions",
+      "node_version": "22.12.0",
+      "quality_gates": [
+        "npm run check:astro",
+        "npm run check:eslint",
+        "npm run check:prettier"
+      ]
+    }
+  },
+  "api_endpoints": [],
+  "features": [
+    "Blog with structured content collection",
+    "SEO components",
+    "Sticky contact and partners strip",
+    "Automated CI build/check",
+    "Blog article publishing workflow with image migration"
+  ],
+  "knowledge_items": {
+    "conventions": [
+      "Blog posts live in src/data/post/*.md",
+      "Blog images live in src/assets/images/[slug]/",
+      "Footer requires secondaryLinks prop in footerData",
+      "Header action variant must be literal union (use as const if needed)",
+      "Ignore .astro generated files in Prettier via .prettierignore"
+    ],
+    "gotchas": [
+      "Duplicate content config file src/content/config.ts can trigger duplicate diagnostics",
+      "Astro check may show deprecated z hints from astro:content in current version; not a blocking error",
+      "Prettier check fails CI when generated .astro files are included"
+    ]
+  }
+}

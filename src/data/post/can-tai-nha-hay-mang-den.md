@@ -1,7 +1,7 @@
 ---
 publishDate: 2026-05-02T00:00:00Z
-title: "Cân màu tại nhà hay mang máy đến: chọn theo tình huống"
-excerpt: "Cân màu màn hình tại nhà hay mang máy đến điểm cố định? Tận nơi rẻ hơn khi 2 màn trở lên hoặc studio không thể dừng job. Mang đến hợp lý khi 1 laptop."
+title: 'Cân màu tại nhà hay mang máy đến: chọn theo tình huống'
+excerpt: 'Cân màu màn hình tại nhà hay mang máy đến điểm cố định? Tận nơi rẻ hơn khi 2 màn trở lên hoặc studio không thể dừng job. Mang đến hợp lý khi 1 laptop.'
 image: ~/assets/images/can-tai-nha-hay-mang-den/can-tai-nha-hay-mang-den-hero.jpg
 category: Tutorials
 tags:
@@ -9,7 +9,7 @@ tags:
   - Cân màu tại nhà
   - Dịch vụ cân màu màn hình
 metadata:
-  description: "Cân màu màn hình tại nhà hay mang máy đến điểm cố định? Tận nơi rẻ hơn khi 2 màn trở lên hoặc studio không thể dừng job. Mang đến hợp lý khi 1 laptop."
+  description: 'Cân màu màn hình tại nhà hay mang máy đến điểm cố định? Tận nơi rẻ hơn khi 2 màn trở lên hoặc studio không thể dừng job. Mang đến hợp lý khi 1 laptop.'
 canonical: https://chuanmau.com/can-tai-nha-hay-mang-den
 ---
 

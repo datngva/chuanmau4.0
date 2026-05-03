@@ -72,7 +72,8 @@ const finalTitle =
 const robotsContent = `${seoProps.noindex ? 'noindex' : 'index'}, ${seoProps.nofollow ? 'nofollow' : 'follow'}`;
 const adaptedOpenGraph = (await adaptOpenGraphImages(seoProps?.openGraph, Astro.site)) as OpenGraphWithSiteName;
 const ogSiteName = adaptedOpenGraph.siteName || adaptedOpenGraph.site_name || SITE?.name;
-const twitterCard = seoProps.twitter?.cardType || (adaptedOpenGraph?.images?.length ? 'summary_large_image' : 'summary');
+const twitterCard =
+  seoProps.twitter?.cardType || (adaptedOpenGraph?.images?.length ? 'summary_large_image' : 'summary');
 ---
 
 {finalTitle && <title>{finalTitle}</title>}

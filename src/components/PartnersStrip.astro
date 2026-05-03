@@ -67,28 +67,38 @@ const partners = [
     <!-- Scrolling logo strip -->
     <div class="relative overflow-hidden">
       <!-- Fade edges -->
-      <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-50 dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-50 dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
+      <div
+        class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-50 dark:from-slate-900 to-transparent z-10 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-50 dark:from-slate-900 to-transparent z-10 pointer-events-none"
+      >
+      </div>
 
       <div class="flex items-center gap-12 partner-track">
-        {partners.map((p) => (
-          <div
-            class="flex-shrink-0 flex items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-default"
-            title={p.desc}
-          >
-            <span class="font-bold text-xl tracking-tight whitespace-nowrap">{p.name}</span>
-          </div>
-        ))}
+        {
+          partners.map((p) => (
+            <div
+              class="flex-shrink-0 flex items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-default"
+              title={p.desc}
+            >
+              <span class="font-bold text-xl tracking-tight whitespace-nowrap">{p.name}</span>
+            </div>
+          ))
+        }
         <!-- Duplicate for seamless loop -->
-        {partners.map((p) => (
-          <div
-            class="flex-shrink-0 flex items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-default"
-            title={p.desc}
-            aria-hidden="true"
-          >
-            <span class="font-bold text-xl tracking-tight whitespace-nowrap">{p.name}</span>
-          </div>
-        ))}
+        {
+          partners.map((p) => (
+            <div
+              class="flex-shrink-0 flex items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-default"
+              title={p.desc}
+              aria-hidden="true"
+            >
+              <span class="font-bold text-xl tracking-tight whitespace-nowrap">{p.name}</span>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
@@ -105,8 +115,12 @@ const partners = [
   }
 
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
