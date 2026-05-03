@@ -246,6 +246,7 @@ const slides = [
 <script>
   (function () {
     const INTERVAL = 5000;
+    const SWIPE_THRESHOLD = 40;
     const root = document.getElementById('hero-slider') as HTMLElement;
     const slideEls = root.querySelectorAll<HTMLElement>('.hs-slide');
     const dotEls = root.querySelectorAll<HTMLButtonElement>('.hs-dot');
@@ -255,36 +256,36 @@ const slides = [
 
     let current = 0;
     let timer: ReturnType<typeof setInterval> | null = null;
+    let touchStartX = 0;
 
-    function goTo(idx: number) {
-      const prev = current;
-      current = (idx + slideEls.length) % slideEls.length;
-
-      slideEls[prev].classList.remove('active');
-      slideEls[current].classList.add('active');
-
-      dotEls.forEach((d, i) => {
-        if (i === current) {
-          d.classList.add('active', 'w-6', 'h-2.5', 'bg-white');
-          d.classList.remove('w-2.5', 'bg-white/50');
-        } else {
-          d.classList.remove('active', 'w-6', 'bg-white');
-          d.classList.add('w-2.5', 'bg-white/50');
-        }
+    function updateDots() {
+      dotEls.forEach((dot, index) => {
+        const isActive = index === current;
+        dot.classList.toggle('active', isActive);
+        dot.classList.toggle('w-6', isActive);
+        dot.classList.toggle('h-2.5', isActive);
+        dot.classList.toggle('bg-white', isActive);
+        dot.classList.toggle('w-2.5', !isActive);
+        dot.classList.toggle('bg-white/50', !isActive);
       });
-
-      startProgress();
     }
 
     function startProgress() {
-      // Reset bar
       progressBar.style.transition = 'none';
       progressBar.style.width = '0%';
-      // Force reflow
       void progressBar.offsetWidth;
-      // Animate
       progressBar.style.transition = `width ${INTERVAL}ms linear`;
       progressBar.style.width = '100%';
+    }
+
+    function goTo(index: number) {
+      const previous = current;
+      current = (index + slideEls.length) % slideEls.length;
+
+      slideEls[previous].classList.remove('active');
+      slideEls[current].classList.add('active');
+      updateDots();
+      startProgress();
     }
 
     function startTimer() {
@@ -297,78 +298,54 @@ const slides = [
       startProgress();
     }
 
-    // Init
+    function moveTo(index: number) {
+      goTo(index);
+      resetTimer();
+    }
+
+    function handleSwipeEnd(event: TouchEvent) {
+      const deltaX = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(deltaX) < SWIPE_THRESHOLD) return;
+      moveTo(current + (deltaX < 0 ? 1 : -1));
+    }
+
     slideEls[0].classList.add('active');
     startTimer();
     startProgress();
 
-    prevBtn.addEventListener('click', () => {
-      goTo(current - 1);
-      resetTimer();
-    });
-    nextBtn.addEventListener('click', () => {
-      goTo(current + 1);
-      resetTimer();
+    prevBtn.addEventListener('click', () => moveTo(current - 1));
+    nextBtn.addEventListener('click', () => moveTo(current + 1));
+
+    dotEls.forEach((dot) => {
+      dot.addEventListener('click', () => moveTo(Number(dot.dataset.index)));
     });
 
-    dotEls.forEach((d) => {
-      d.addEventListener('click', () => {
-        const idx = Number(d.dataset.index);
-        goTo(idx);
-        resetTimer();
-      });
-    });
-
-    // Touch swipe support
-    let touchStartX = 0;
     root.addEventListener(
       'touchstart',
-      (e) => {
-        touchStartX = e.changedTouches[0].clientX;
+      (event) => {
+        touchStartX = event.changedTouches[0].clientX;
       },
       { passive: true }
     );
-    root.addEventListener(
-      'touchend',
-      (e) => {
-        const dx = e.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(dx) < 40) return;
-        if (dx < 0) {
-          goTo(current + 1);
-        } else {
-          goTo(current - 1);
-        }
-        resetTimer();
-      },
-      { passive: true }
-    );
+    root.addEventListener('touchend', handleSwipeEnd, { passive: true });
 
-    // Pause on hover (desktop UX)
     root.addEventListener('mouseenter', () => {
       if (timer) clearInterval(timer);
       progressBar.style.animationPlayState = 'paused';
     });
-    root.addEventListener('mouseleave', () => {
-      resetTimer();
-    });
+    root.addEventListener('mouseleave', resetTimer);
   })();
 
-  // ── Transparent nav when over hero slider ──────────────────────────
   function initHeroNav() {
     const header = document.getElementById('header');
     const slider = document.getElementById('hero-slider');
     if (!header || !slider) return;
 
-    // Add nav-hero immediately so there's no flash of black text
     header.classList.add('nav-hero');
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          header.classList.add('nav-hero');
-        } else {
-          header.classList.remove('nav-hero');
-        }
+        header.classList.toggle('nav-hero', entry.isIntersecting);
       },
       { threshold: 0.1 }
     );
@@ -376,7 +353,5 @@ const slides = [
   }
 
   initHeroNav();
-
-  // Re-run after Astro view transitions (e.g. clicking footer logo back to home)
   document.addEventListener('astro:after-swap', initHeroNav);
 </script>

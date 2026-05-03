@@ -20,11 +20,11 @@ Upgrade this Astro project from `astro v5.18.1` to `astro v6.2.x` safely without
 
 ## Success Criteria
 
-- [ ] `npx astro --version` shows `astro v6.2.x`
-- [ ] `npm run check` passes locally
-- [ ] `npm run build` passes locally
-- [ ] Blog pages render correctly, especially `/icc-profile-la-gi`
-- [ ] GitHub Actions passes on pushed branch/main
+- [x] `npx astro --version` shows `astro v6.2.x`
+- [x] `npm run check` passes locally
+- [x] `npm run build` passes locally
+- [x] Blog pages render correctly, especially `/icc-profile-la-gi`
+- [x] GitHub Actions passes on pushed branch/main
 - [ ] No `.astro/*` or `.brain/*` generated/local files committed again
 
 ## Tasks
@@ -74,7 +74,7 @@ Upgrade this Astro project from `astro v5.18.1` to `astro v6.2.x` safely without
   - `npm run dev`  
     Verify: all commands pass and key pages load.
 
-- [ ] Task 8: Push upgrade branch and monitor CI  
+- [x] Task 8: Push upgrade branch and monitor CI  
        Agent: `devops-engineer` / Skill: `deployment-procedures`  
        Verify: GitHub Actions passes for the upgrade branch.
 
@@ -104,8 +104,8 @@ If changes were committed but not merged, simply abandon the branch.
 
 ## Done When
 
-- [ ] Astro version is `6.2.x`
-- [ ] Local checks pass
-- [ ] CI checks pass
-- [ ] Site routes and blog content render correctly
-- [ ] Upgrade notes saved via `/save-brain`
+- [x] Astro version is `6.2.x`
+- [x] Local checks pass
+- [x] CI checks pass
+- [x] Site routes and blog content render correctly
+- [x] Upgrade notes saved via `/save-brain`
