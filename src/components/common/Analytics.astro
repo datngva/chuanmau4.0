@@ -9,7 +9,7 @@ const scriptType = ANALYTICS?.vendors?.googleAnalytics?.partytown ? 'text/partyt
 {
   isValidGoogleAnalyticsId ? (
     <>
-      <script async type={scriptType} src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} />
+      <script is:inline async type={scriptType} src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} />
       <script
         is:inline
         type={scriptType}

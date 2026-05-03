@@ -46,10 +46,11 @@ export const headerData = {
       href: '/lien-he',
     },
   ],
-  actions: [{ text: 'Zalo: 0879.02.5858', href: 'https://zalo.me/0879025858', variant: 'primary', target: '_blank' }],
+  actions: [{ text: 'Zalo: 0879.02.5858', href: 'https://zalo.me/0879025858', variant: 'primary' as const, target: '_blank' }],
 };
 
 export const footerData = {
+  secondaryLinks: [],
   links: [
     {
       title: 'Dịch vụ',
