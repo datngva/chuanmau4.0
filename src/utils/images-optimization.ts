@@ -36,7 +36,7 @@ export type ImagesOptimizer = (
 
 /* ******* */
 const config = {
-  // FIXME: Use this when image.width is minor than deviceSizes
+  // Reserved for future non-device presets
   imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
 
   deviceSizes: [
@@ -80,6 +80,11 @@ const parseAspectRatio = (aspectRatio: number | string | null | undefined): numb
   }
 
   return undefined;
+};
+
+const logImageDimensionError = (message: string, image: ImageMetadata | string) => {
+  console.error(message);
+  console.error('Image', image);
 };
 
 /**
@@ -304,24 +309,20 @@ export async function getImagesOptimized(
   // Calculate dimensions from aspect ratio
   if (aspectRatio) {
     if (width) {
-      if (height) {
-        /* empty */
-      } else {
+      if (!height) {
         height = width / aspectRatio;
       }
     } else if (height) {
       width = Number(height * aspectRatio);
     } else if (layout !== 'fullWidth') {
       // Fullwidth images have 100% width, so aspectRatio is applicable
-      console.error('When aspectRatio is set, either width or height must also be set');
-      console.error('Image', image);
+      logImageDimensionError('When aspectRatio is set, either width or height must also be set', image);
     }
   } else if (width && height) {
     aspectRatio = width / height;
   } else if (layout !== 'fullWidth') {
     // Fullwidth images don't need dimensions
-    console.error('Either aspectRatio or both width and height must be set');
-    console.error('Image', image);
+    logImageDimensionError('Either aspectRatio or both width and height must be set', image);
   }
 
   let breakpoints = getBreakpoints({ width: width, breakpoints: widths, layout: layout });
