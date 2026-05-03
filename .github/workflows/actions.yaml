@@ -7,6 +7,9 @@ on:
   push:
     branches:
       - main
+      - 'chore/**'
+      - 'feature/**'
+      - 'fix/**'
 
 jobs:
   build:
