@@ -1,159 +1,124 @@
 {
-  "$ref": "#/definitions/post",
-  "definitions": {
-    "post": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "publishDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updateDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "draft": {
+      "type": "boolean"
+    },
+    "title": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "author": {
+      "type": "string"
+    },
+    "metadata": {
       "type": "object",
       "properties": {
-        "publishDate": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
-        },
-        "updateDate": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
-        },
-        "draft": {
-          "type": "boolean"
-        },
         "title": {
           "type": "string"
         },
-        "excerpt": {
-          "type": "string"
+        "ignoreTitleTemplate": {
+          "type": "boolean"
         },
-        "image": {
-          "type": "string"
+        "canonical": {
+          "type": "string",
+          "format": "uri"
         },
-        "category": {
-          "type": "string"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "author": {
-          "type": "string"
-        },
-        "metadata": {
+        "robots": {
           "type": "object",
           "properties": {
-            "title": {
-              "type": "string"
-            },
-            "ignoreTitleTemplate": {
+            "index": {
               "type": "boolean"
             },
-            "canonical": {
-              "type": "string",
-              "format": "uri"
-            },
-            "robots": {
-              "type": "object",
-              "properties": {
-                "index": {
-                  "type": "boolean"
-                },
-                "follow": {
-                  "type": "boolean"
-                }
-              },
-              "additionalProperties": false
-            },
-            "description": {
+            "follow": {
+              "type": "boolean"
+            }
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "openGraph": {
+          "type": "object",
+          "properties": {
+            "url": {
               "type": "string"
             },
-            "openGraph": {
-              "type": "object",
-              "properties": {
-                "url": {
-                  "type": "string"
-                },
-                "siteName": {
-                  "type": "string"
-                },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "url": {
-                        "type": "string"
-                      },
-                      "width": {
-                        "type": "number"
-                      },
-                      "height": {
-                        "type": "number"
-                      }
-                    },
-                    "required": [
-                      "url"
-                    ],
-                    "additionalProperties": false
+            "siteName": {
+              "type": "string"
+            },
+            "images": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "width": {
+                    "type": "number"
+                  },
+                  "height": {
+                    "type": "number"
                   }
                 },
-                "locale": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                }
-              },
-              "additionalProperties": false
+                "required": [
+                  "url"
+                ]
+              }
             },
-            "twitter": {
-              "type": "object",
-              "properties": {
-                "handle": {
-                  "type": "string"
-                },
-                "site": {
-                  "type": "string"
-                },
-                "cardType": {
-                  "type": "string"
-                }
-              },
-              "additionalProperties": false
+            "locale": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
             }
-          },
-          "additionalProperties": false
+          }
         },
-        "$schema": {
-          "type": "string"
+        "twitter": {
+          "type": "object",
+          "properties": {
+            "handle": {
+              "type": "string"
+            },
+            "site": {
+              "type": "string"
+            },
+            "cardType": {
+              "type": "string"
+            }
+          }
         }
-      },
-      "required": [
-        "title"
-      ],
-      "additionalProperties": false
+      }
+    },
+    "$schema": {
+      "type": "string"
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "required": [
+    "title"
+  ]
 }

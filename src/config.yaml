@@ -2,7 +2,7 @@ site:
   name: chuanmau.com
   site: 'https://chuanmau.com'
   base: '/'
-  trailingSlash: false
+  trailingSlash: true
 
   googleSiteVerificationId: RrFlTylhRlRngAVxH3qU8l8xD6a1SGDj_w8CMwS2hxA
 
