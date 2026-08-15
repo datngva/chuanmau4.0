@@ -1,4 +1,5 @@
 # /services was an unused AstroWind template page that Google had indexed.
-# It was removed; send the traffic to the services section on the home page.
-/services   /#features   301
-/services/  /#features   301
+# It was removed; send that traffic to the home page.
+# No URL fragment here on purpose: '#' starts a comment in this file format.
+/services   /   301
+/services/  /   301

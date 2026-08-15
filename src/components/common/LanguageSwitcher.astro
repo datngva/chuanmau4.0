@@ -15,7 +15,7 @@ const entries = (Object.keys(languages) as Lang[]).map((lang) => ({
 }));
 ---
 
-<div class="flex items-center text-sm font-medium text-muted dark:text-gray-400" aria-label={t('lang.switchLabel')}>
+<nav class="flex items-center text-sm font-medium text-muted dark:text-gray-400" aria-label={t('lang.switchLabel')}>
   {
     entries.map(({ lang, label, title, href, isCurrent }, index) => (
       <>
@@ -24,7 +24,7 @@ const entries = (Object.keys(languages) as Lang[]).map((lang) => ({
           href={href}
           hreflang={lang}
           title={title}
-          aria-current={isCurrent ? 'true' : undefined}
+          aria-current={isCurrent ? 'page' : undefined}
           class:list={[
             'px-1 py-1 rounded hover:text-link dark:hover:text-white transition',
             { 'font-bold text-default dark:text-white': isCurrent },
@@ -35,4 +35,4 @@ const entries = (Object.keys(languages) as Lang[]).map((lang) => ({
       </>
     ))
   }
-</div>
+</nav>

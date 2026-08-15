@@ -13,8 +13,28 @@ import tasks from './src/utils/tasks';
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter.mjs';
 
 import { ANALYTICS, SITE } from './src/utils/config.ts';
+import { localeTags, routeMap } from './src/i18n/ui.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+/**
+ * Absolute URL -> hreflang alternates, derived from the i18n route map.
+ *
+ * @astrojs/sitemap's own `i18n` option infers pairs from the URL structure, so
+ * it only matches when both locales share a slug (/privacy/ <-> /en/privacy/).
+ * Our English slugs are translated (/bang-gia/ <-> /en/pricing/), so we build
+ * the alternates ourselves and hand them to `serialize`.
+ */
+const sitemapAlternates = new Map();
+for (const paths of Object.values(routeMap)) {
+  const links = Object.entries(paths).map(([lang, p]) => ({
+    lang: localeTags[lang],
+    url: new URL(p, SITE.site).href,
+  }));
+  for (const p of Object.values(paths)) {
+    sitemapAlternates.set(new URL(p, SITE.site).href, links);
+  }
+}
 
 const whenExternalScripts = (items = []) =>
   ANALYTICS.vendors.googleAnalytics.id && ANALYTICS.vendors.googleAnalytics.partytown
@@ -45,9 +65,9 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      i18n: {
-        defaultLocale: 'vi',
-        locales: { vi: 'vi-VN', en: 'en-US' },
+      serialize(item) {
+        const links = sitemapAlternates.get(item.url);
+        return links ? { ...item, links } : item;
       },
     }),
     mdx(),

@@ -8,11 +8,12 @@ import { heroSlides } from '~/i18n/content';
 
 const banners = [banner1, banner2, banner3];
 
-// Copy comes from the per-language dictionary; the images are shared.
-const slides = heroSlides[getLangFromUrl(Astro.url)].map((slide, i) => ({
-  ...slide,
-  image: banners[i],
-}));
+// Copy comes from the per-language dictionary; the images are shared and
+// paired by position. Adding a slide to one language without adding a banner
+// here would otherwise render an <Image> with an undefined src.
+const slides = heroSlides[getLangFromUrl(Astro.url)]
+  .slice(0, banners.length)
+  .map((slide, i) => ({ ...slide, image: banners[i] }));
 ---
 
 <section
