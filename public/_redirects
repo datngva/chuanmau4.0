@@ -1,0 +1,4 @@
+# /services was an unused AstroWind template page that Google had indexed.
+# It was removed; send the traffic to the services section on the home page.
+/services   /#features   301
+/services/  /#features   301
