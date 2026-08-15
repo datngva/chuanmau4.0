@@ -1,7 +1,6 @@
 import { defaultLang, localeTags, ogLocales, routeMap, ui } from './ui';
 import type { Lang, RouteKey, UIKey } from './ui';
 
-export { defaultLang, languages, localeTags, ogLocales, routeMap } from './ui';
 export type { Lang, RouteKey, UIKey } from './ui';
 
 /** Strip the trailing slash so '/bang-gia/' and '/bang-gia' compare equal. Root stays '/'. */

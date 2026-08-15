@@ -99,7 +99,3 @@ export const getFooterData = (lang: Lang = defaultLang) => {
   `,
   };
 };
-
-/** Vietnamese defaults, kept for callers that do not need a language. */
-export const headerData = getHeaderData(defaultLang);
-export const footerData = getFooterData(defaultLang);

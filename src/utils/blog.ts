@@ -138,20 +138,6 @@ export const fetchPosts = async (): Promise<Array<Post>> => {
 };
 
 /** */
-export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
-  if (!Array.isArray(slugs)) return [];
-
-  const posts = await fetchPosts();
-
-  return slugs.reduce(function (r: Array<Post>, slug: string) {
-    posts.some(function (post: Post) {
-      return slug === post.slug && r.push(post);
-    });
-    return r;
-  }, []);
-};
-
-/** */
 export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> => {
   if (!Array.isArray(ids)) return [];
 
