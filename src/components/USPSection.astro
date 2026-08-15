@@ -1,29 +1,10 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import { Icon } from 'astro-icon/components';
+import { getLangFromUrl } from '~/i18n/utils';
+import { usps as uspsByLang } from '~/i18n/content';
 
-const usps = [
-  {
-    title: 'X-Rite i1Display Pro',
-    description: 'Thiết bị đo màu chuyên nghiệp hàng đầu thế giới',
-    icon: 'tabler:device-laptop',
-  },
-  {
-    title: 'Chuẩn Delta-E < 2',
-    description: 'Độ chính xác màu sắc theo chuẩn quốc tế',
-    icon: 'tabler:target',
-  },
-  {
-    title: 'Bảo hành 6 tháng',
-    description: 'Hỗ trợ kỹ thuật trọn đời, tư vấn & kiểm tra miễn phí',
-    icon: 'tabler:shield-check',
-  },
-  {
-    title: '500+ màn hình',
-    description: 'Đã phục vụ hàng trăm khách hàng tại Hà Nội',
-    icon: 'tabler:users',
-  },
-];
+const usps = uspsByLang[getLangFromUrl(Astro.url)];
 
 const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
 ---

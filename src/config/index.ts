@@ -107,4 +107,6 @@ export const ANALYTICS = {
 export const I18N = {
   language: rawConfig.i18n?.language || 'vi',
   textDirection: rawConfig.i18n?.textDirection || 'ltr',
+  defaultLocale: rawConfig.i18n?.defaultLocale || 'vi',
+  locales: rawConfig.i18n?.locales || ['vi', 'en'],
 };

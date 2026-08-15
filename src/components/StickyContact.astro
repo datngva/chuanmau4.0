@@ -1,5 +1,8 @@
 ---
 // Sticky Zalo + Phone floating button
+import { getLangFromUrl, useTranslations } from '~/i18n/utils';
+
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <div id="sticky-contact" class="fixed bottom-6 right-5 z-50 flex flex-col items-center gap-3">
@@ -7,9 +10,9 @@
   <a
     href="tel:0879025858"
     id="sticky-phone"
-    aria-label="Gọi điện: 0879.02.5858"
+    aria-label={`${t('sticky.call')}: 0879.02.5858`}
     class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 hover:scale-110 transition-transform duration-200"
-    title="Gọi: 0879.02.5858"
+    title={`${t('sticky.call')}: 0879.02.5858`}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -39,10 +42,10 @@
     id="sticky-zalo"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Chat Zalo: 0879.02.5858"
+    aria-label={`${t('sticky.zalo')}: 0879.02.5858`}
     class="group relative flex items-center justify-center w-14 h-14 rounded-full shadow-xl hover:scale-110 transition-transform duration-200"
     style="background:#0068FF;"
-    title="Chat Zalo ngay"
+    title={t('sticky.zalo')}
   >
     <!-- Pulse animation ring -->
     <span class="absolute inset-0 rounded-full animate-ping opacity-30" style="background:#0068FF;"></span>
@@ -56,7 +59,7 @@
     <span
       class="absolute right-16 whitespace-nowrap bg-gray-900 text-white text-xs px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
     >
-      Chat Zalo ngay
+      {t('sticky.zalo')}
     </span>
   </a>
 </div>

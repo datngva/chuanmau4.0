@@ -1,6 +1,11 @@
 ---
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import { testimonials } from '~/data/testimonials';
+import { getLangFromUrl, useTranslations } from '~/i18n/utils';
+import { testimonialsByLang } from '~/i18n/content';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const testimonials = testimonialsByLang[lang];
 
 const stringToHsl = (str: string) => {
   let hash = 0;
@@ -39,7 +44,7 @@ const testimonialData = testimonials.map((t) => ({
 
 <Testimonials
   id="testimonials"
-  title="Khách hàng nói gì về chúng tôi"
-  subtitle="Sự hài lòng của khách hàng là động lực để chúng tôi không ngừng cải thiện chất lượng dịch vụ."
+  title={t('testimonials.title')}
+  subtitle={t('testimonials.subtitle')}
   testimonials={testimonialData}
 />

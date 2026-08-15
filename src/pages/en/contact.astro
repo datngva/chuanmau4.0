@@ -1,0 +1,159 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact us" title="Contact" />
+  <hr />
+
+  <!-- Contact Information + Maps Section -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-7xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">How can we help?</h2>
+    </div>
+
+    <!-- 2-col layout: info left | maps right -->
+    <div class="grid gap-10 lg:grid-cols-2 grid-cols-1">
+      <!-- Left col: contact info cards -->
+      <div class="flex flex-col gap-6">
+        <!-- Phone/Zalo -->
+        <div
+          class="rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6"
+        >
+          <Icon name="tabler:headset" class="w-10 h-10 text-primary mb-3" />
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Phone / Zalo</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-2">
+            <a href="tel:0879025858" class="hover:text-primary transition-colors duration-200 font-medium">
+              +84 879 02 5858
+            </a>
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+            <Icon name="tabler:clock" class="w-4 h-4 shrink-0" />
+            <span>Monday – Saturday · 8:00 – 18:00</span>
+          </div>
+          <div class="flex gap-2 items-center">
+            <a
+              href="https://zalo.me/0879025858"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center w-7 h-7 bg-[#0068FF] text-white rounded-full hover:bg-[#0056CC] transition-colors duration-200"
+              title="Contact us on Zalo"
+            >
+              <Image src="~/assets/images/Icon_of_Zalo.svg" alt="Zalo" width={16} height={16} class="w-4 h-4" />
+            </a>
+            <a
+              href="https://m.me/chuanmaucom"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Contact us on Messenger"
+            >
+              <Image
+                src="~/assets/images/facebook-messenger-icon.svg"
+                alt="Facebook Messenger"
+                width={30}
+                height={30}
+                class="w-7 h-7"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Cầu Giấy -->
+        <div
+          class="rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6"
+        >
+          <Icon name="tabler:map-pin" class="w-10 h-10 text-primary mb-3" />
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Location 1 – Cầu Giấy</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-2">9 Duy Tân, Cầu Giấy ward, Hanoi</p>
+          <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+            <Icon name="tabler:clock" class="w-4 h-4 shrink-0" />
+            <span>Monday – Saturday · 8:00 – 18:00</span>
+          </div>
+        </div>
+
+        <!-- Phú Thượng -->
+        <div
+          class="rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6"
+        >
+          <Icon name="tabler:map-pin" class="w-10 h-10 text-primary mb-3" />
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Location 2 – Phú Thượng</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-2">Building A1 – IA20 Ciputra, Phú Thượng ward, Hanoi</p>
+          <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+            <Icon name="tabler:clock" class="w-4 h-4 shrink-0" />
+            <span>Monday – Sunday · 18:00 – 22:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right col: Google Maps embeds -->
+      <div class="flex flex-col gap-6">
+        <!-- Map: Cầu Giấy -->
+        <div class="rounded-lg overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-[#ffffff29]">
+          <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 px-4 pt-3 pb-2">
+            📍 Location 1 – 9 Duy Tân, Cầu Giấy
+          </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2045.153008868863!2d105.7841585738575!3d21.02999566166421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4c871a7303%3A0xe14381eb4957a600!2zVMOyYSBOaMOgIFZp4buHdCDDgSwgOSBEdXkgVMOibiwgROG7i2NoIFbhu41uZyBI4bqtdSwgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWkgMTIzMTg2LCBWaWV0bmFt!5e0!3m2!1sen!2sus!4v1773677121804!5m2!1sen!2sus"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map of Location 1 – 9 Duy Tân, Cầu Giấy"></iframe>
+        </div>
+
+        <!-- Map: Phú Thượng / Ciputra -->
+        <div class="rounded-lg overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-[#ffffff29]">
+          <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 px-4 pt-3 pb-2">
+            📍 Location 2 – Building A1, IA20 Ciputra, Phú Thượng
+          </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.742777213654!2d105.78825960125882!3d21.084266696331696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab1eaa29367b%3A0x25a6a56d5fb3c234!2zQ2h14bqpbiBNw6B1IC0gROG7i2NoIHbhu6UgY8OibiBjaOG7iW5oIG3DoHUgbcOgbiBow6xuaA!5e0!3m2!1sen!2sus!4v1773677287733!5m2!1sen!2sus"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map of Location 2 – Ciputra, Phú Thượng"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+  <ContactUs
+    title="Send a request"
+    subtitle="Send us a quick support request and we will get back to you."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Full name',
+      },
+      {
+        type: 'number',
+        name: 'phone',
+        label: 'Phone number',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label: 'By submitting this contact form, you consent to the collection of your personal information.',
+    }}
+    description="We usually respond within 4 working hours."
+  />
+</Layout>

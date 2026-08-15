@@ -1,0 +1,298 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Calibration pricing',
+};
+
+const bookingCta = `<div class="flex flex-col items-center gap-2 w-full">
+          <a href="https://zalo.me/0879025858" target="_blank" rel="noopener" class="btn-primary w-full text-center">Book via Zalo</a>
+          <a href="tel:0879025858" class="text-sm text-gray-500 dark:text-slate-400 hover:text-primary transition-colors">or call +84 879 02 5858</a>
+        </div>`;
+---
+
+<Layout metadata={metadata}>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: 'en',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Why does a monitor need calibration?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Calibration makes sure colors display accurately, which matters most for designers, photographers and video editors. An uncalibrated display can show shifted colors that affect the quality of your work.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does calibration take?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Calibrating a single display usually takes about 30 to 45 minutes.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does monitor calibration cost?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'At our shop: 150,000₫ for the first display. On-site: 200,000₫ for the first display. Each additional display is 100,000₫.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is the service covered by a warranty?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, Chuẩn Màu provides a 6-month warranty. If any issue arises during that period we will check and recalibrate free of charge.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you offer on-site service?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, Chuẩn Màu offers on-site service across Hanoi for 200,000₫ for the first display.',
+          },
+        },
+      ],
+    })}
+  />
+
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Services"
+    title="Pricing"
+    subtitle="Take a look at our standard rates, or get in touch for a custom quote."
+  />
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    prices={[
+      {
+        title: 'At our shop',
+        subtitle: 'You bring the display to us',
+        price: 150,
+        period: 'per display',
+        items: [
+          { description: 'Calibration performed at our shop' },
+          { description: '100,000₫ from the second display onward' },
+          { description: 'Color profile exported, with instructions' },
+          { description: 'Lifetime support' },
+        ],
+        callToAction: bookingCta,
+      },
+      {
+        title: 'On-site',
+        subtitle: 'We come to you',
+        price: 200,
+        period: 'per display',
+        items: [
+          { description: 'Calibration performed at your location' },
+          { description: '100,000₫ from the second display onward' },
+          { description: 'Color profile exported, with instructions' },
+          { description: 'Lifetime support' },
+        ],
+        callToAction: bookingCta,
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: 'Volume',
+        subtitle: '5 displays or more',
+        price: 90,
+        period: 'per additional display',
+        items: [
+          { description: 'Calibration performed at your location' },
+          { description: 'First display 200,000₫' },
+          { description: 'Color profile exported, with instructions' },
+          { description: 'Lifetime support' },
+        ],
+        callToAction: bookingCta,
+      },
+    ]}
+  />
+
+  <!-- Price Calculator Form ******************* -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold dark:text-white mb-2">Calculate your calibration cost</h2>
+      <p class="text-gray-600 dark:text-slate-400">Enter how many displays you need calibrated to see the total</p>
+      <p class="text-sm text-primary mt-2 font-medium">
+        ✨ Offer: additional displays drop to 90,000₫ each when you book 6 or more
+      </p>
+    </div>
+
+    <div
+      class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-lg px-8 py-8"
+    >
+      <form class="space-y-6" id="priceCalculator">
+        <div>
+          <label for="serviceType" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+            Service type
+          </label>
+          <select
+            id="serviceType"
+            name="serviceType"
+            class="w-full rounded-md border border-gray-300 dark:border-gray-600 dark:bg-slate-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            <option value="store">At our shop (150k / first display)</option>
+            <option value="home" selected>On-site (200k / first display)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="screenCount" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+            Number of displays
+          </label>
+          <input
+            type="number"
+            id="screenCount"
+            name="screenCount"
+            min="1"
+            max="50"
+            value="1"
+            class="w-full rounded-md border border-gray-300 dark:border-gray-600 dark:bg-slate-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+
+        <div class="bg-primary/10 dark:bg-primary/20 rounded-lg p-6 border border-primary/30">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-gray-700 dark:text-slate-300 font-medium">First display:</span>
+            <span class="text-2xl font-bold text-primary dark:text-primary" id="firstScreenPrice">200k</span>
+          </div>
+          <div class="flex justify-between items-center mb-2" id="additionalScreensRow" style="display: none;">
+            <span class="text-gray-700 dark:text-slate-300 font-medium">
+              <span id="additionalCount">0</span> more display(s) (<span id="additionalPricePerUnit">100</span>k each):
+            </span>
+            <span class="text-2xl font-bold text-primary dark:text-primary" id="additionalScreensPrice">0k</span>
+          </div>
+          <hr class="my-4 border-gray-300 dark:border-gray-600" />
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold text-gray-900 dark:text-white">Total:</span>
+            <span class="text-3xl font-extrabold text-primary dark:text-primary" id="totalPrice">200k</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently asked questions"
+    subtitle="Have a look through these, or contact us for advice."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Will I lose the calibration after reinstalling my operating system?',
+        description:
+          'No. Once calibration is done we export a Profile.ICC file and show you how to install it again on your computer.',
+      },
+      {
+        title: 'Does calibration need to be repeated periodically?',
+        description: 'Yes. Displays drift over time, so we recommend recalibrating after 6 months to a year of use.',
+      },
+      {
+        title: 'How much does monitor calibration cost?',
+        description:
+          'Calibration starts from 150,000₫ per display. Please get in touch and we will advise you in detail.',
+      },
+      {
+        title: 'Can laptop screens be calibrated?',
+        description:
+          'Laptop panels come in roughly two grades: around 60% and around 100% sRGB. We will advise whether calibration is worthwhile based on your panel.',
+      },
+      {
+        title: 'Can Wacom, XP-Pen or Huion tablets be calibrated?',
+        description: 'Absolutely. They are essentially external displays, so we can calibrate them the same way.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact us',
+        href: '/en/contact/',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">Can my display be calibrated?</Fragment>
+
+    <Fragment slot="subtitle">
+      Not sure whether your screen is a good candidate? Get in touch with your display model and setup, and we will
+      advise you directly.
+    </Fragment>
+  </CallToAction>
+</Layout>
+
+<script is:inline define:vars={{}}>
+  // Price calculation logic
+  const serviceType = document.getElementById('serviceType');
+  const screenCount = document.getElementById('screenCount');
+  const firstScreenPrice = document.getElementById('firstScreenPrice');
+  const additionalScreensRow = document.getElementById('additionalScreensRow');
+  const additionalCount = document.getElementById('additionalCount');
+  const additionalScreensPrice = document.getElementById('additionalScreensPrice');
+  const additionalPricePerUnit = document.getElementById('additionalPricePerUnit');
+  const totalPrice = document.getElementById('totalPrice');
+
+  function calculatePrice() {
+    const selectedType = serviceType.value;
+    const count = parseInt(screenCount.value) || 0;
+
+    // Prices based on service type
+    const firstScreenCost = selectedType === 'store' ? 150 : 200;
+    // If > 5 screens, additional screens are 90k, otherwise 100k
+    const additionalScreenCost = count > 5 ? 90 : 100;
+
+    // Calculate
+    if (count <= 0) {
+      firstScreenPrice.textContent = `${firstScreenCost}k`;
+      additionalScreensRow.style.display = 'none';
+      totalPrice.textContent = '0k';
+      return;
+    }
+
+    firstScreenPrice.textContent = `${firstScreenCost}k`;
+
+    if (count > 1) {
+      const additionalScreens = count - 1;
+      const additionalTotal = additionalScreens * additionalScreenCost;
+
+      additionalCount.textContent = additionalScreens;
+      additionalScreensPrice.textContent = `${additionalTotal}k`;
+      additionalPricePerUnit.textContent = additionalScreenCost;
+      additionalScreensRow.style.display = 'flex';
+
+      const total = firstScreenCost + additionalTotal;
+      totalPrice.textContent = `${total}k`;
+    } else {
+      additionalScreensRow.style.display = 'none';
+      totalPrice.textContent = `${firstScreenCost}k`;
+    }
+  }
+
+  // Add event listeners
+  serviceType.addEventListener('change', calculatePrice);
+  screenCount.addEventListener('input', calculatePrice);
+
+  // Calculate on page load
+  calculatePrice();
+</script>

@@ -2,6 +2,7 @@
 import '~/assets/styles/tailwind.css';
 
 import { I18N } from '~/config';
+import { getLangFromUrl, getLocaleTag, useTranslations } from '~/i18n/utils';
 
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
@@ -19,11 +20,15 @@ export interface Props {
 }
 
 const { metadata = {} } = Astro.props;
-const { language, textDirection } = I18N;
+const { textDirection } = I18N;
+
+const lang = getLangFromUrl(Astro.url);
+const htmlLang = getLocaleTag(lang);
+const t = useTranslations(lang);
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+<html lang={htmlLang} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <CommonMeta />
     <Favicons />
@@ -40,7 +45,7 @@ const { language, textDirection } = I18N;
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         name: 'Chuẩn Màu',
-        description: 'Dịch vụ cân màu màn hình chuyên nghiệp tại Hà Nội. Phục vụ Designer, Photographer, Video Editor.',
+        description: t('business.description'),
         url: 'https://chuanmau.com',
         telephone: '+84879025858',
         priceRange: '150.000đ – 200.000đ',

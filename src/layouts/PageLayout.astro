@@ -5,7 +5,8 @@ import Footer from '~/components/widgets/Footer.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import StickyContact from '~/components/StickyContact.astro';
 
-import { headerData, footerData } from '~/navigation';
+import { getHeaderData, getFooterData } from '~/navigation';
+import { getLangFromUrl } from '~/i18n/utils';
 
 import type { MetaData } from '~/types';
 
@@ -14,6 +15,10 @@ export interface Props {
 }
 
 const { metadata } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const headerData = getHeaderData(lang);
+const footerData = getFooterData(lang);
 ---
 
 <Layout metadata={metadata}>

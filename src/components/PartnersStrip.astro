@@ -1,4 +1,11 @@
 ---
+import { getLangFromUrl } from '~/i18n/utils';
+import { partnerDescriptions, partnersLabel } from '~/i18n/content';
+
+const lang = getLangFromUrl(Astro.url);
+const descriptions = partnerDescriptions[lang];
+const label = partnersLabel[lang];
+
 const partners = [
   {
     name: 'X-Rite',
@@ -62,7 +69,7 @@ const partners = [
 <section id="doi-tac" class="py-12 bg-gray-50 dark:bg-slate-900/50 border-y border-gray-200 dark:border-slate-700">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <p class="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-8">
-      Thiết bị & màn hình chúng tôi đã hỗ trợ
+      {label}
     </p>
     <!-- Scrolling logo strip -->
     <div class="relative overflow-hidden">
@@ -81,7 +88,7 @@ const partners = [
           partners.map((p) => (
             <div
               class="flex-shrink-0 flex items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-default"
-              title={p.desc}
+              title={descriptions[p.name] ?? p.desc}
             >
               <span class="font-bold text-xl tracking-tight whitespace-nowrap">{p.name}</span>
             </div>
@@ -92,7 +99,7 @@ const partners = [
           partners.map((p) => (
             <div
               class="flex-shrink-0 flex items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-default"
-              title={p.desc}
+              title={descriptions[p.name] ?? p.desc}
               aria-hidden="true"
             >
               <span class="font-bold text-xl tracking-tight whitespace-nowrap">{p.name}</span>

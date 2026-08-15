@@ -1,9 +1,10 @@
 ---
 import merge from 'lodash.merge';
 
-import { SITE, METADATA, I18N } from '~/config';
+import { SITE, METADATA } from '~/config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
+import { getAlternatePath, getLangFromUrl, getOgLocale, hasAlternate } from '~/i18n/utils';
 
 import { adaptOpenGraphImages } from '~/utils/images';
 
@@ -25,6 +26,21 @@ const {
   twitter = {},
 } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
+
+// Only advertise alternates for pages that genuinely exist in both languages.
+// Blog posts are Vietnamese-only for now and must not claim an English twin.
+const alternateLinks = hasAlternate(Astro.url.pathname)
+  ? ([
+      { hreflang: 'vi', path: getAlternatePath(Astro.url.pathname, 'vi') },
+      { hreflang: 'en', path: getAlternatePath(Astro.url.pathname, 'en') },
+      { hreflang: 'x-default', path: getAlternatePath(Astro.url.pathname, 'vi') },
+    ].map(({ hreflang, path }) => ({ hreflang, href: String(getCanonical(path)) })) as Array<{
+      hreflang: string;
+      href: string;
+    }>)
+  : [];
+
 const seoProps = merge(
   {
     title: '',
@@ -37,7 +53,7 @@ const seoProps = merge(
       url: canonical,
       site_name: SITE?.name,
       images: [],
-      locale: I18N?.language || 'en',
+      locale: getOgLocale(lang),
       type: 'website',
     },
     twitter: {
@@ -60,7 +76,9 @@ const seoProps = merge(
     noindex: typeof robots?.index !== 'undefined' ? !robots.index : undefined,
     nofollow: typeof robots?.follow !== 'undefined' ? !robots.follow : undefined,
     description: description,
-    openGraph: { url: canonical, ...openGraph },
+    // locale must sit in this layer: config.yaml's metadata.openGraph.locale is
+    // hardcoded vi_VN and would otherwise win over the page's actual language.
+    openGraph: { url: canonical, locale: getOgLocale(lang), ...openGraph },
     twitter: twitter,
   }
 );
@@ -80,6 +98,8 @@ const twitterCard =
 {seoProps.description && <meta name="description" content={seoProps.description} />}
 <meta name="robots" content={robotsContent} />
 {seoProps.canonical && <link rel="canonical" href={String(seoProps.canonical)} />}
+
+{alternateLinks.map(({ hreflang, href }) => <link rel="alternate" hreflang={hreflang} href={href} />)}
 
 {finalTitle && <meta property="og:title" content={finalTitle} />}
 {seoProps.description && <meta property="og:description" content={seoProps.description} />}

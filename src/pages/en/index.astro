@@ -1,0 +1,253 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroSlider from '~/components/HeroSlider.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import USPSection from '~/components/USPSection.astro';
+import TestimonialsSection from '~/components/TestimonialsSection.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import PartnersStrip from '~/components/PartnersStrip.astro';
+
+const metadata = {
+  title: 'Chuẩn Màu — Professional monitor calibration in Hanoi',
+  description:
+    'Professional color calibration for PC monitors, laptops and pen displays in Hanoi. High accuracy, 6-month warranty. Built for designers, photographers and video editors.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Slider ****************** -->
+
+  <HeroSlider />
+
+  <!-- Partners Strip ****************** -->
+
+  <PartnersStrip />
+
+  <!-- USP Section ******************* -->
+
+  <USPSection />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Services"
+    title="Our monitor calibration services"
+    subtitle="Professional calibration with modern instruments and the highest achievable accuracy."
+    items={[
+      {
+        title: 'Desktop monitor calibration',
+        description:
+          'Professional calibration for desktop monitors using modern colorimeters, for dependable accuracy.',
+        icon: 'tabler:device-desktop',
+      },
+      {
+        title: 'Laptop calibration',
+        description: 'Laptop calibration for designers, photographers and video editors, tuned for optimal accuracy.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Pen display calibration',
+        description: 'Calibration for Wacom, Huion and other pen display brands used in professional design work.',
+        icon: 'tabler:device-tablet',
+      },
+      {
+        title: 'ICC profile installation',
+        description: 'Guidance and hands-on help installing ICC profiles on Windows and macOS to keep color accurate.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Monitor buying advice',
+        description: 'Advice on choosing the right monitor for your work and your budget.',
+        icon: 'tabler:help',
+      },
+      {
+        title: 'Warranty and support',
+        description: 'Warranty coverage and technical support after calibration so quality holds up over time.',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="How our calibration process works."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Get in touch</span>',
+        description:
+          'Contact us by phone or through the website to book an appointment. We will advise you and give you a detailed quote for the service.',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Assessment</span>',
+        description:
+          'A technician inspects your display and assesses its current state, checking brightness, contrast and color.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Calibration</span>',
+        description:
+          'We use professional measurement equipment to calibrate your display to the color standard that fits your work.',
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'Done!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/xritei1-chuanmau.jpg',
+      alt: 'X-Rite i1 colorimeter used by Chuẩn Màu',
+    }}
+  />
+
+  <!-- Testimonials Section *********** -->
+
+  <TestimonialsSection />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently asked questions"
+    subtitle="Learn more about monitor calibration and what to know before booking."
+    tagline="FAQ"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why does a monitor need calibration?',
+        description:
+          'Calibration makes sure colors display accurately, which matters most for designers, photographers and video editors. An uncalibrated display can show shifted colors that affect the quality of your work.',
+      },
+      {
+        title: 'How long does calibration take?',
+        description:
+          'Calibrating a single display usually takes about 30 to 45 minutes. We inspect, measure and calibrate to the color standard that suits your work.',
+      },
+      {
+        title: 'Do I need to prepare anything?',
+        description:
+          'Just make sure the screen is clean and has been powered on for at least 30 minutes so its temperature is stable. We bring all the equipment needed.',
+      },
+      {
+        title: 'Is the service covered by a warranty?',
+        description:
+          'We provide a 6-month warranty on calibration. If any color issue comes up during that period, we will check and recalibrate free of charge.',
+      },
+      {
+        title: 'How much does it cost?',
+        description:
+          'At our shop: 150,000₫ for the first display, then 100,000₫ for each additional one. On-site: 200,000₫ for the first display, 100,000₫ for each additional one. See the Pricing page for full details.',
+      },
+      {
+        title: 'Do you offer on-site service?',
+        description:
+          'Yes, we offer on-site service across Hanoi. A technician comes to you and calibrates on the spot, saving you the time and cost of travel.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact us',
+        href: '/en/contact/',
+        icon: 'tabler:phone',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Chuẩn Màu <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Professional</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Do not let inaccurate color undermine the quality of your work. <br class="hidden md:inline" />
+      Get in touch for a free consultation.
+    </Fragment>
+  </CallToAction>
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: 'en',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Why does a monitor need calibration?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Calibration makes sure colors display accurately, which matters most for designers, photographers and video editors. An uncalibrated display can show shifted colors that affect the quality of your work.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does calibration take?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Calibrating a single display usually takes about 30 to 45 minutes.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does monitor calibration cost?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'At our shop: 150,000₫ for the first display. On-site: 200,000₫ for the first display. Each additional display is 100,000₫.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is the service covered by a warranty?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, Chuẩn Màu provides a 6-month warranty. If any issue arises during that period we will check and recalibrate free of charge.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you offer on-site service?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, Chuẩn Màu offers on-site service across Hanoi for 200,000₫ for the first display.',
+          },
+        },
+      ],
+    })}
+  />
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Monitor color calibration',
+      inLanguage: 'en',
+      provider: {
+        '@type': 'LocalBusiness',
+        name: 'Chuẩn Màu',
+      },
+      areaServed: {
+        '@type': 'City',
+        name: 'Hanoi',
+      },
+      offers: {
+        '@type': 'AggregateOffer',
+        lowPrice: '150000',
+        highPrice: '200000',
+        priceCurrency: 'VND',
+      },
+    })}
+  />
+</Layout>

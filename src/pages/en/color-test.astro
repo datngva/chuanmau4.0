@@ -1,0 +1,59 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Color check',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Color Check"
+    image={{
+      src: '~/assets/images/kiem-tra-mau-sac.jpg',
+      alt: 'sRGB check',
+    }}
+  >
+    <Fragment slot="title">Color check</Fragment>
+
+    <Fragment slot="subtitle">Expert guidance and trustworthy assessments of display color.</Fragment>
+  </Hero>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently asked questions"
+    subtitle="Have a look through these, or contact us for advice."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Will I lose the calibration after reinstalling my operating system?',
+        description:
+          'No. Once calibration is done we export a Profile.ICC file and show you how to install it again on your computer.',
+      },
+      {
+        title: 'Does calibration need to be repeated periodically?',
+        description: 'Yes. Displays drift over time, so we recommend recalibrating after 6 months to a year of use.',
+      },
+      {
+        title: 'How much does monitor calibration cost?',
+        description:
+          'Calibration starts from 150,000₫ per display. Please get in touch and we will advise you in detail.',
+      },
+      {
+        title: 'Can laptop screens be calibrated?',
+        description:
+          'Laptop panels come in roughly two grades: around 60% and around 100% sRGB. We will advise whether calibration is worthwhile based on your panel.',
+      },
+      {
+        title: 'Can Wacom, XP-Pen or Huion tablets be calibrated?',
+        description: 'Absolutely. They are essentially external displays, so we can calibrate them the same way.',
+      },
+    ]}
+  />
+</Layout>

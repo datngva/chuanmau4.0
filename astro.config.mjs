@@ -33,8 +33,23 @@ export default defineConfig({
     domains: ['ui-avatars.com'],
   },
 
+  // Vietnamese is the primary language and stays unprefixed at the site root
+  // (/, /bang-gia, ...). English lives under /en/ via src/pages/en/*.
+  i18n: {
+    defaultLocale: 'vi',
+    locales: ['vi', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+
   integrations: [
-    sitemap(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'vi',
+        locales: { vi: 'vi-VN', en: 'en-US' },
+      },
+    }),
     mdx(),
     icon({
       include: {

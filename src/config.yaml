@@ -32,6 +32,10 @@ metadata:
 i18n:
   language: vi
   textDirection: ltr
+  defaultLocale: vi
+  locales:
+    - vi
+    - en
 
 apps:
   blog:
