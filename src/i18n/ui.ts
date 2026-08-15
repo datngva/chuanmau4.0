@@ -71,8 +71,13 @@ export const ui = {
     'sticky.call': 'Gọi',
     'sticky.zalo': 'Chat Zalo ngay',
 
+    'breadcrumb.home': 'Trang chủ',
+
     'business.description':
-      'Dịch vụ cân màu màn hình chuyên nghiệp tại Hà Nội. Phục vụ Designer, Photographer, Video Editor.',
+      'Dịch vụ cân màu màn hình PC, laptop, bảng vẽ chuyên nghiệp tại Hà Nội. Thiết bị X-Rite i1Display Pro — đạt chuẩn Delta-E <2. Phục vụ Designer, Photographer, Video Editor.',
+    'business.alternateName': 'Dịch vụ cân màu màn hình Chuẩn Màu',
+    'business.areaServed': 'Hà Nội',
+    'business.catalogName': 'Dịch vụ cân màu màn hình',
   },
   en: {
     'nav.services': 'Services',
@@ -108,8 +113,13 @@ export const ui = {
     'sticky.call': 'Call',
     'sticky.zalo': 'Chat on Zalo',
 
+    'breadcrumb.home': 'Home',
+
     'business.description':
-      'Professional monitor calibration service in Hanoi. Serving designers, photographers and video editors.',
+      'Professional color calibration for PC monitors, laptops and pen displays in Hanoi. Calibrated with an X-Rite i1Display Pro to a Delta-E under 2. Serving designers, photographers and video editors.',
+    'business.alternateName': 'Chuẩn Màu monitor calibration service',
+    'business.areaServed': 'Hanoi',
+    'business.catalogName': 'Monitor calibration services',
   },
 } as const;
 

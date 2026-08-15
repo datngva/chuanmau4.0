@@ -1,4 +1,24 @@
 ---
+import logoImage from '~/assets/images/logo.png';
+import heroImage from '~/assets/images/hero.png';
+
+import { SITE } from '~/config';
+import { getLangFromUrl, getRoute, useTranslations } from '~/i18n/utils';
+import { businessOffers } from '~/i18n/content';
+
+/**
+ * The single source of LocalBusiness data for the whole site.
+ *
+ * Keep it here and nowhere else -- two competing LocalBusiness blocks used to
+ * be emitted on every page with conflicting priceRange and image values, which
+ * left it to the search engine to guess which one was authoritative.
+ */
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+/** Build an absolute URL; JSON-LD must not contain site-relative paths. */
+const absolute = (pathOrUrl: string) => new URL(pathOrUrl, SITE.site).href;
+
 const breadcrumbData = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -6,8 +26,8 @@ const breadcrumbData = {
     {
       '@type': 'ListItem',
       position: 1,
-      name: 'Trang chủ',
-      item: 'https://chuanmau.com',
+      name: t('breadcrumb.home'),
+      item: absolute(getRoute('home', lang)),
     },
   ],
 };
@@ -15,15 +35,17 @@ const breadcrumbData = {
 const localBusinessData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': `${SITE.site.replace(/\/$/, '')}/#localbusiness`,
   name: 'Chuẩn Màu',
-  alternateName: 'Dịch vụ cân màu màn hình Chuẩn Màu',
-  description:
-    'Dịch vụ cân màu màn hình PC, laptop, bảng vẽ chuyên nghiệp tại Hà Nội. Thiết bị X-Rite i1Display Pro — đạt chuẩn Delta-E <2. Phục vụ Designer, Photographer, Video Editor.',
-  url: 'https://chuanmau.com',
+  alternateName: t('business.alternateName'),
+  description: t('business.description'),
+  url: absolute(getRoute('home', lang)),
   telephone: '+84879025858',
-  priceRange: '₫₫',
-  image: 'https://chuanmau.com/og-image.jpg',
-  logo: 'https://chuanmau.com/favicon.ico',
+  priceRange: '150.000₫ – 200.000₫',
+  // Imported so the hashed asset URL stays correct; this used to be a
+  // hand-written /_astro/ hash and a /og-image.jpg that did not exist.
+  image: absolute(heroImage.src),
+  logo: absolute(logoImage.src),
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Số 9 Duy Tân',
@@ -37,6 +59,9 @@ const localBusinessData = {
     latitude: 21.0299957,
     longitude: 105.7841586,
   },
+  // These hours belong to the Cầu Giấy address above. The second branch
+  // (Phú Thượng, 18:00-22:00) is a separate location and needs its own
+  // LocalBusiness entity on its own page rather than extra hours here.
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -44,39 +69,25 @@ const localBusinessData = {
       opens: '08:00',
       closes: '18:00',
     },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '18:00',
-      closes: '22:00',
-    },
   ],
+  areaServed: {
+    '@type': 'City',
+    name: t('business.areaServed'),
+  },
   sameAs: ['https://www.facebook.com/chuanmaucom', 'https://zalo.me/0879025858'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Dịch vụ cân màu màn hình',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Cân màu màn hình tại cửa hàng',
-          description: 'Cân màu màn hình PC, laptop tại cửa hàng với thiết bị X-Rite i1Display Pro',
-        },
-        price: '150000',
-        priceCurrency: 'VND',
+    name: t('business.catalogName'),
+    itemListElement: businessOffers[lang].map((offer) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: offer.name,
+        description: offer.description,
       },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Cân màu màn hình tại nhà',
-          description: 'Kỹ thuật viên đến tận nhà cân màu màn hình, bảo hành 6 tháng',
-        },
-        price: '200000',
-        priceCurrency: 'VND',
-      },
-    ],
+      price: offer.price,
+      priceCurrency: 'VND',
+    })),
   },
 };
 ---

@@ -146,6 +146,40 @@ export const partnerDescriptions: Record<Lang, Record<string, string>> = {
   },
 };
 
+export interface BusinessOffer {
+  name: string;
+  description: string;
+  price: string;
+}
+
+/** Offers listed in the LocalBusiness hasOfferCatalog. Prices are in VND. */
+export const businessOffers: Record<Lang, BusinessOffer[]> = {
+  vi: [
+    {
+      name: 'Cân màu màn hình tại cửa hàng',
+      description: 'Cân màu màn hình PC, laptop tại cửa hàng với thiết bị X-Rite i1Display Pro',
+      price: '150000',
+    },
+    {
+      name: 'Cân màu màn hình tại nhà',
+      description: 'Kỹ thuật viên đến tận nhà cân màu màn hình, bảo hành 6 tháng',
+      price: '200000',
+    },
+  ],
+  en: [
+    {
+      name: 'Monitor calibration at our shop',
+      description: 'Monitor and laptop calibration at our shop using an X-Rite i1Display Pro',
+      price: '150000',
+    },
+    {
+      name: 'On-site monitor calibration',
+      description: 'A technician calibrates your display at your location, with a 6-month warranty',
+      price: '200000',
+    },
+  ],
+};
+
 export interface LocalizedTestimonial {
   name: string;
   role: string;

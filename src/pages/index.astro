@@ -242,9 +242,10 @@ const metadata = {
       '@context': 'https://schema.org',
       '@type': 'Service',
       serviceType: 'Cân màu màn hình',
+      // Points at the single LocalBusiness defined in StructuredData.astro
+      // rather than restating it, so there is one business entity per page.
       provider: {
-        '@type': 'LocalBusiness',
-        name: 'Chuẩn Màu',
+        '@id': 'https://chuanmau.com/#localbusiness',
       },
       areaServed: {
         '@type': 'City',

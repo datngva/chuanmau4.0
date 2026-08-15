@@ -234,9 +234,10 @@ const metadata = {
       '@type': 'Service',
       serviceType: 'Monitor color calibration',
       inLanguage: 'en',
+      // Points at the single LocalBusiness defined in StructuredData.astro
+      // rather than restating it, so there is one business entity per page.
       provider: {
-        '@type': 'LocalBusiness',
-        name: 'Chuẩn Màu',
+        '@id': 'https://chuanmau.com/#localbusiness',
       },
       areaServed: {
         '@type': 'City',
